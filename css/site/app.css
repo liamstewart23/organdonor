@@ -1,0 +1,210 @@
+.hidden {display: none;}
+
+/*Overall styles*/
+body {
+  background-color: red;
+  color: #fff;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 500;
+/*  margin-top: 150px;*/
+  font-size: 32px;
+  overflow-x: hidden;
+}
+/*Bootstrap changes*/
+/*.container {width: 100%;margin-bottom: 15px;} /*Forces Bootstrap grid full screen width*/
+/*.ham {margin-top: 25px;}*/
+
+/*End Bootstrap changes*/
+
+h2 {
+  font-weight: 900;
+  font-size: 64px;
+}
+
+h3 {
+  font-size: 48px;;
+}
+
+h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover {
+  color: #000;
+  text-decoration:none;
+  opacity: .7;
+}
+/*End Overall styles*/
+
+/*
+Nav ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+.nav li a:hover, .nav li a:focus {background: transparent !important;}
+.navbar-nav li a {outline: 0;}
+.nav-top {margin-top: 40px;} /*Fixes top margin*/
+
+.navbar-default {
+    background-color: #fff;
+    border-color: #fff;
+}
+.navbar-default .navbar-nav li a {
+    color: #000;
+}
+.navbar-nav li {
+  margin-right: 40px;
+}
+.navbar-brand img {
+    display: block;
+    height: 25px;
+}
+#homeIcon {
+  height: 28px;
+  margin-top: -5px;
+}
+nav ul li {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+  text-transform: lowercase;
+  font-size: 22px;
+}
+.btnred {
+  font-weight: 500;
+  border-radius: 25px;
+  background: red;
+  border: 2px solid red;
+  color: #fff !important;
+  padding: 0px 50px 5px 50px;
+  line-height: 20px;
+  align-content: center !important; 
+}
+.btnred:hover {
+  background: #fff;
+  border: 2px solid red;
+  color: red !important;
+}
+/*
+End Nav ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+/*
+Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+#home {margin-top: 50px;}
+
+#banner1 { 
+  background: url(../../img/home/banner1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#banner2 { 
+  background: url(../../img/home/banner2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#banner3 { 
+  background: url(../../img/home/lighbulb_banner.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#home h3 {
+font-size: 72px !important;
+font-family: 'Fjalla One', sans-serif;
+}
+
+
+/*
+End Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+
+
+/*Pages*/
+#pageContent {
+  width: 100%;
+  margin-top:80px;
+  background-color: #fff;
+}
+
+#about h2{
+  font-size: 28px;
+  font-weight: 100;
+  text-transform: uppercase;
+  color:#000;
+}
+#about h3{
+  font-size: 38px;
+  color: #e00113;
+}
+#about .about-main{
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  font-weight: 100;  
+}
+#about .about-sidebar {
+  background-color:#e00113;
+}
+#about .about-sidebar-1, #about .about-sidebar-1 h4 { 
+  color: #7a7a7c;
+  margin-top: 50px;
+  font-size: 1.5em;
+}
+#about .about-sidebar h4 {
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-size: 28px;
+  font-weight: 100;
+  margin:50px;
+}
+#about .about-sidebar p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-weight: 100;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 40px;
+}
+
+
+
+@media only screen and (min-width : 250px) {
+  body {font-size: 12px;}        
+  h1 {font-size: 18px;}
+  h2 {font-size: 26px;}
+  h3 {font-size: 18px;}
+  h4 {font-size: 18px;}
+  .contactItem,.contactItem a {font-size: 18px;}
+  #about-start,#blog-posts,#contactArea {margin-top: 50px;}
+}
+@media only screen and (min-width : 500px) {
+  body {font-size: 14px;}        
+  h1 {font-size: 24px;}
+  h2 {font-size: 48px;}
+  h3 {font-size: 36px;}
+  h4 {font-size: 14px;}
+  h5 {font-size: 18px;}
+  .contactItem,.contactItem a {font-size: 24px;}
+  #about-start,#blog-posts,#contactArea {margin-top: 50px;}
+}
+@media only screen and (min-width : 775px) {
+  body {font-size: 18px;}        
+  h1 {font-size: 24px;}
+  h2 {font-size: 50px;}
+  h3 {font-size: 34px;}
+  h4 {font-size: 14px;}
+  .contactItem,.contactItem a {font-size: 32px;}
+}
+@media only screen and (min-width : 950px) {
+  body {font-size: 18px;}        
+  h1 {font-size: 36px;}
+  h2 {font-size: 64px;}
+  h3 {font-size: 48px;}
+  h4 {font-size: 24px;}
+  .contactItem,.contactItem a {font-size: 36px;}
+}
