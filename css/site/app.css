@@ -1,4 +1,6 @@
 .hidden {display: none;}
+#menuMobileHome {display: none;}
+#menuMobileRegister {display: none;}
 
 /*Overall styles*/
 body, html {
@@ -10,10 +12,7 @@ body, html {
 }
 /*Bootstrap changes*/
 /*.container {width: 100%;margin-bottom: 15px;} /*Forces Bootstrap grid full screen width*/
-/*.ham {margin-top: 25px;}*/
-
 /*End Bootstrap changes*/
-.red {color:#eb1f27;}
 
 h2 {
   font-weight: 900;
@@ -33,6 +32,7 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover {
 p,li{
   font-size: 1em;
 }
+.red {color:#eb1f27;}
 /*End Overall styles*/
 
 /*
@@ -65,7 +65,7 @@ nav ul li {
   font-family: 'Oswald', sans-serif;
   font-weight: 200;
   text-transform: lowercase;
-  font-size: 2em;
+  font-size: 1em;
 }
 .btnred {
   font-weight: 500;
@@ -92,8 +92,9 @@ Start Footer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 footer {
   height: 150px;
   padding-top: 50px;
+  background: #eb1f27;
 }
-footer a {color: #000;}
+footer a {color: #fff;}
 
 /*
 End Footer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -131,9 +132,9 @@ Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   text-transform: lowercase;
   font-size: ;
   border-radius: 25px;
-  background: #4eaee9;
+  background: #fff;
   border: 2px solid #fff;
-  color: #fff !important;
+  color: #4eaee9 !important;
   padding: 5px 50px 5px 50px;
   align-content: center !important;
   margin-top: 200px;
@@ -150,9 +151,9 @@ Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   text-transform: lowercase;
   font-size: ;
   border-radius: 25px;
-  background: #9d5bc2;
+  background: #fff;
   border: 2px solid #fff;
-  color: #fff !important;
+  color: #9d5bc2 !important;
   padding: 5px 50px 5px 50px;
   align-content: center !important;
   margin-top: 200px;
@@ -161,6 +162,42 @@ Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   opacity: .8;
   border: 2px solid #9d5bc2;
   color: #fff;
+  text-decoration: none;
+}
+
+#btnB3 {
+  font-weight: 500;
+  text-transform: lowercase;
+  border-radius: 25px;
+  background: #6eb0eb;
+  border: 2px solid #6eb0eb;
+  color: #fff !important;
+  padding: 5px 50px 5px 50px;
+  align-content: center !important;
+  margin-top: 200px;
+}
+#btnB3:hover {
+  background: #fff;
+  border: 2px solid #6eb0eb;
+  color: #6eb0eb;
+  text-decoration: none;
+}
+
+#btnB4 {
+  font-weight: 500;
+  text-transform: lowercase;
+  border-radius: 25px;
+  background: #488ecc;
+  border: 2px solid #488ecc;
+  color: #fff !important;
+  padding: 5px 50px 5px 50px;
+  align-content: center !important;
+  margin-top: 200px;
+}
+#btnB4:hover {
+  background: #fff;
+  border: 2px solid #488ecc;
+  color: #488ecc;
   text-decoration: none;
 }
 
@@ -190,7 +227,7 @@ font-family: 'Fjalla One', sans-serif;
 }
 #content1 h5 {
   color: #000;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 .homeSVG {
   margin-top: 50px;
@@ -215,6 +252,7 @@ font-family: 'Fjalla One', sans-serif;
 #homeStories h3 {
   line-height: 150px;
   margin-left: 200px;
+  font-size: 1.5em;
 }
 
 #discoverstories {
@@ -244,7 +282,7 @@ End Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   background-color: #fff;
 }
 
-#about h2{
+/*#about h2{
   font-weight: 100;
   text-transform: uppercase;
   color:#000;
@@ -281,23 +319,26 @@ End Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   padding-bottom: 40px;
 }
 
+*/
+@media screen and (min-width : 15.625em) {/*250px*/
+  body {font-size: 1.2em;}
 
-
-@media only screen and (min-width : 15.625em) {/*250px*/
-  body {font-size: 1.2em;}        
-
-  #about-start,#blog-posts,#contactArea {margin-top: 50px;}
 }
-@media only screen and (min-width : 31.25em) {/*500px*/
+@media screen and (min-width : 31.25em) {/*500px*/
   body {font-size: 1.4em;}
 
-  #about-start,#blog-posts,#contactArea {margin-top: 50px;}
 }
-@media only screen and (min-width : 48.4375em) {/*775px*/
-  body {font-size: 1.5em;}        
+@media screen and (max-width : 48.4375em) {/*775px*/
+  body {font-size: 1.5em;}
+  #menuMobileHome {display: block;}
+  #menuMobileRegister {display: block;color:#eb1f27;}
+  #menuHome {display: none;}
+  #menuRegister {display: none;}          
 
 }
-@media only screen and (min-width : 50.375em) {/*950px*/
+@media screen and (min-width : 50.375em) {/*950px*/
   body {font-size: 1.7em;}        
-
+}
+@media screen and (min-width : 75em) {/*1200px*/
+  body {font-size: 1.8em;}      
 }

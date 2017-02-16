@@ -5,7 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="IE=edge,IE=9,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <title>Because a Donor - Organ Donation Awareness | Ontario Canada</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <!-- <link rel="icon" type="image/x-icon" href="favicon.ico" /> -->
         <meta name="author" content="Liam Stewart, www.liamstewart.ca">
         <meta name="description" content="">
         <meta name="HandheldFriendly" content="True" />

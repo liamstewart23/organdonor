@@ -1,6 +1,6 @@
 (function() {
 	"use strict";
-	console.log("HELLO WORLD!")
+	//console.log("HELLO WORLD!")
 
 // JS is enabled! Switch links
 	var logo = document.querySelector(".navbar-brand");
@@ -13,6 +13,7 @@
 	menuLearn.href = "#/learn";
 	menuStories.href = "#/stories";
 	menuShare.href = "#/share";
+
 // end js enabled link switching
 
 	//Variables

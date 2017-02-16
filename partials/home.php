@@ -43,17 +43,22 @@
 			deceased donors</h4>
 			<h4><span class="red">They will never be forgotten.</span></h4>
 			<p>We have created a network that has allowed recipients,<br>and donors and their families all across Ontario to share<br>their stories.</p>
-			<p>Tell us yours.</p>
-			<h5>#because<span class="red">a</span>donor</h5>
+			<p>Tell us yours.
+			<h5>#because<span class="red">a</span>donor</h5></p>
+		<!-- 	<a href="index.php?partial=stories" id="btnB3">Discover their stories</a><br><br>
+			<a href="index.php?partial=stories" id="btnB4">share your story</a>
+			<br> -->
 		</div>
 		<div class="col-xs-12 col-sm-offset-0 col-md-4" id="banner5"></div>
-		<div id="homeStories">
+		<!-- <div id="homeStories">
+
+
 			<a href=""><div class="col-xs-12 col-sm-offset-0 col-md-6" id="discoverstories">
 				<h3>discover their stories</h3>
 			</div></a>
 			<a href="#"><div class="col-xs-12 col-sm-offset-0 col-md-6" id="sharestory">
 				<h3>share your own</h3>
 			</div></a>
-		</div>
+		</div> -->
 	</div>
 </section>
