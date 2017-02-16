@@ -1,5 +1,5 @@
-<section id="about">
-	<h2 class="hidden">About Chantry Island</h2>
+<!-- <section id="share">
+	<h2 class="hidden">Share and help spread the word about organ donation</h2>
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 text-center">
 			<h2>About Us</h2>
@@ -42,4 +42,4 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
