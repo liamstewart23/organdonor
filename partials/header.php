@@ -15,11 +15,11 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a id="menuHome" href="index.php?partial=home">
-					<img src="img/home.svg" alt="home button" id="homeIcon">
+					<img src="img/home.svg" height="0" alt="home button" id="homeIcon">
 				</a></li>
-				<li><a id="menuLearn" href="index.php?partial=about">Learn</a></li>
-				<li><a id="menuStories" href="index.php?partial=book">Stories</a></li>
-				<li><a id="menuShare" href="index.php?partial=gallery">Share</a></li>
+				<li><a id="menuLearn" href="index.php?partial=learn">Learn</a></li>
+				<li><a id="menuStories" href="index.php?partial=stories">Stories</a></li>
+				<li><a id="menuShare" href="index.php?partial=share">Share</a></li>
 				<li><a id="menuRegister" href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" target="_blank"><span class="btnred">Register</span></a></li>
 			</ul>
 			</div><!--/.nav-collapse -->

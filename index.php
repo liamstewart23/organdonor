@@ -49,6 +49,7 @@
             }?>
             </noscript>
         </div>  
+        <?php include 'partials/footer.php';?>
         <script src="js/vendor/jquery-3.1.1.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/angular.min.js"></script>
