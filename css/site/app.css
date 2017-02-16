@@ -1,11 +1,11 @@
 .hidden {display: none;}
 
 /*Overall styles*/
-body {
+body, html {
   background-color: #fff;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 500;
-  font-size: 32px;
+  font-size: 100%;
   overflow-x: hidden;
 }
 /*Bootstrap changes*/
@@ -17,17 +17,21 @@ body {
 
 h2 {
   font-weight: 900;
-  font-size: 58px;
+  font-size: 2em;
 }
 
-h3 {
-  font-size: 48px;
-}
+h3 {font-size: 2em;}
+h4 {font-size: 1.5em;}
+h5 {font-size: 2em;}
 
 h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover {
   color: #000;
   text-decoration:none;
   opacity: .7;
+}
+
+p,li{
+  font-size: 1em;
 }
 /*End Overall styles*/
 
@@ -61,7 +65,7 @@ nav ul li {
   font-family: 'Oswald', sans-serif;
   font-weight: 200;
   text-transform: lowercase;
-  font-size: 22px;
+  font-size: 2em;
 }
 .btnred {
   font-weight: 500;
@@ -82,13 +86,27 @@ End Nav ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
 /*
+Start Footer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+footer {
+  height: 150px;
+  padding-top: 50px;
+}
+footer a {color: #000;}
+
+/*
+End Footer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+/*
 Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
 #home {margin-top: 50px;}
 
 #banner1 { 
-  background: url(../../img/home/banner1.jpg) no-repeat center center fixed; 
+  background: url(../../img/home/banner1.jpg) no-repeat center center /*fixed*/; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -96,7 +114,7 @@ Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   color: #fff;
 }
 #banner2 { 
-  background: url(../../img/home/banner2.jpg) no-repeat center center fixed; 
+  background: url(../../img/home/banner2.jpg) no-repeat center center /*fixed*/; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -111,11 +129,11 @@ Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #btnB1 {
   font-weight: 500;
   text-transform: lowercase;
-  font-size: 24px;
+  font-size: ;
   border-radius: 25px;
   background: #4eaee9;
   border: 2px solid #fff;
-  color: #ffcc05 !important;
+  color: #fff !important;
   padding: 5px 50px 5px 50px;
   align-content: center !important;
   margin-top: 200px;
@@ -123,18 +141,18 @@ Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #btnB1:hover {
   opacity: .8;
   border: 2px solid #4eaee9;
-  color: #ffcc05 !important;
+  color: #fff;
   text-decoration: none;
 }
 
 #btnB2 {
   font-weight: 500;
   text-transform: lowercase;
-  font-size: 24px;
+  font-size: ;
   border-radius: 25px;
   background: #9d5bc2;
   border: 2px solid #fff;
-  color: #ffcc05 !important;
+  color: #fff !important;
   padding: 5px 50px 5px 50px;
   align-content: center !important;
   margin-top: 200px;
@@ -142,7 +160,7 @@ Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #btnB2:hover {
   opacity: .8;
   border: 2px solid #9d5bc2;
-  color: #ffcc05 !important;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -155,7 +173,6 @@ Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
 
 #home h3 {
-font-size: 72px !important;
 font-family: 'Fjalla One', sans-serif;
 }
 
@@ -165,16 +182,13 @@ font-family: 'Fjalla One', sans-serif;
   padding-top:100px;
 }
 #content1 h4 {
-  font-size: 64px !important;
   color: #000;
 }
 #content1 p {
   color: #000;
-  font-size: 38px;
   margin-top: 40px;
 }
 #content1 h5 {
-  font-size: 48px !important;
   color: #000;
   margin-top: 70px;
 }
@@ -191,7 +205,7 @@ font-family: 'Fjalla One', sans-serif;
   margin-top: 80px;
 }
 #banner5 { 
-  background: url(../../img/home/dad_kid.jpg) no-repeat left fixed; 
+  background: url(../../img/home/dad_kid.jpg) no-repeat left; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -221,11 +235,7 @@ font-family: 'Fjalla One', sans-serif;
 End Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-footer {
-  height: 150px;
-  padding-top: 50px;
-}
-footer a {color: #000;}
+
 
 /*Pages*/
 #pageContent {
@@ -235,19 +245,16 @@ footer a {color: #000;}
 }
 
 #about h2{
-  font-size: 28px;
   font-weight: 100;
   text-transform: uppercase;
   color:#000;
 }
 #about h3{
-  font-size: 38px;
   color: #e00113;
 }
 #about .about-main{
   color: #000;
   font-family: 'Raleway', sans-serif;
-  font-size: 18px;
   font-weight: 100;  
 }
 #about .about-sidebar {
@@ -256,18 +263,16 @@ footer a {color: #000;}
 #about .about-sidebar-1, #about .about-sidebar-1 h4 { 
   color: #7a7a7c;
   margin-top: 50px;
-  font-size: 1.5em;
+
 }
 #about .about-sidebar h4 {
   text-transform: uppercase;
   font-family: 'Raleway', sans-serif;
-  font-size: 28px;
   font-weight: 100;
   margin:50px;
 }
 #about .about-sidebar p {
   font-family: 'Raleway', sans-serif;
-  font-size: 14px;
   text-align: justify;
   text-justify: inter-word;
   font-weight: 100;
@@ -278,38 +283,21 @@ footer a {color: #000;}
 
 
 
-@media only screen and (min-width : 250px) {
-  body {font-size: 12px;}        
-  h1 {font-size: 18px;}
-  h2 {font-size: 24px;}
-  h3 {font-size: 24px;}
-  h4 {font-size: 24px;}
-  .contactItem,.contactItem a {font-size: 18px;}
+@media only screen and (min-width : 15.625em) {/*250px*/
+  body {font-size: 1.2em;}        
+
   #about-start,#blog-posts,#contactArea {margin-top: 50px;}
 }
-@media only screen and (min-width : 500px) {
-  body {font-size: 14px;}        
-  h1 {font-size: 24px;}
-  h2 {font-size: 28px;}
-  h3 {font-size: 28px;}
-  h4 {font-size: 28px;}
-  h5 {font-size: 18px;}
-  .contactItem,.contactItem a {font-size: 24px;}
+@media only screen and (min-width : 31.25em) {/*500px*/
+  body {font-size: 1.4em;}
+
   #about-start,#blog-posts,#contactArea {margin-top: 50px;}
 }
-@media only screen and (min-width : 775px) {
-  body {font-size: 18px;}        
-  h1 {font-size: 24px;}
-  h2 {font-size: 36px;}
-  h3 {font-size: 34px;}
-  h4 {font-size: 34px;}
-  .contactItem,.contactItem a {font-size: 32px;}
+@media only screen and (min-width : 48.4375em) {/*775px*/
+  body {font-size: 1.5em;}        
+
 }
-@media only screen and (min-width : 950px) {
-  body {font-size: 18px;}        
-  h1 {font-size: 36px;}
-  h2 {font-size: 42px;}
-  h3 {font-size: 48px;}
-  h4 {font-size: 48px;}
-  .contactItem,.contactItem a {font-size: 36px;}
+@media only screen and (min-width : 50.375em) {/*950px*/
+  body {font-size: 1.7em;}        
+
 }

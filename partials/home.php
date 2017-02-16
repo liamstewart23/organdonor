@@ -22,7 +22,7 @@
 		</div>
 		<div class="col-xs-12 col-sm-offset-0 col-md-8 col-md-offset-2" id="content1">
 			<h4>We've made it our mission to give you the <span class="red">facts.</span></h4>
-			<p>Studies have found that when asked, the majority of non-donors express that they simply don’t feel informed enough to make the decision.</p>
+			<p>Studies have found that most of non-donors don’t feel informed enough to make the decision.</p>
 			<div class="text-center">
 				<h5>Did you know...</h5>
 				<img src="img/home/pies.svg" height="0" alt="organ donation stats" id="homePies" class="homeSVG">
