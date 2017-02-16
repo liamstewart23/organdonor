@@ -7,13 +7,14 @@
 		</div>
 		<div class="col-xs-12 col-sm-offset-0 col-md-8">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a id="menuHome" href="index.php?partial=home">
+				<li><a class="menuHome" href="index.php?partial=home">
 					<img src="img/home.svg" height="0" alt="home button" id="homeIcon">
 				</a></li>
-				<li><a id="menuLearn" href="index.php?partial=learn">Learn</a></li>
-				<li><a id="menuStories" href="index.php?partial=stories">Stories</a></li>
-				<li><a id="menuShare" href="index.php?partial=share">Share</a></li>
-				<li><a id="menuRegister" href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" target="_blank"><span class="btnred">Register</span></a></li>
+				<li><a class="menuLearn" href="index.php?partial=learn">Learn</a></li>
+				<li><a class="menuStories" href="index.php?partial=stories">Stories</a></li>
+				<li><a class="menuShare" href="index.php?partial=share">Share</a></li>
+				<li><a class="menuFacebook" href="#">Facebookhere</a></li>
+				<li><a class="menuTwitter" href="#">Twitterhere</a></li>
 			</ul>
 		</div>
 	</div>

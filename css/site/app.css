@@ -17,11 +17,11 @@ body {
 
 h2 {
   font-weight: 900;
-  font-size: 64px;
+  font-size: 58px;
 }
 
 h3 {
-  font-size: 48px;;
+  font-size: 48px;
 }
 
 h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover {
@@ -36,6 +36,7 @@ Nav ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 .nav li a:hover, .nav li a:focus {background: transparent !important;}
 .navbar-nav li a {outline: 0;}
+.navbar-nav li a:hover {opacity: .7;}
 .nav-top {margin-top: 40px;} /*Fixes top margin*/
 
 .navbar-default {
@@ -169,7 +170,7 @@ font-family: 'Fjalla One', sans-serif;
 }
 #content1 p {
   color: #000;
-  font-size: 48px;
+  font-size: 38px;
   margin-top: 40px;
 }
 #content1 h5 {
@@ -224,7 +225,7 @@ footer {
   height: 150px;
   padding-top: 50px;
 }
-
+footer a {color: #000;}
 
 /*Pages*/
 #pageContent {
@@ -280,18 +281,18 @@ footer {
 @media only screen and (min-width : 250px) {
   body {font-size: 12px;}        
   h1 {font-size: 18px;}
-  h2 {font-size: 26px;}
-  h3 {font-size: 18px;}
-  h4 {font-size: 18px;}
+  h2 {font-size: 24px;}
+  h3 {font-size: 24px;}
+  h4 {font-size: 24px;}
   .contactItem,.contactItem a {font-size: 18px;}
   #about-start,#blog-posts,#contactArea {margin-top: 50px;}
 }
 @media only screen and (min-width : 500px) {
   body {font-size: 14px;}        
   h1 {font-size: 24px;}
-  h2 {font-size: 48px;}
-  h3 {font-size: 36px;}
-  h4 {font-size: 14px;}
+  h2 {font-size: 28px;}
+  h3 {font-size: 28px;}
+  h4 {font-size: 28px;}
   h5 {font-size: 18px;}
   .contactItem,.contactItem a {font-size: 24px;}
   #about-start,#blog-posts,#contactArea {margin-top: 50px;}
@@ -299,16 +300,16 @@ footer {
 @media only screen and (min-width : 775px) {
   body {font-size: 18px;}        
   h1 {font-size: 24px;}
-  h2 {font-size: 50px;}
+  h2 {font-size: 36px;}
   h3 {font-size: 34px;}
-  h4 {font-size: 14px;}
+  h4 {font-size: 34px;}
   .contactItem,.contactItem a {font-size: 32px;}
 }
 @media only screen and (min-width : 950px) {
   body {font-size: 18px;}        
   h1 {font-size: 36px;}
-  h2 {font-size: 64px;}
+  h2 {font-size: 42px;}
   h3 {font-size: 48px;}
-  h4 {font-size: 24px;}
+  h4 {font-size: 48px;}
   .contactItem,.contactItem a {font-size: 36px;}
 }
