@@ -27,10 +27,11 @@
         <meta name="language" content="english">
         <meta name="googlebot" content="noodp">
         <meta name="fragment" content="!">
-<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,500|Roboto+Condensed|Fjalla+One" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,700|Fjalla+One" rel="stylesheet"> 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/site/app.css">
+        <script src="https://use.fontawesome.com/380411a7d6.js"></script>
     </head>
     <body ng-app="BecauseADonor">
         <h1 class="hidden">Because a Donor - Organ Donation Awareness | Ontario Canada</h1>
