@@ -1,23 +1,20 @@
 <section id="mainMenu">
-	<h2 class="hidden">Menu</h2>
+	<h2 class="hidden">Menu for non-js browsers</h2>
 	<div class="row">
 		<div class="col-xs-12 col-sm-offset-0 col-md-9 col-md-offset-3">
-			<h2><a href="#/home">Home</a></h2>
+			<h3><a href="index.php?partial=home">home</a></h3>
 		</div>
 		<div class="col-xs-12 col-sm-offset-0 col-md-9 col-md-offset-3">
-			<h2><a href="#/about">About</a></h2>
+			<h3><a href="index.php?partial=learn">learn</a></h3>
 		</div>
 		<div class="col-xs-12 col-sm-offset-0 col-md-9 col-md-offset-3">
-			<h2><a href="#/book">Book</a></h2>
+			<h3><a href="index.php?partial=stories">stories</a></h3>
 		</div>
 		<div class="col-xs-12 col-sm-offset-0 col-md-9 col-md-offset-3">
-			<h2><a href="#/gallery">Gallery</a></h2>
+			<h3><a href="index.php?partial=share">share</a></h3>
 		</div>
 		<div class="col-xs-12 col-sm-offset-0 col-md-9 col-md-offset-3">
-			<h2><a href="#/donate">Donate</a></h2>
+			<h3><a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" class="red" target="blank">register</a></h3>
 		</div>
-		<div class="col-xs-12 col-sm-offset-0 col-md-9 col-md-offset-3">
-			<h2><a href="#/contact">Contact</a></h2>
-		</div>		
 	</div>
 </section>
