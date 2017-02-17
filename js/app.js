@@ -14,44 +14,52 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 app.controller('HomeCtrl', [function() {
     angular.element(document).ready(function () {
         document.title = siteTitle;
-    $(document).ready(function(){
-        //Initial Browser height for banners sizing
-        $('#banner1').css({'height':(($(window).height()-50))+'px'});
-        $('#banner2').css({'height':(($(window).height()-50))+'px'});
-        $('#banner3').css({'height':(($(window).height()/4))+'px'});
-        $('#banner4').css({'height':(($(window).height()/4))+'px'});
-        $('#banner5').css({'height':(($(window).height()))+'px'});
-        $('#iconCheckmark').css({'height':(($(window).height()/8))+'px'});
-        $('#iconBook').css({'height':(($(window).height()/8))+'px'});
-        $('#iconLightbulb').css({'height':(($(window).height()/5))+'px'});
-        $('#iconCommunity').css({'height':(($(window).height()/5))+'px'});
-        $('#iconCheckmark').css({'margin-top':(($(window).height()/4))+'px'});
-        $('#iconBook').css({'margin-top':(($(window).height()/4))+'px'});
-        $('#iconLightbulb').css({'margin-top':(($(window).height()/35))+'px'});
-        $('#iconCommunity').css({'margin-top':(($(window).height()/35))+'px'});
-        $('#homePies').css({'height':(($(window).height()/3))+'px'});
-        $('#home1to8').css({'height':(($(window).height()/3))+'px'});
-        $('#home3days').css({'height':(($(window).height()/3))+'px'});
-    });
-    $(window).resize(function(){
-        //Banner sizing adjustments based on resize
-        $('#banner1').css({'height':(($(window).height()-50))+'px'});
-        $('#banner2').css({'height':(($(window).height()-50))+'px'});
-        $('#banner3').css({'height':(($(window).height()/4))+'px'});
-        $('#banner4').css({'height':(($(window).height()/4))+'px'});
-        $('#banner5').css({'height':(($(window).height()))+'px'});
-        $('#iconCheckmark').css({'height':(($(window).height()/8))+'px'});
-        $('#iconBook').css({'height':(($(window).height()/8))+'px'});
-        $('#iconLightbulb').css({'height':(($(window).height()/5))+'px'});
-        $('#iconCommunity').css({'height':(($(window).height()/5))+'px'});        
-        $('#iconCheckmark').css({'margin-top':(($(window).height()/4))+'px'});
-        $('#iconBook').css({'margin-top':(($(window).height()/4))+'px'});
-        $('#iconLightbulb').css({'margin-top':(($(window).height()/35))+'px'});
-        $('#iconCommunity').css({'margin-top':(($(window).height()/35))+'px'});
-        $('#homePies').css({'height':(($(window).height()/3))+'px'});
-        $('#home1to8').css({'height':(($(window).height()/3))+'px'});
-        $('#home3days').css({'height':(($(window).height()/3))+'px'});
-    });
+        $(document).ready(function(){
+            //Initial Browser height for banners sizing
+            $('#banner1').css({'height':(($(window).height()-50))+'px'});
+            $('#banner2').css({'height':(($(window).height()-50))+'px'});
+            $('#banner3').css({'height':(($(window).height()/4))+'px'});
+            $('#banner4').css({'height':(($(window).height()/4))+'px'});
+            $('#banner5').css({'height':(($(window).height()))+'px'});
+            $('#iconCheckmark').css({'height':(($(window).height()/8))+'px'});
+            $('#iconBook').css({'height':(($(window).height()/8))+'px'});
+            $('#iconLightbulb').css({'height':(($(window).height()/5))+'px'});
+            $('#iconCommunity').css({'height':(($(window).height()/5))+'px'});
+            $('#iconCheckmark').css({'margin-top':(($(window).height()/4))+'px'});
+            $('#iconBook').css({'margin-top':(($(window).height()/4))+'px'});
+            $('#iconLightbulb').css({'margin-top':(($(window).height()/35))+'px'});
+            $('#iconCommunity').css({'margin-top':(($(window).height()/35))+'px'});
+            $('#homePies').css({'height':(($(window).height()/3))+'px'});
+            $('#home1to8').css({'height':(($(window).height()/3))+'px'});
+            $('#home3days').css({'height':(($(window).height()/3))+'px'});
+        });
+        $(window).resize(function(){
+            //Banner sizing adjustments based on resize
+            $('#banner1').css({'height':(($(window).height()-50))+'px'});
+            $('#banner2').css({'height':(($(window).height()-50))+'px'});
+            $('#banner3').css({'height':(($(window).height()/4))+'px'});
+            $('#banner4').css({'height':(($(window).height()/4))+'px'});
+            $('#banner5').css({'height':(($(window).height()))+'px'});
+            $('#iconCheckmark').css({'height':(($(window).height()/8))+'px'});
+            $('#iconBook').css({'height':(($(window).height()/8))+'px'});
+            $('#iconLightbulb').css({'height':(($(window).height()/5))+'px'});
+            $('#iconCommunity').css({'height':(($(window).height()/5))+'px'});        
+            $('#iconCheckmark').css({'margin-top':(($(window).height()/4))+'px'});
+            $('#iconBook').css({'margin-top':(($(window).height()/4))+'px'});
+            $('#iconLightbulb').css({'margin-top':(($(window).height()/35))+'px'});
+            $('#iconCommunity').css({'margin-top':(($(window).height()/35))+'px'});
+            $('#homePies').css({'height':(($(window).height()/3))+'px'});
+            $('#home1to8').css({'height':(($(window).height()/3))+'px'});
+            $('#home3days').css({'height':(($(window).height()/3))+'px'});
+        });
+        // Linking changes
+        var btnHomeLearn = document.querySelector("#btnHomeLearn");
+        var dstory = document.querySelector("#btnDiscover");
+        var sstory = document.querySelector("#btnShare");
+        btnHomeLearn.href = "#/learn";
+        dstory.href = "#/stories";
+        sstory.href = "#/stories";
+        //End Linking changes
     });
 }]);
 //Controller for Learn

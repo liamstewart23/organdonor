@@ -5,28 +5,32 @@
 				<img src="img/logowhite.svg" alt="Because a Donor">
 			</a>
 		</div>
-		<div id="footerNav" class="col-xs-12 col-sm-offset-0 col-md-6 col-lg-8">
-			<ul class="nav navbar-nav navbar-right">
-				<li class="desk-footer"><a class="menuHome" href="index.php?partial=home">
-					<img src="img/homewhite.svg" height="0" alt="home button" id="homeIcon">
-				</a></li>
-				<li class="desk-footer"><a class="menuLearn" href="index.php?partial=learn">Learn</a></li>
-				<li class="desk-footer"><a class="menuStories" href="index.php?partial=stories">Stories</a></li>
-				<li class="desk-footer"><a class="menuShare" href="index.php?partial=share">Share</a></li>
+		<div id="footerNav" class="col-xs-12 col-sm-offset-0 col-md-6">
+			<!-- 			<ul class="nav navbar-nav navbar-right">
+					<li class="desk-footer"><a class="menuHome" id="footerHome" href="index.php?partial=home">
+							home
+					</a></li>
+					<li class="desk-footer"><a class="menuLearn" id="footerLearn" href="index.php?partial=learn">learn</a></li>
+					<li class="desk-footer"><a class="menuStories" id="footerStories" href="index.php?partial=stories">stories</a></li>
+					<li class="desk-footer"><a class="menuShare" id="footerShare" href="index.php?partial=share">share</a></li>
+								<li><a class="menuShare" href="https://facebook.com/" target="_blank"><span class="fa-stack fa-lg">
+								<i class="fa fa-circle fa-stack-2x social-icon-outer"></i>
+								<i class="fa fa-facebook fa-stack-1x social-icon-inner"></i>
+					</span></a></li>
 				<li><a class="menuFacebook" href="#">
-						<span class="fa-stack fa-lg">
-						  <i class="fa fa-circle fa-stack-2x social-icon-outer"></i>
-						  <i class="fa fa-facebook fa-stack-1x social-icon-inner"></i>
-						</span>
-					</a>
-					<a class="menuTwitter" href="#">
-						<span class="fa-stack fa-lg">
-						  <i class="fa fa-circle fa-stack-2x social-icon-outer"></i>
-						  <i class="fa fa-twitter fa-stack-1x social-icon-inner"></i>
-						</span>
-					</a>
-				</li>				
-			</ul>
-		</div>
+										<span class="fa-stack fa-lg">
+													<i class="fa fa-circle fa-stack-2x social-icon-outer"></i>
+													<i class="fa fa-facebook fa-stack-1x social-icon-inner"></i>
+										</span>
+						</a>
+						<a class="menuTwitter" href="#">
+										<span class="fa-stack fa-lg">
+													<i class="fa fa-circle fa-stack-2x social-icon-outer"></i>
+													<i class="fa fa-twitter fa-stack-1x social-icon-inner"></i>
+										</span>
+						</a>
+						</li>
+		</ul> -->
 	</div>
+</div>
 </footer>
