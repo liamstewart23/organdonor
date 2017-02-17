@@ -45,14 +45,16 @@
 			<p>We have created a network that has allowed recipients,<br>and donors and their families all across Ontario to share<br>their stories.</p>
 			<p>Tell us yours.
 				<h5>#because<span class="red">a</span>donor</h5></p>
-				<div id="homeStories">
-					<div class="col-xs-12 col-sm-offset-0 col-md-6">
+			<!-- 	<div id="homeStories">
+					<div class="col-xs-12 col-sm-offset-0 col-md-12">
 						<a href="index.php?partial=stories" class="btnB3" id="btnDiscover">Discover their stories</a>
 					</div>
-					<div class="col-xs-12 col-sm-offset-0 col-md-6">
+					<br>
+					<div class="col-xs-12 col-sm-offset-0 col-md-12">
 						<a href="index.php?partial=stories" class="btnB4" id="btnShare">share your story</a>
 					</div>
-				</div>
+					<br><br>
+				</div> -->
 			</div>
 			<div class="col-xs-12 col-sm-offset-0 col-md-4" id="banner5"></div>
 			<!-- <div id="homeStories">
