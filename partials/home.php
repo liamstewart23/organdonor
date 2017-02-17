@@ -17,7 +17,7 @@
 		</div>
 		<div class="col-xs-12 col-sm-offset-0 col-md-12" id="banner3">
 			<div class="text-center">
-				<img src="img/home/lightbulb.svg" height="0" alt="Because a Donor" id="iconLightbulb">
+				<object id="iconLightbulb" height="0" data="img/home/lightbulb.svg"alt="Because a Donor"></object>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-offset-0 col-md-8 col-md-offset-2" id="content1">
@@ -35,7 +35,7 @@
 		</div>
 		<div class="col-xs-12 col-sm-offset-0 col-md-12" id="banner4">
 			<div class="text-center">
-				<img src="img/home/community.svg" height="0" alt="Because a Donor" id="iconCommunity">
+				<object id="iconCommunity" height="0" data="img/home/community.svg"alt="Because a Donor"></object>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-offset-0 col-md-6 col-md-offset-2" id="content1">
