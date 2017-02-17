@@ -55,11 +55,11 @@ app.controller('HomeCtrl', [function() {
         });
         // Linking changes
         var btnHomeLearn = document.querySelector("#btnHomeLearn");
-        var dstory = document.querySelector("#btnDiscover");
-        var sstory = document.querySelector("#btnShare");
+        // var dstory = document.querySelector("#btnDiscover");
+        // var sstory = document.querySelector("#btnShare");
         btnHomeLearn.href = "#/learn";
-        dstory.href = "#/stories";
-        sstory.href = "#/stories";
+        // dstory.href = "#/stories";
+        // sstory.href = "#/stories";
         //End Linking changes
 
     //Icon Animations on Scroll
@@ -100,7 +100,7 @@ app.controller('HomeCtrl', [function() {
 
         function heartbeat(scroll){
             var trigger = window.scrollY + window.innerHeight;
-            console.log(trigger);
+            // console.log(trigger);
             if(comBanner.offsetTop + 200 < trigger){
                 console.log('trigger');
                 b++;
