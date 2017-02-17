@@ -5,14 +5,14 @@
 			<div class="text-center">
 				<img src="img/home/checkmark.svg" height="0" alt="Because a Donor" id="iconCheckmark">
 				<h3 class="bannerHeading">Become a Donor</h2>
-				<a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" target="_blank" id="btnB1">Register now</a>
+				<a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" target="_blank" class="btnB1" id="btnRegister">Register now</a>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-offset-0 col-md-6" id="banner2">
 			<div class="text-center">
 				<img src="img/home/book.svg" height="0" alt="Because a Donor" id="iconBook">
 				<h3 class="bannerHeading">Why Donate?</h2>
-				<a href="index.php?partial=learn" id="btnB2">learn more</a>
+				<a href="index.php?partial=learn" class="btnB2" id="btnHomeLearn">learn more</a>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-offset-0 col-md-12" id="banner3">
@@ -44,21 +44,24 @@
 			<h4><span class="red">They will never be forgotten.</span></h4>
 			<p>We have created a network that has allowed recipients,<br>and donors and their families all across Ontario to share<br>their stories.</p>
 			<p>Tell us yours.
-			<h5>#because<span class="red">a</span>donor</h5></p>
-		<!-- 	<a href="index.php?partial=stories" id="btnB3">Discover their stories</a><br><br>
-			<a href="index.php?partial=stories" id="btnB4">share your story</a>
-			<br> -->
+				<h5>#because<span class="red">a</span>donor</h5></p>
+				<div id="homeStories">
+					<div class="col-xs-12 col-sm-offset-0 col-md-6">
+						<a href="index.php?partial=stories" class="btnB3" id="btnDiscover">Discover their stories</a>
+					</div>
+					<div class="col-xs-12 col-sm-offset-0 col-md-6">
+						<a href="index.php?partial=stories" class="btnB4" id="btnShare">share your story</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-offset-0 col-md-4" id="banner5"></div>
+			<!-- <div id="homeStories">
+						<a href=""><div class="col-xs-12 col-sm-offset-0 col-md-6" id="discoverstories">
+									<h3>discover their stories</h3>
+						</div></a>
+						<a href="#"><div class="col-xs-12 col-sm-offset-0 col-md-6" id="sharestory">
+									<h3>share your own</h3>
+						</div></a>
+			</div> -->
 		</div>
-		<div class="col-xs-12 col-sm-offset-0 col-md-4" id="banner5"></div>
-		<!-- <div id="homeStories">
-
-
-			<a href=""><div class="col-xs-12 col-sm-offset-0 col-md-6" id="discoverstories">
-				<h3>discover their stories</h3>
-			</div></a>
-			<a href="#"><div class="col-xs-12 col-sm-offset-0 col-md-6" id="sharestory">
-				<h3>share your own</h3>
-			</div></a>
-		</div> -->
-	</div>
-</section>
+	</section>

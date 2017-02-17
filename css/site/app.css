@@ -127,34 +127,31 @@ footer a {
   display: inline-block;
   margin: 0;
   width: 100%;
-  padding-top: 50px;
+  padding: 10px 0px 10px 0px;
   background-color: #eb1f27;
 }
-
+#footer ul li {list-style-type: none;}
 #footer ul li {
   color: #fff; 
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  margin: 0;
+  float: left;
+  line-height: 65px;
 }
-
+#footer ul li a {display: inline-block;}
 .menuFacebook,.menuTwitter{ 
-  display: inline-block!important;
   text-align: center;
   margin: 50px 0;
 }
 
-.desk-footer{display: none!important;}
+.desk-footer{display: none;}
 
 /*fontawesome-------------*/
-.social-icon-outer{
+/*.social-icon-outer{
   color: #fff;
 }
 
 .social-icon-inner{
   color: #eb1f27;
-}
+}*/
 /*
 End Footer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
@@ -186,7 +183,7 @@ Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   margin: 20px 0px 50px 0px;
 }
 
-#btnB1 {
+.btnB1 {
   font-weight: 500;
   text-transform: lowercase;
   font-size: ;
@@ -198,14 +195,14 @@ Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   align-content: center;
   margin-top: 200px;
 }
-#btnB1:hover {
+.btnB1:hover {
   opacity: .8;
   border: 2px solid #4eaee9;
-  color: #fff;
+  color: #4eaee9;
   text-decoration: none;
 }
 
-#btnB2 {
+.btnB2 {
   font-weight: 500;
   text-transform: lowercase;
   font-size: ;
@@ -217,43 +214,41 @@ Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   align-content: center !important;
   margin-top: 200px;
 }
-#btnB2:hover {
+.btnB2:hover {
   opacity: .8;
   border: 2px solid #9d5bc2;
   color: #fff;
   text-decoration: none;
 }
-
-#btnB3 {
+.btnB3 {
   font-weight: 500;
   text-transform: lowercase;
   border-radius: 25px;
   background: #6eb0eb;
   border: 2px solid #6eb0eb;
-  color: #fff !important;
+  color: #fff;
   padding: 5px 50px 5px 50px;
   align-content: center !important;
   margin-top: 200px;
 }
-#btnB3:hover {
+.btnB3:hover {
   background: #fff;
   border: 2px solid #6eb0eb;
   color: #6eb0eb;
   text-decoration: none;
 }
-
-#btnB4 {
+.btnB4 {
   font-weight: 500;
   text-transform: lowercase;
   border-radius: 25px;
   background: #488ecc;
   border: 2px solid #488ecc;
-  color: #fff !important;
+  color: #fff;
   padding: 5px 50px 5px 50px;
   align-content: center !important;
   margin-top: 200px;
 }
-#btnB4:hover {
+.btnB4:hover {
   background: #fff;
   border: 2px solid #488ecc;
   color: #488ecc;
@@ -309,24 +304,8 @@ font-family: 'Fjalla One', sans-serif;
   background-size: cover;
 }
 
-#homeStories h3 {
-  line-height: 150px;
-  margin-left: 200px;
-  font-size: 1.5em;
-}
-
-#discoverstories {
-  color: #fff;
-  background:#6eb0eb;
-  width: 50%;
-  height: 200px;
-}
-
-#sharestory {
-  color: #fff;
-  background:#488ecc;
-  width: 50%;
-  height: 200px;
+#homeStories {
+  margin-top:175px;
 }
 
 /*
@@ -394,7 +373,7 @@ End Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #menuMobileRegister {display: none;}
   #menuHome {display: block;}
   #menuRegister {display: block;}          
-
+  .desk-footer {display: none;}
 }
 @media screen and (min-width : 50.375em) {/*950px*/
   body {font-size: 1.7em;}
