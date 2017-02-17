@@ -102,7 +102,7 @@ app.controller('HomeCtrl', [function() {
             var trigger = window.scrollY + window.innerHeight;
             // console.log(trigger);
             if(comBanner.offsetTop + 200 < trigger){
-                console.log('trigger');
+                // console.log('trigger');
                 b++;
                 if(b===1){
                     TweenMax.to(comInd, .4, {scale: 1.15, transformOrigin: "50% 100%", yoyo: true, repeat: 3, ease:Power2.easeInOut});
