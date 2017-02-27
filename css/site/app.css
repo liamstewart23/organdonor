@@ -321,44 +321,6 @@ End Home ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   background-color: #fff;
 }
 
-/*#about h2{
-  font-weight: 100;
-  text-transform: uppercase;
-  color:#000;
-}
-#about h3{
-  color: #e00113;
-}
-#about .about-main{
-  color: #000;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 100;  
-}
-#about .about-sidebar {
-  background-color:#e00113;
-}
-#about .about-sidebar-1, #about .about-sidebar-1 h4 { 
-  color: #7a7a7c;
-  margin-top: 50px;
-
-}
-#about .about-sidebar h4 {
-  text-transform: uppercase;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 100;
-  margin:50px;
-}
-#about .about-sidebar p {
-  font-family: 'Raleway', sans-serif;
-  text-align: justify;
-  text-justify: inter-word;
-  font-weight: 100;
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-bottom: 40px;
-}
-
-*/
 @media screen and (min-width : 15.625em) {/*250px*/
   body {font-size: 1.2em;}
 

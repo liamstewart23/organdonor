@@ -5,6 +5,12 @@ ErrorDocument 404 /
 
 Redirect 301 /home.php /#/
 Redirect 301 /home.html /#/
+Redirect 301 /learn.php /#/learn
+Redirect 301 /learn.html /#/learn
+Redirect 301 /stories.php /#/stories
+Redirect 301 /stories.html /#/stories
+Redirect 301 /share.php /#/share
+Redirect 301 /share.html /#/share
 
 #gZIP Compression 
 <ifModule mod_gzip.c>
