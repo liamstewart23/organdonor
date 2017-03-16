@@ -1,0 +1,23 @@
+Concept: BecauseADonor was created by Liam Stewart built off Jillian Matthies I get to grow up concept. Further developed into I get to do or experience something many people can relate to because of an organ donor.
+
+Design: The design for the website and branding material was created by Moragh Crossley. We decided to go with simple and clean modern and fun. Bright colours and filters over imagery.
+
+Logo: The BecauseADonor logo was designed by Lauren Koza.
+
+Website: Frontend Angular website and backend CodeIgniter CMS developed by Lauren Koza and Liam Stewart.
+
+Project GitHub: https://github.com/liamstewart23/organdonor
+
+Roles:
+Jillian Matthies - Project Manager
+Lauren Koza - Designer/Developer
+Moragh Crossley - Designer
+Liam Stewart - Developer
+
+Team Member Websites:
+www.jillianmatthies
+www.laurenkoza.com
+www.moraghcrossley.com
+www.liamstewart.ca
+
+Project Year: 2017
