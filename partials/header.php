@@ -15,7 +15,7 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a id="menuHome" href="index.php?partial=home">
-					<img src="img/home.svg" height="0" alt="home button" id="homeIcon">
+					<i class="fa fa-home" aria-hidden="true"></i>
 				</a></li>
 				<li><a id="menuMobileHome" href="index.php?partial=home">Home</a></li>
 				<li><a id="menuLearn" href="index.php?partial=learn">Learn</a></li>
