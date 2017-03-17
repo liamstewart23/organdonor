@@ -9,7 +9,7 @@ Install db from db/becauseadonor.sql file.
 Edit Config file.
 
 ```
-route to config/connect file here
+admin/phpscripts/config.php
 ```
 Install Sass
 
