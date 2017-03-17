@@ -27,6 +27,6 @@ sass --watch css/site/scss/main.scss:css/site/app.css --style compressed
 sass --watch css/site/scss/nojs.scss:css/site/no-js.css --style compressed
 ```
 
-#Credit
+# Credit
 
 https://github.com/liamstewart23/organdonor/blob/master/humans.txt
