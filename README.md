@@ -16,7 +16,9 @@ Install Sass
 See: http://sass-lang.com/install
 
 Move to root folder of site.
+
 Run the following commands in terminal
+
 These commands will watch scss files for updates and compress to app.css and no-js.css on save.
 
 ```
