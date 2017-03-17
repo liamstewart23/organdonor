@@ -2,29 +2,22 @@
 
 This website is for our marketing campaign - raising awareness for organ donation.
 
-# Setup for development
+# Setup for Development
 
 Pull the repo.
 
 Install db from db file.
 
 Edit Config file.
+
 ```
 route to config/connect file here
 ```
 Install Sass
 
-```
-gem install sass
-```
+See: http://sass-lang.com/install
 
-Confirm Sass Install
-
-```
-sass -v
-```
-
-Move to root folder of site. Run the following to watch scss files for change to compress to app.css and no-js.css
+Move to root folder of site. Run the following to watch scss files to compress to app.css and no-js.css on save.
 
 ```
 sass --watch css/site/scss/main.scss:css/site/app.css --style compressed
