@@ -1,3 +1,0 @@
-sass --watch scss/main.scss:app.css --style compressed
-
-sass --watch scss/nojs.scss:no-js.css --style compressed
