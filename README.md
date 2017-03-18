@@ -29,6 +29,13 @@ sass --watch css/site/scss/main.scss:css/site/app.css --style compressed
 sass --watch css/site/scss/nojs.scss:css/site/no-js.css --style compressed
 ```
 
+```
+sass --watch admin/css/scss/main.scss:admin/css/app.css --style compressed
+```
+
+```
+sass --watch admin/css/scss/nojs.scss:admin/css/no-js.css --style compressed
+```
 # Credit
 
 https://github.com/liamstewart23/organdonor/blob/master/humans.txt
