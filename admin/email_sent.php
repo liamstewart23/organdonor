@@ -1,10 +1,8 @@
 <?php
 	require_once('phpscripts/init.php');
-	confirm_logged_in(); //session will fully log out if you shut down entire browser, not just by closing tab
+	confirm_logged_in();
 
 	$lastSession = $_SESSION['users_time'];
-	//echo $lastSession;
-
 ?>
 
 

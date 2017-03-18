@@ -5,6 +5,10 @@
 	ini_set('display_errors',1);
 	error_reporting(E_ALL);
 
+	if (empty($_GET['id'])){//prevent people from typing in admin_edituser with no id
+		redirect_to('admin_users.php');
+	}
+
 	$id = $_GET['id'];
 	$popForm = getUser($id);
 
