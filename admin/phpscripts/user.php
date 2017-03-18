@@ -1,6 +1,6 @@
 <?php
 	function createUser($fname, $lname, $username, $email, $level){
-		require_once("connect.php");
+		require_once("config.php");
 		$ip=0;
 		$status="New";
 		$time="This is your first session.";
@@ -14,7 +14,7 @@
 		//entry for ID MUST be NULL so that user cannot choose their own ID
 		//echo $userstring;
 
-		$userquery = mysqli_query($link, $userstring);
+		$userquery = mysqli_query($link, $userstring);//Email password to user after account setup
 		if($userquery) {
 				//function sendMessage($name,$email,$company,$msg,$direct) {
 				$to = "la_koza04@hotmail.com"; //CHANGE TO {$email} AFTER TESTING
@@ -24,18 +24,15 @@
 				mail($to, $subj, $msg);
 
 		redirect_to("email_sent.php");
-
-		//redirect_to($direct);
 		}else{
 			$message ="Unable to create account.";
 			return $message;
 		}
-
 		mysqli_close($link);
 	}
 
-	function firstPassword($password, $id){
-		require_once("connect.php");
+	function firstPassword($password, $id){//changes password on initial login
+		require_once("config.php");
 		$time = time();
 		$userstring="UPDATE tbl_user SET user_password='{$password}', user_status='{$time}'  WHERE user_id={$id}";
 
@@ -52,8 +49,8 @@
 
 	
 	function getUser($id){
-		include("connect.php");
-		$userstring = "SELECT * FROM tbl_user WHERE user_id = {$id}"; //create query
+		include("config.php");
+		$userstring = "SELECT * FROM tbl_user WHERE user_id = {$id}";
 		$userquery = mysqli_query($link, $userstring);
 
 		if($userquery){
@@ -67,14 +64,14 @@
 	}
 
 	function editUser($id, $fname, $lname, $username, $password, $email){
-		include("connect.php"); //must include as we need it more than once when switching to new functions
+		include("config.php"); //must include as we need it more than once when switching to new functions
 		$updatestring = "UPDATE tbl_user SET user_fname='{$fname}', user_lname='{$lname}', user_username='{$username}', user_password='{$password}', user_email='{$email}' WHERE user_id={$id}";
 		$updatequery = mysqli_query($link, $updatestring);
 
 		if($updatequery){
 			redirect_to("admin_users.php");
 		} else {
-			$message = "Not happening!";
+			$message = "There was an error changing this profile. Please contact your Admin.";
 			return $message;
 		}
 		mysqli_close($link);

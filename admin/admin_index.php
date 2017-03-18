@@ -46,7 +46,7 @@
 				<a href="admin_createuser.php">Learn</a>
 			</div>
 			<div>
-				<a href="admin_edituser.php">Stories</a>
+				<a href="edit_stories.php">Stories</a>
 			</div>
 			<div>
 				<a href="admin_edituser.php">Share</a>
@@ -56,7 +56,7 @@
 										<a href=\"admin_users.php\">Users</a>
 									</div>
 									<div>
-										<a href=\"admin_createuser.php\">Settings</a>
+										<a href=\"admin_users.php\">Settings</a>
 									</div>";
 						}
 				?>

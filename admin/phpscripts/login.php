@@ -1,7 +1,7 @@
 <?php
 
 	function logIn($username, $password, $ip){
-		require_once("connect.php");
+		require_once("config.php");
 		//clean username and password to prevent SQLI injection attacks
 		$username = mysqli_real_escape_string($link,$username);
 		$password = mysqli_real_escape_string($link,$password);
@@ -52,7 +52,7 @@
 				}
 
 				if($_SESSION['users_time'] === "This is your first session."){ //check if account setup needed
-					redirect_to('admin_setupaccount.php');
+					redirect_to('admin_accountsetup.php');
 				} else if($pstatus=="Clear"){ //check if status is clear
 					//redirect_to('admin_index.php');
 				} else if ( ($pstatus + 300) >= time() ){ //if setup required, 5 minutes to login before account lockdown
