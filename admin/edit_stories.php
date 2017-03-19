@@ -2,17 +2,27 @@
 	require_once('phpscripts/init.php');
 	confirm_logged_in(); //comment out so you can test page without having to login
 
-	if (isset($_POST['submit'])){
+	/*if (empty($_GET['id'])){//prevent people from typing in admin_edituser with no id
+		redirect_to('edit_stories.php');
+	}*/
+
+	//$id = $_GET['id'];
+	//$popForm = getUser($id);
+
+	if(isset($_POST['submit'])){
 		$name = trim($_POST['name']);
 		$age = trim($_POST['age']);
 		$city = trim($_POST['city']);
 		$organ = trim($_POST['organ']);
 		$story = trim($_POST['story']);
 		$video = trim($_POST['video']);
-		$addStory = addStory($name,$age,$city,$organ,$story,$video);
+
+		$addStory = addStory($name,$age,$city,$organ,$story,$video);			
+		$message = $addStory;
 	}
 
 	$tbl = 'tbl_stories';
+	$col = 'story_id';
 	$getStories = getAll($tbl);
 
 ?>
@@ -67,7 +77,8 @@
 							echo "<h3>{$row['story_name']}, {$row['story_age']}</h3>
 								<p>{$row['story_city']}</p>
 								<p>{$row['story_organ']}</p>
-								<a href=\"admin_editstory.php?id={$row['story_id']}\">Edit Story</a><br><br>";
+								<a href=\"edit_editstory.php?id={$row['story_id']}\">Edit Story</a><br><br>
+								<a href=\"edit_delete.php?table={$tbl}&col={$col}&id={$row['story_id']}\">Delete Story</a><br><br>";
 						}
 					}else{
 						echo "<p>{$getStories}</p>";
