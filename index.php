@@ -31,7 +31,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/site/app.css">
-        <script src="https://use.fontawesome.com/380411a7d6.js"></script>
+        <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     </head>
     <body ng-app="BecauseADonor">
         <h1 class="hidden">Because a Donor - Organ Donation Awareness | Ontario Canada</h1>
