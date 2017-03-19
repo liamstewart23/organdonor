@@ -4,17 +4,16 @@
 
 
 	if(isset($_POST['submit'])){
-		
 		$name = trim($_POST['name']);
 		$age = trim($_POST['age']);
 		$city = trim($_POST['city']);
+		$photo = trim($_POST['photo']);
 		$organ = trim($_POST['organ']);
-		$photo = $_FILES['photo']['name'];
 		$story = trim($_POST['story']);
 		$video = trim($_POST['video']);
+
 		$addStory = addStory($name,$age,$city,$organ,$photo,$story,$video);			
-		//$message = $addStory;
-		echo $photo;
+		$message = $addStory;
 	}
 
 	$tbl = 'tbl_stories';
@@ -35,7 +34,7 @@
 	<body>
 	<h1>Stories</h1>
 		<?php if(!empty($message)){echo $message;} ?>
-		<form action="edit_stories.php" method="post" enctype="multipart/form-data">
+		<form action="edit_stories.php" method="post">
 		<h2>Add a New Story</h2>
 
 			<div class="upForm">

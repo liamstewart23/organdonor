@@ -7,19 +7,22 @@
 	}
 
 	$id = $_GET['id'];
+
 	$tbl = 'tbl_stories';
 	$col = 'story_id';
 	$getStories = getTable($tbl, $col, $id);
 
 	if(isset($_POST['submit'])){
-		$fname = trim($_POST['fname']);
-		$lname = trim($_POST['lname']);
-		$username = trim($_POST['username']);
-		$password = trim($_POST['password']);
-		$email = trim($_POST['email']);
+		$name = trim($_POST['name']);
+		$age = trim($_POST['age']);
+		$city = trim($_POST['city']);
+		$organ = trim($_POST['organ']);
+		$photo = $_FILES['photo']['name'];
+		$story = trim($_POST['story']);
+		$video = trim($_POST['video']);
 
-		$result = editUser($id, $fname, $lname, $username, $password, $email);			
-		$message = $result;
+		$result = editStory($id,$name,$age,$city,$organ,$photo,$story,$video);			
+		return $result;
 	}
 
 ?>
@@ -35,7 +38,7 @@
 	<body>
 	<h1>Stories</h1>
 		<?php if(!empty($message)){echo $message;} ?>
-		<form action="edit_stories.php" method="post">
+		<?php echo "<form action=\"edit_editstory.php?id={$id}\" method=\"post\" enctype=\"multipart/form-data\">"?>
 		<h2>Add a New Story</h2>
 
 			<div class="upForm">
@@ -50,6 +53,10 @@
 
 				<label>Organ:</label><br>
 				<input type="text" name="organ" value="<?php echo $getStories['story_organ']; ?>"><br>
+
+				<label>Photo</label><br>
+				<p><?php echo $getStories['story_photo']; ?></p>
+				<input type="file" name="photo" value="<?php echo $getStories['story_photo']; ?>"><br>
 
 				<label>Written Story:</label><br>
 				<input type="text" name="story" value="<?php echo $getStories['story_text']; ?>"><br>

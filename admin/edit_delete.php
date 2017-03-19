@@ -2,8 +2,10 @@
 	require_once('phpscripts/init.php');
 	confirm_logged_in();
 
-		$tbl = $_GET['table'];
+		//$tbl = $_GET['table'];
+		$tbl = "tbl_".$_GET['table'];
 		$id = $_GET['id'];
+		
 		$col = $_GET['col'];
 		//$col = 'story_id';
 		

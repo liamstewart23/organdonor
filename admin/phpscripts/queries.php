@@ -45,29 +45,60 @@
 	mysqli_close($link);
 	}
 
-	function addStory($name,$age,$city,$organ,$story,$video){
-		$type = 'written';
-		require_once('config.php');
-		$query = "INSERT INTO tbl_stories VALUES(NULL,'{$name}','{$age}','{$organ}','{$city}','{$type}','{$story}','{$video}')";
-		$run = mysqli_query($link, $query);
+	function addStory($name,$age,$city,$organ,$photo,$story,$video){
+		include('config.php');
+		$type = 'written';		
+		$photo = mysqli_real_escape_string($link,$photo); //gotta clean up the image name, prevent possible injection attacks in image name
+		
+		if($_FILES['photo']['type'] == "image/jpg" || $_FILES['photo']['type'] == "image/JPG" || $_FILES['photo']['type'] == "image/jpeg" || $_FILES['photo']['type'] == "image/png"){//check and limit file types
+			echo "This is an accepted file type";
+			$targetpath="../img/{$photo}"; //where to send the file
 
-		if($run){
-			redirect_to('edit_stories.php');
+			if(move_uploaded_file($_FILES['photo']['tmp_name'], $targetpath)){
+				//echo "file moved";
+				$orig = "../img/{$photo}";
+				//$th_copy = "../images/{$thumb}";
+
+				if(!copy($orig)){
+					echo "Failed to copy";
+				}
+
+				$query = "INSERT INTO tbl_stories VALUES(NULL,'{$name}','{$age}','{$organ}','{$city}','{$type}','{$story}','{$video}','{$photo}')";
+				echo $query;
+				$run = mysqli_query($link, $query);
+
+				if($run){
+					echo "success!";
+					//redirect_to('edit_stories.php');
+				}
+			}
 		}else{
 			return $error;
 		}
 	mysqli_close($link);
 	}
 
-	function editStory($name,$age,$city,$organ,$story,$video){
+	function editStory($id,$name,$age,$city,$organ,$photo,$story,$video){
 		$type = 'written';
-		require_once('config.php');
-		$query = "UPDATE tbl_stories SET story_name = '{$name}', story_age = '{$age}', story_organ = '{$organ}', story_city = '{$city}', story_text = '{$story}', story_link = '{$video}'";
-		$run = mysqli_query($link, $query);
+		include('config.php');
 
-		if($run){
-			redirect_to('edit_stories.php');
+		$photo = mysqli_real_escape_string($link,$photo); //gotta clean up the image name, prevent possible injection attacks in image name
+		
+		if($_FILES['photo']['type'] == "image/jpg" || $_FILES['photo']['type'] == "image/JPG" || $_FILES['photo']['type'] == "image/jpeg" || $_FILES['photo']['type'] == "image/png"){//check and limit file types
+			echo "This is an accepted file type";
+			$targetpath="../img/{$photo}"; //where to send the file
+
+			if(move_uploaded_file($_FILES['photo']['tmp_name'], $targetpath)){
+				$orig = "../img/{$photo}";
+				$query = "UPDATE tbl_stories SET story_name = '{$name}', story_age = '{$age}', story_organ = '{$organ}', story_city = '{$city}', story_photo = '{$photo}', story_text = '{$story}', story_link = '{$video}' WHERE story_id = {$id}";
+				$run = mysqli_query($link, $query);
+
+				if($run){
+					redirect_to('edit_stories.php');
+				}
+			}
 		}else{
+			$error =  "There was an error accessing this information. Please contact your admin.";
 			return $error;
 		}
 	mysqli_close($link);
