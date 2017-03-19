@@ -27,7 +27,7 @@
         <meta name="language" content="english">
         <meta name="googlebot" content="noodp">
         <meta name="fragment" content="!">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,700|Fjalla+One" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,700|Fjalla+One|Oswald:200,400" rel="stylesheet"> 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/site/app.css">

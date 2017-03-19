@@ -1,69 +1,39 @@
 <section id="home">
 	<h2 class="hidden">Because a Donor Website</h2>
 	<div class="row">
-		<div class="col-xs-12 col-sm-offset-0 col-md-6" id="banner1">
-			<div class="text-center">
-				<img src="img/home/checkmark.svg" height="0" alt="Because a Donor" id="iconCheckmark">
-				<h3 class="bannerHeading">Become a Donor</h2>
+		<div class="col-xs-12 col-sm-offset-0 col-md-6 text-center" id="bannerHome1">
+				<img src="img/icons/checkmark.svg" height="0" alt="Because a Donor" id="iconCheckmark">
+				<h3 class="bannerHeading">Become a Donor</h3>
 				<a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" target="_blank" class="btnB1" id="btnRegister">Register now</a>
-			</div>
 		</div>
-		<div class="col-xs-12 col-sm-offset-0 col-md-6" id="banner2">
+		<div class="col-xs-12 col-sm-offset-0 col-md-6" id="bannerHome2">
 			<div class="text-center">
-				<img src="img/home/book.svg" height="0" alt="Because a Donor" id="iconBook">
+				<img src="img/icons/book.svg" height="0" alt="Because a Donor" id="iconBook">
 				<h3 class="bannerHeading">Why Donate?</h2>
 				<a href="index.php?partial=learn" class="btnB2" id="btnHomeLearn">learn more</a>
 			</div>
 		</div>
-		<div class="col-xs-12 col-sm-offset-0 col-md-12" id="banner3">
-			<div class="text-center">
-				<object id="iconLightbulb" height="0" data="img/home/lightbulb.svg"alt="Because a Donor"></object>
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-offset-0 col-md-8 col-md-offset-2" id="content1">
-			<h4>We've made it our mission to give you the <span class="red">facts.</span></h4>
-			<p>Studies have found that most of non-donors don’t feel informed enough to make the decision.</p>
-			<div class="text-center">
-				<h5>Did you know...</h5>
-				<img src="img/home/pies.svg" height="0" alt="organ donation stats" id="homePies" class="homeSVG">
-				<p>85% of Ontarians agree with organ donation.<br>Only 31% of those eligible are registered donors.</p>
-				<img src="img/home/1to8.svg" height="0" alt="organ donation saves 8 lives" id="home1to8" class="homeSVG">
-				<p>One donor can save up to 8 lives through organ donation, and improve the lives of 75 more through tissue donation.</p>
-				<img src="img/home/3days.svg" height="0" alt="organ donation" id="home3days" class="homeSVG">
-				<p>Every three days, one of over 1’500 people on the waiting list passes away.</p>
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-offset-0 col-md-12" id="banner4">
-			<div class="text-center">
-				<object id="iconCommunity" height="0" data="img/home/community.svg"alt="Because a Donor"></object>
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-offset-0 col-md-6 col-md-offset-2" id="content1">
-			<h4>In 2016, nearly 300 people became
-			deceased donors</h4>
-			<h4><span class="red">They will never be forgotten.</span></h4>
-			<p>We have created a network that has allowed recipients,<br>and donors and their families all across Ontario to share<br>their stories.</p>
-			<p>Tell us yours.
+		<div class="col-xs-12 col-md-12 col-md-6 col-md-offset-3 text-center" id="content1">
+			<img src="img/icons/community.svg" height="0" alt="Because a Donor" id="iconHeart">
+			<h4>Many Canadians are alive today <br><span class="red">Because of an Organ Donor</span></h4>
+			<p>We have created a network that has allowed recipients, donors, and their families all across Ontario to share their stories.</p>
+				<p>Tell us yours.
 				<h5>#because<span class="red">a</span>donor</h5></p>
-			<!-- 	<div id="homeStories">
-					<div class="col-xs-12 col-sm-offset-0 col-md-12">
-						<a href="index.php?partial=stories" class="btnB3" id="btnDiscover">Discover their stories</a>
-					</div>
-					<br>
-					<div class="col-xs-12 col-sm-offset-0 col-md-12">
-						<a href="index.php?partial=stories" class="btnB4" id="btnShare">share your story</a>
-					</div>
-					<br><br>
-				</div> -->
-			</div>
-			<div class="col-xs-12 col-sm-offset-0 col-md-4" id="banner5"></div>
-			<!-- <div id="homeStories">
-						<a href=""><div class="col-xs-12 col-sm-offset-0 col-md-6" id="discoverstories">
-									<h3>discover their stories</h3>
-						</div></a>
-						<a href="#"><div class="col-xs-12 col-sm-offset-0 col-md-6" id="sharestory">
-									<h3>share your own</h3>
-						</div></a>
-			</div> -->
+		</div>
+
+		<div class="col-xs-12 col-sm-offset-0 col-md-8 col-md-offset-2 text-center homeBannerText" id="bannerHome3">
+				<h3>See What is Possible</h2>
+				<p>See the changes you can make by registering as an organ donor.</p>	
+				<div class="subBannerBtn">
+				<a href="index.php?partial=stories" class="btnB4" id="btnHomeStories">discover stories</a>	
+				</div>
+		</div>
+
+		<div class="col-xs-12 col-sm-offset-0 col-md-8 col-md-offset-2 text-center homeBannerText" id="bannerHome4">
+				<h3>See What is Possible</h2>
+				<p>See the changes you can make by registering as an organ donor.</p>	
+				<div class="subBannerBtn">
+				<a href="index.php?partial=share" class="btnB4" id="btnHomeShare">discover stories</a>	
+				</div>
 		</div>
 	</section>
