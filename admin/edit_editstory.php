@@ -21,7 +21,7 @@
 		$story = trim($_POST['story']);
 		$video = trim($_POST['video']);
 
-		$result = editStory($id,$name,$age,$city,$organ,$photo,$story,$video);			
+		$result = editStory($id,$name,$age,$city,$organ,$photo,$story,$video);
 		return $result;
 	}
 

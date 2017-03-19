@@ -10,10 +10,11 @@
 		$city = trim($_POST['city']);
 		$organ = trim($_POST['organ']);
 		$photo = $_FILES['photo']['name'];
+		$thumb = "th_{$photo}";
 		$story = trim($_POST['story']);
 		$video = trim($_POST['video']);
-		$addStory = addStory($name,$age,$city,$organ,$photo,$story,$video);			
-		//$message = $addStory;
+		$addStory = addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video);
+		$message = $addStory;
 		echo $photo;
 	}
 
@@ -78,7 +79,7 @@
 								<p>{$row['story_city']}</p>
 								<p>{$row['story_organ']}</p>
 								<a href=\"edit_editstory.php?id={$row['story_id']}\">Edit Story</a><br><br>
-								<a href=\"edit_delete.php?table={$tblurl}&col={$col}&id={$row['story_id']}\">Delete Story</a><br><br>";
+								<a href=\"edit_delete.php?table={$tbl}&col={$col}&id={$row['story_id']}\">Delete Story</a><br><br>";
 						}
 					}else{
 						echo "<p>{$getStories}</p>";

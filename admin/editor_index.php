@@ -39,16 +39,16 @@
 
 		<div id="editor-home">			
 			<div>
-				<a href="admin_createuser.php">Stories</a>
+				<a href="edit_stories.php">Stories</a>
 			</div>
 			<div>
-				<a href="admin_createuser.php">Statistics</a>
+				<a href="edit_stats.php">Statistics</a>
 			</div>
 			<div>
-				<a href="admin_edituser.php">Myths vs Facts</a>
+				<a href="edit_mythfact.php">Myths vs Facts</a>
 			</div>
 			<div>
-				<a href="admin_edituser.php">Facebook &amp; Twitter</a>
+				<a href="edit_social.php">Facebook &amp; Twitter</a>
 			</div>
 		</div>
 
