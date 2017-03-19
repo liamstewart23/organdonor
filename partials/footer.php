@@ -6,31 +6,49 @@
 			</a>
 		</div>
 		<div id="footerNav" class="col-xs-12 col-sm-offset-0 col-md-6">
-			<!-- 			<ul class="nav navbar-nav navbar-right">
-					<li class="desk-footer"><a class="menuHome" id="footerHome" href="index.php?partial=home">
+		<nav>
+		<h2 class="hidden">BecauseADonor Footer Navigation</h2>
+						<ul class="nav navbar-nav navbar-right desk-footer">
+					<li><a class="menuHome" id="footerHome" href="index.php?partial=home">
 							home
 					</a></li>
-					<li class="desk-footer"><a class="menuLearn" id="footerLearn" href="index.php?partial=learn">learn</a></li>
-					<li class="desk-footer"><a class="menuStories" id="footerStories" href="index.php?partial=stories">stories</a></li>
-					<li class="desk-footer"><a class="menuShare" id="footerShare" href="index.php?partial=share">share</a></li>
-								<li><a class="menuShare" href="https://facebook.com/" target="_blank"><span class="fa-stack fa-lg">
-								<i class="fa fa-circle fa-stack-2x social-icon-outer"></i>
-								<i class="fa fa-facebook fa-stack-1x social-icon-inner"></i>
-					</span></a></li>
-				<li><a class="menuFacebook" href="#">
-										<span class="fa-stack fa-lg">
-													<i class="fa fa-circle fa-stack-2x social-icon-outer"></i>
-													<i class="fa fa-facebook fa-stack-1x social-icon-inner"></i>
-										</span>
-						</a>
-						<a class="menuTwitter" href="#">
-										<span class="fa-stack fa-lg">
-													<i class="fa fa-circle fa-stack-2x social-icon-outer"></i>
-													<i class="fa fa-twitter fa-stack-1x social-icon-inner"></i>
-										</span>
-						</a>
-						</li>
-		</ul> -->
+					<li><a class="menuLearn" id="footerLearn" href="index.php?partial=learn">learn</a></li>
+					<li><a class="menuStories" id="footerStories" href="index.php?partial=stories">stories</a></li>
+					
+					<li><a class="menuShare" id="footerShare" href="index.php?partial=share">share</a></li>
+
+					<li><a class="menuContact" id="footerContact" href="index.php?partial=contact">contact</a></li>
+
+					<!-- <li><a class="menuLang" id="lang-fr" href="#">français</a></li> -->
+
+						<li><a id="footerFacebook" href="#" target="_blank">
+<i class="fa fa-facebook-square" aria-hidden="true"></i>
+						</a></li>
+
+
+									<li><a id="footerSnapChat" href="#" target="_blank">
+<i class="fa fa-snapchat-square" aria-hidden="true"></i>
+						</a></li>
+					
+
+									<li><a id="footerTwitter" href="#" target="_blank">
+<i class="fa fa-twitter-square" aria-hidden="true"></i>
+						</a></li>
+					
+
+
+									<li><a id="footerYouTube" href="#" target="_blank">
+<i class="fa fa-youtube-square" aria-hidden="true"></i>
+						</a></li>
+					
+
+			<li><a id="footerInstagram" href="#" target="_blank">
+<i class="fa fa-instagram" aria-hidden="true"></i>
+						</a></li>
+					
+
+		</ul>
+		</nav>
 	</div>
 </div>
 </footer>

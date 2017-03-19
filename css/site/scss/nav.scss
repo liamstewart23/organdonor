@@ -20,10 +20,6 @@
     background: transparent !important;
 }
 
-.navbar-nav li a {
-    outline: 0;
-}
-
 .navbar-nav li a:hover {
     opacity: .7;
 }
@@ -31,9 +27,6 @@
 .nav-top {
     margin-top: 40px;
 }
-
-
-/*Fixes top margin*/
 
 .navbar-default {
     background-color: $white;
@@ -45,6 +38,7 @@
         margin-left: 40px;
         a {
             color: $black;
+            outline: 0;
         }
     }
 }

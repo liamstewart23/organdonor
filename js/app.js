@@ -1,3 +1,6 @@
+console.log("%c      ", "font-size:100px;background-image:url(https://goo.gl/IFDpHP); background-size:contain; background-repeat:no-repeat;");
+console.log("BecauseADonor JS started!")
+
 var app = angular.module('BecauseADonor', ['ngRoute']); //declare app + import ngRoute
 var siteTitle = "Because a Donor - Organ Donation Awareness | Ontario Canada"; //Site Title
 var once = 0; //run menu + logo animation once on homepage
@@ -6,17 +9,64 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         .when("/", { templateUrl: "partials/home.php", controller: "HomeCtrl" }) //Home Page
         .when("/learn", { templateUrl: "partials/learn.php", controller: "LearnCtrl" }) //Learn Page
         .when("/stories", { templateUrl: "partials/stories.php", controller: "StoriesCtrl" }) //Stories Page
+        .when('/story/:story_id', { //Story Page
+            templateUrl: function(attrs) {
+                return 'includes/story.php?story_id=' + attrs.story_id;
+            },
+            controller: "StoryCtrl"
+        })
         .when("/share", { templateUrl: "partials/share.php", controller: "ShareCtrl" }) //Share Page
+        .when("/contact", { templateUrl: "partials/contact.php", controller: "ContactCtrl" }) //Contact Page
 
     .otherwise({ redirectTo: '/' });
     //$locationProvider.html5Mode(true);
 }]);
 
+// JS is enabled! Switch links for footer and nav
+var logo = document.querySelector(".navbar-brand");
+var logoFooter = document.querySelector("#logoFooter");
+var menuHome = document.querySelector("#menuHome");
+var footerHome = document.querySelector("#footerHome");
+var menuLearn = document.querySelector("#menuLearn");
+var footerLearn = document.querySelector("#footerLearn");
+var menuStories = document.querySelector("#menuStories");
+var footerStories = document.querySelector("#footerStories");
+var menuShare = document.querySelector("#menuShare");
+var footerShare = document.querySelector("#footerShare");
+var footerContact = document.querySelector("#footerContact");
+// var menuLang = document.querySelector(".menuLang");
+
+logo.href = "#/";
+logoFooter.href = "#/";
+menuHome.href = "#/";
+
+menuLearn.href = "#/learn";
+footerLearn.href = "#/learn";
+
+menuStories.href = "#/stories";
+footerStories.href = "#/stories";
+
+menuShare.href = "#/share";
+footerShare.href = "#/share";
+
+footerContact.href = "#/contact";
+
+// footerContact.style.display = "block";
+
+// end js enabled link switching for footer and nav
+
+
+// Force closes mobile menu when menu item is clicked
+var navMain = $(".navbar-collapse");
+navMain.on("click", "a:not([data-toggle])", null, function() {
+    navMain.collapse('hide');
+});
+
 var navbar = $('.navbar');
 var footer = $('footer');
 if (once === 0) { // nav and footer animation once
-    TweenMax.to(navbar, .5, { opacity: 1 });
-    TweenMax.to(footer, .5, { opacity: 1 });
+    TweenMax.to(navbar, .5, {opacity:1});
+    TweenMax.to(footer, 1, {opacity:1});
     once++;
 }
 
@@ -59,13 +109,8 @@ app.controller('HomeCtrl', [function() {
 
         // Linking changes on
         var btnHomeLearn = document.querySelector("#btnHomeLearn");
-        // var dstory = document.querySelector("#btnDiscover");
-        // var sstory = document.querySelector("#btnShare");
         btnHomeLearn.href = "#/learn";
-        // dstory.href = "#/stories";
-        // sstory.href = "#/stories";
         //End Linking changes
-
 
     });
 }]);
@@ -104,14 +149,12 @@ app.controller('LearnCtrl', [function() {
             $('#icon2Min').css({ 'height': (($(window).height() / 6)) + 'px' });
         });
 
-
         // Linking changes on
         var btnLearnStats = document.querySelector("#btnLearnStats");
         var btnLearnMyths = document.querySelector("#btnLearnMyths");
         btnLearnStats.href = "#/learn#statistics";
         btnLearnMyths.href = "#/learn#myths";
         //End Linking changes
-
 
     });
 }]);
@@ -146,6 +189,16 @@ app.controller('StoriesCtrl', [function() {
 
     });
 }]);
+//Controller for Story
+app.controller('StoryCtrl', [function() {
+    angular.element(document).ready(function() {
+        document.title = "Share - " + siteTitle;
+
+        var story = document.querySelector("#story");
+        TweenMax.to(story, 0.5, { startAt: { opacity: 0, y: 200 }, opacity: 1, y: 0 });
+
+    });
+}]);
 //Controller for Share
 app.controller('ShareCtrl', [function() {
     angular.element(document).ready(function() {
@@ -159,9 +212,6 @@ app.controller('ShareCtrl', [function() {
             $('#bannerShare1').css({ 'height': (($(window).height())) + 'px' });
             $('#iconShare').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconShare').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
-
-
-
         });
         $(window).resize(function() {
             //Banner sizing adjustments based on resize
@@ -170,6 +220,30 @@ app.controller('ShareCtrl', [function() {
             $('#iconShare').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
 
 
+        });
+
+    });
+}]);
+//Controller for Contact
+app.controller('ContactCtrl', [function() {
+    angular.element(document).ready(function() {
+        document.title = "Contact - " + siteTitle;
+
+        var contact = $('#contact');
+        TweenMax.to(contact, 2, { delay: 2, opacity: 1 });
+
+        $(document).ready(function() {
+            //Initial Browser height for banners sizing
+            $('#contact').css({ 'height': (($(window).height())) + 'px' });
+            $('#contact form').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
+
+
+
+        });
+        $(window).resize(function() {
+            //Banner sizing adjustments based on resize
+            $('#contact').css({ 'height': (($(window).height())) + 'px' });
+            $('#contact form').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
         });
 
     });
