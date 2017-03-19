@@ -1,0 +1,63 @@
+#bannerLearn1 {
+    background: url(../../img/learn/learn_ban1.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: $white;
+}
+
+#myths {
+    background: url(../../img/learn/learn_ban2.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: $white;
+}
+
+#statistics {
+    margin-bottom: 50px;
+    h4 {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+}
+
+.stat-item {
+    background-color: $white;
+    color: $white;
+    padding: 5px 5px 5px 5px;
+    .inner {
+        background-color: $purple;
+        padding: 20px;
+        p {
+            font-weight: 200;
+        }
+    }
+}
+
+#myth-vs-fact-search {
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+    input {
+        border: 0;
+        box-shadow: none;
+    }
+    button {
+        margin: 2px 0 0 0;
+        background: none;
+        box-shadow: none;
+        border: 0;
+        color: #666666;
+        padding: 0 8px 0 10px;
+        border-left: solid 1px #ccc;
+    }
+    button:hover {
+        border: 0;
+        box-shadow: none;
+        border-left: solid 1px #ccc;
+    }
+}

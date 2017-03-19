@@ -1,0 +1,35 @@
+#bannerStories1 {
+    background: url(../../img/stories/stories_ban1_mob.png) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: $white;
+}
+
+#storiesContainer {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.story {
+    background-color: $white;
+    padding: 5px 5px 5px 5px;
+}
+
+.story .inner {
+    background-color: $purple;
+}
+
+#btnLoadStories {
+    margin-top: 50px;
+}
+
+#storiesFooter {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#storiesFooter h4 {
+    margin-bottom: 50px;
+}
