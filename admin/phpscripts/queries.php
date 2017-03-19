@@ -1,6 +1,6 @@
 <?php
 
-	$error =  "There was an error accessing this information. Please contact your admin.";
+
 
 	function getAll($tbl) {
 		include('config.php');
@@ -45,21 +45,45 @@
 	mysqli_close($link);
 	}
 
-	function addStory($name,$age,$city,$organ,$photo,$story,$video){
+	function addMythFact($myth,$fact,$keyword){
+		include('config.php');
+		$query = "INSERT INTO tbl_myths_facts VALUES(NULL,'{$myth}','{$fact}','{$keyword}')";
+		echo $query;
+		$run = mysqli_query($link, $query);
+
+		if($run){
+			return $run;
+		}else{
+			$error =  "There was an error accessing this information. Please contact your admin.";
+			return $error;
+		}
+	mysqli_close($link);
+	}
+
+	function addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video){
 		include('config.php');
 		$type = 'written';		
-		$photo = mysqli_real_escape_string($link,$photo); //gotta clean up the image name, prevent possible injection attacks in image name
+		$photo = mysqli_real_escape_string($link,$photo); //Clean up the image name, prevent possible injection attacks in image name
 		
+		//CHECK IF FILE IS JPG, JPEG OR PNG
 		if($_FILES['photo']['type'] == "image/jpg" || $_FILES['photo']['type'] == "image/JPG" || $_FILES['photo']['type'] == "image/jpeg" || $_FILES['photo']['type'] == "image/png"){//check and limit file types
 			echo "This is an accepted file type";
 			$targetpath="../img/{$photo}"; //where to send the file
 
+			//MOVE FILE AND RENAME
 			if(move_uploaded_file($_FILES['photo']['tmp_name'], $targetpath)){
 				//echo "file moved";
-				$orig = "../img/{$photo}";
-				//$th_copy = "../images/{$thumb}";
+				$upload = "../img/{$photo}";
+				$th_upload = "../img/{$thumb}";
 
-				if(!copy($orig)){
+				$size = getimagesize($upload);
+				//echo $size[0]; //size is an array. width is [0], height is [1]
+				$width = $size[0];
+				$height = $size[1];
+				echo $width."x".$height;
+
+
+				if(!copy($upload,$th_upload)){
 					echo "Failed to copy";
 				}
 
@@ -73,6 +97,7 @@
 				}
 			}
 		}else{
+			$error =  "There was an error accessing this information. Please contact your admin.";
 			return $error;
 		}
 	mysqli_close($link);
@@ -92,9 +117,9 @@
 				$orig = "../img/{$photo}";
 				$query = "UPDATE tbl_stories SET story_name = '{$name}', story_age = '{$age}', story_organ = '{$organ}', story_city = '{$city}', story_photo = '{$photo}', story_text = '{$story}', story_link = '{$video}' WHERE story_id = {$id}";
 				$run = mysqli_query($link, $query);
-
+				echo $query;
 				if($run){
-					redirect_to('edit_stories.php');
+					//redirect_to('edit_stories.php');
 				}
 			}
 		}else{
@@ -102,5 +127,9 @@
 			return $error;
 		}
 	mysqli_close($link);
+	}
+
+	function imageResize($wmax, $hmax, $wnew, $hnew){
+
 	}
 ?>

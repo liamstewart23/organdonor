@@ -2,20 +2,22 @@
 	require_once('phpscripts/init.php');
 	confirm_logged_in();
 
-		//$tbl = $_GET['table'];
-		$tbl = "tbl_".$_GET['table'];
+		$tbl = $_GET['table'];
+		//$tbl = "tbl_".$_GET['table'];
 		$id = $_GET['id'];
-		
 		$col = $_GET['col'];
-		//$col = 'story_id';
 		
+
 	if (isset($_POST['yes'])){
 		deletePost($tbl,$col,$id);
 		redirect_to('admin_index.php');
+		//previous_page();
 
 	}
 	if (isset($_POST['no'])){
+		//echo "that's okay";
 		redirect_to('admin_index.php');
+		//previous_page();
 	}
 ?>
 
