@@ -6,7 +6,9 @@
 #learn,
 #stories,
 #share,
-.navbar {
+.navbar,
+footer
+ {
     opacity: 0;
 }
 
@@ -33,6 +35,11 @@ html {
 
 
 /*.container {width: 100%;margin-bottom: 15px;} /*Forces Bootstrap grid full screen width*/
+
+.container-fluid {
+    margin:0 !important;
+    padding:0 !important;
+}
 
 h2 {
     font-weight: 900;

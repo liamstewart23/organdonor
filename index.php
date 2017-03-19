@@ -57,6 +57,5 @@
         <script src="js/vendor/angular-route.min.js"></script>
         <script src="js/vendor/TweenMax.min.js"></script>
         <script src="js/app.js"></script>
-        <script src="js/main.js"></script>
     </body>
 </html>

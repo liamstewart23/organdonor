@@ -17,13 +17,13 @@
 				<li><a id="menuHome" href="index.php?partial=home">
 					<i class="fa fa-home" aria-hidden="true"></i>
 				</a></li>
-				<li><a id="menuMobileHome" href="index.php?partial=home">Home</a></li>
+				<li><a id="menuMobileHome" href="#/">Home</a></li>
 				<li><a id="menuLearn" href="index.php?partial=learn">Learn</a></li>
 				<li><a id="menuStories" href="index.php?partial=stories">Stories</a></li>
 				<li><a id="menuShare" href="index.php?partial=share">Share</a></li>
 				<li><a id="menuRegister" href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" target="_blank"><span class="btnRed">Register</span></a></li>
 				<li><a id="menuMobileRegister" class="red" href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" target="_blank">Register</a></li>
 			</ul>
-			</div><!--/.nav-collapse -->
+			</div>
 		</div>
 	</nav>
