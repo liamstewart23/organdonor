@@ -14,7 +14,6 @@
 			$message = "Please select a user level.";
 		} else {
 			$result = createUser($fname, $lname, $username, $email, $level);
-			//$message = "Thanks for selecting me";
 			$message = $result;
 
 		}
@@ -39,14 +38,14 @@
 
 			<div class="upForm">
 				<label>First Name:</label><br>
-				<input type="text" name="fname" value="<?php if(!empty($fname)){echo $fname;} ?>"><br>
+				<input required type="text" name="fname" value="<?php if(!empty($fname)){echo $fname;} ?>"><br>
 			
 				<label>Last Name:</label><br>
-				<input type="text" name="lname" value="<?php if(!empty($lname)){echo $lname;} ?>"><br>
+				<input required type="text" name="lname" value="<?php if(!empty($lname)){echo $lname;} ?>"><br>
 				<label>Username:</label><br>
-				<input type="text" name="username" value="<?php if(!empty($username)){echo $username;} ?>"><br>
+				<input required type="text" name="username" value="<?php if(!empty($username)){echo $username;} ?>"><br>
 				<label>Email:</label><br>
-				<input type="text" name="email" value="<?php if(!empty($email)){echo $email;} ?>"><br>
+				<input required type="text" name="email" value="<?php if(!empty($email)){echo $email;} ?>"><br>
 
 				<select name="lvllist"><br>
 					<option value="">Please Select User Level...</option><!--forces user to choose an option-->

@@ -14,12 +14,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome Company Name</title>
+<title>Users</title>
 <link rel="stylesheet" href="css/main.css"/>
 </head>
 
 	<body>
-	<h1>Edit User Account</h1>
+	<div>
+		<h2>Add New User</h2>
+		<a href="admin_createuser.php">Add New User</a><br><br>
+	</div>
+	
+
+
+
+	<h2>Edit User Account</h2>
 		<?php
 			if(!is_string($fetchUsers)){
 				while($row = mysqli_fetch_array($fetchUsers)){
