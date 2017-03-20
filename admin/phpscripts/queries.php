@@ -60,25 +60,39 @@
 
 	function addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video,$type){
 		include('config.php');
+		require_once('img_fix.php');
 		$photo = mysqli_real_escape_string($link,$photo); //Clean up the image name, prevent possible injection attacks in image name
 		
 		//CHECK IF FILE IS JPG, JPEG OR PNG
 		$fileType = $_FILES['photo']['type'];
-		$tempFolder = 
-		if($fileType == "image/jpg" || $fileType == "image/JPG" || $fileType == "image/jpeg" || $fileType == "image/png"){//check and limit file types
+		$fileName = $_FILES['photo']['tmp_name'];
+		//$tempFolder = "../img/{$photo}";
+		if($fileType == "image/jpg" || $fileType == "image/jpeg" || $fileType == "image/png"){//check and limit file types
 			echo "This is an accepted file type";
-			$targetpath="../img/{$photo}"; //where to send the file
+			$targetpath = "../img/{$photo}.jpg"; //where to send the file
+			echo $fileType;
+			$moveFile = move_uploaded_file($fileName, $targetpath);
+			if (!$moveFile){
+				echo "Error copying file";
+			}
 
-			//MOVE FILE AND RENAME
+			$size = getimagesize($targetpath);
+				//echo $size[0]; //size is an array. width is [0], height is [1]
+				$width = $size[0];
+				$height = $size[1];
 
+			$resizeFile = "../img/resized{$photo}";
+			$wmax = 300;
+			$hmax = 300;
+			imageResize($fileType, $targetpath,$resizeFile,$width,$height,$wmax,$hmax);
 
-			
 		}else{
 			$error =  "There was an error accessing this information. Please contact your admin.";
 			return $error;
 		}
 	mysqli_close($link);
 	}
+
 
 	/*function addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video,$type){
 		include('config.php');
@@ -148,18 +162,5 @@
 	mysqli_close($link);
 	}
 
-	/*function imageResize($wmax, $hmax, $wnew, $hnew){
-		list($w_orig, $h_orig) = getimagesize($target);
-		$scale_ratio = $w_orig / $h_orig;
-
-		if(($w / $h) > $scale_ratio){
-			$w = $h * $scale_ratio;
-		}else{
-			$h = $w / $scale_ratio;
-		}
-
-		$img = "";
-		$ext = strtolower($ext)
-
-	}*/
+	
 ?>
