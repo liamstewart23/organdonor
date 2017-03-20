@@ -1,7 +1,5 @@
 <?php
 
-
-
 	function getAll($tbl) {
 		include('config.php');
 		$queryAll = "SELECT * FROM {$tbl}";
@@ -60,9 +58,30 @@
 	mysqli_close($link);
 	}
 
-	function addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video){
+	function addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video,$type){
 		include('config.php');
-		$type = 'written';		
+		$photo = mysqli_real_escape_string($link,$photo); //Clean up the image name, prevent possible injection attacks in image name
+		
+		//CHECK IF FILE IS JPG, JPEG OR PNG
+		$fileType = $_FILES['photo']['type'];
+		$tempFolder = 
+		if($fileType == "image/jpg" || $fileType == "image/JPG" || $fileType == "image/jpeg" || $fileType == "image/png"){//check and limit file types
+			echo "This is an accepted file type";
+			$targetpath="../img/{$photo}"; //where to send the file
+
+			//MOVE FILE AND RENAME
+
+
+			
+		}else{
+			$error =  "There was an error accessing this information. Please contact your admin.";
+			return $error;
+		}
+	mysqli_close($link);
+	}
+
+	/*function addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video,$type){
+		include('config.php');
 		$photo = mysqli_real_escape_string($link,$photo); //Clean up the image name, prevent possible injection attacks in image name
 		
 		//CHECK IF FILE IS JPG, JPEG OR PNG
@@ -101,7 +120,7 @@
 			return $error;
 		}
 	mysqli_close($link);
-	}
+	}*/
 
 	function editStory($id,$name,$age,$city,$organ,$photo,$story,$video){
 		$type = 'written';
@@ -109,7 +128,7 @@
 
 		$photo = mysqli_real_escape_string($link,$photo); //gotta clean up the image name, prevent possible injection attacks in image name
 		
-		if($_FILES['photo']['type'] == "image/jpg" || $_FILES['photo']['type'] == "image/JPG" || $_FILES['photo']['type'] == "image/jpeg" || $_FILES['photo']['type'] == "image/png"){//check and limit file types
+		if($_FILES['photo']['type'] == "image/jpg" || $_FILES['photo']['type'] == "image/jpeg" || $_FILES['photo']['type'] == "image/png"){//check and limit file types
 			echo "This is an accepted file type";
 			$targetpath="../img/{$photo}"; //where to send the file
 
@@ -129,7 +148,18 @@
 	mysqli_close($link);
 	}
 
-	function imageResize($wmax, $hmax, $wnew, $hnew){
+	/*function imageResize($wmax, $hmax, $wnew, $hnew){
+		list($w_orig, $h_orig) = getimagesize($target);
+		$scale_ratio = $w_orig / $h_orig;
 
-	}
+		if(($w / $h) > $scale_ratio){
+			$w = $h * $scale_ratio;
+		}else{
+			$h = $w / $scale_ratio;
+		}
+
+		$img = "";
+		$ext = strtolower($ext)
+
+	}*/
 ?>
