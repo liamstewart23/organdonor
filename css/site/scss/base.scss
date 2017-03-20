@@ -7,8 +7,7 @@
 #stories,
 #share,
 .navbar,
-footer
- {
+footer {
     opacity: 0;
 }
 
@@ -37,8 +36,16 @@ html {
 /*.container {width: 100%;margin-bottom: 15px;} /*Forces Bootstrap grid full screen width*/
 
 .container-fluid {
-    margin:0 !important;
-    padding:0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Fjalla One', sans-serif;
 }
 
 h2 {
@@ -48,7 +55,6 @@ h2 {
 
 h3 {
     font-size: 2em;
-    font-family: 'Fjalla One', sans-serif
 }
 
 h4 {
@@ -75,10 +81,11 @@ li {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-.banner p {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 200;
-    margin-bottom: 80px;
+.banner {
+    p {
+        font-weight: 200;
+        margin-bottom: 80px;
+    }
 }
 
 .bannerHeading {
@@ -91,9 +98,10 @@ li {
     background: $red;
     border: 2px solid $red;
     color: $white !important;
-    padding: 2px 50px 5px 50px;
+    padding: 5px 50px 5px 50px;
     line-height: 20px;
     align-content: center !important;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 .btnRed:hover {
@@ -108,9 +116,10 @@ li {
     background: $blue;
     border: 2px solid $blue;
     color: $white !important;
-    padding: 2px 50px 5px 50px;
+    padding: 5px 50px 5px 50px;
     line-height: 20px;
     align-content: center !important;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 .btnBlue:hover {
@@ -129,6 +138,7 @@ li {
     padding: 5px 50px 5px 50px;
     align-content: center;
     margin-top: 200px;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 .btnB1:hover {
@@ -148,6 +158,7 @@ li {
     padding: 5px 50px 5px 50px;
     align-content: center !important;
     margin-top: 200px;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 .btnB2:hover {
@@ -168,6 +179,7 @@ li {
     color: $black;
     padding: 5px 50px 5px 50px;
     align-content: center !important;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 .btnB3:hover,

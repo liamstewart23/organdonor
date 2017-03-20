@@ -19,8 +19,6 @@
 
 					<li><a class="menuContact" id="footerContact" href="index.php?partial=contact">contact</a></li>
 
-					<!-- <li><a class="menuLang" id="lang-fr" href="#">français</a></li> -->
-
 						<li><a id="footerFacebook" href="#" target="_blank">
 <i class="fa fa-facebook-square" aria-hidden="true"></i>
 						</a></li>
@@ -45,8 +43,6 @@
 			<li><a id="footerInstagram" href="#" target="_blank">
 <i class="fa fa-instagram" aria-hidden="true"></i>
 						</a></li>
-					
-
 		</ul>
 		</nav>
 	</div>

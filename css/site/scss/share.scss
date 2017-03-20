@@ -6,3 +6,16 @@
     background-size: cover;
     color: $white;
 }
+
+#share {
+	h4 {
+		font-weight: 500;
+		margin-bottom: 50px;
+	}
+        #twitter {
+        	background-color: $white;
+        }
+        #facebook {
+        	background-color: $shareRightSide;
+        }
+}

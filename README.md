@@ -6,7 +6,7 @@ This website is for our marketing campaign - raising awareness for organ donatio
 
 Install db from db/becauseadonor.sql file.
 
-Edit Config file.
+Edit config.php file with your database settings.
 
 ```
 admin/phpscripts/config.php
@@ -17,7 +17,7 @@ See: http://sass-lang.com/install
 
 Move to root folder of site.
 
-Run the following commands in terminal
+Run the following commands in terminal.
 
 These commands will watch scss files for updates and compress to app.css and no-js.css on save.
 

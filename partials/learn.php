@@ -9,7 +9,7 @@
 registered because they feel as though they aren’t informed enough.<br>
 Let’s fix that.</p>	
 
-<div class="col-xs-12 col-sm-offset-0 col-md-6">
+<div class="col-xs-12 col-sm-offset-0 col-md-6" id="mobileLearnBannerFix">
 				<a href="#statistics" class="btnB1" id="btnLearnStats">statistics</a>
 				</div>
 <div class="col-xs-12 col-sm-offset-0 col-md-6">
@@ -56,7 +56,7 @@ Let’s fix that.</p>
 	
 				<img src="img/icons/myth.svg" height="0" alt="Because a Donor" id="iconMyth">
 				<h3 class="bannerHeading">Myth vs. Fact</h3>
-<div class="col-xs-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+<div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
 				
 <!-- Search -->
 

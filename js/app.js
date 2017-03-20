@@ -15,6 +15,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
             },
             controller: "StoryCtrl"
         })
+        .when("/share-your-story", { templateUrl: "partials/story-form.php", controller: "SubmitStoryCtrl" }) //Submit your Story Page
         .when("/share", { templateUrl: "partials/share.php", controller: "ShareCtrl" }) //Share Page
         .when("/contact", { templateUrl: "partials/contact.php", controller: "ContactCtrl" }) //Contact Page
 
@@ -22,11 +23,25 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     //$locationProvider.html5Mode(true);
 }]);
 
+
+// Scrolls to top on route change - so you don't end up half way down a page if you go back to it via navigation(s)
+app.run(function($rootScope, $window) {
+    $rootScope.$on('$routeChangeSuccess', function() {
+        var interval = setInterval(function() {
+            if (document.readyState == 'complete') {
+                $window.scrollTo(0, 0);
+                clearInterval(interval);
+            }
+        }, 300);
+    });
+});
+
+
 // JS is enabled! Switch links for footer and nav
 var logo = document.querySelector(".navbar-brand");
 var logoFooter = document.querySelector("#logoFooter");
 var menuHome = document.querySelector("#menuHome");
-var footerHome = document.querySelector("#footerHome");
+var menuFooterHome = document.querySelector(".menuHome");
 var menuLearn = document.querySelector("#menuLearn");
 var footerLearn = document.querySelector("#footerLearn");
 var menuStories = document.querySelector("#menuStories");
@@ -34,11 +49,11 @@ var footerStories = document.querySelector("#footerStories");
 var menuShare = document.querySelector("#menuShare");
 var footerShare = document.querySelector("#footerShare");
 var footerContact = document.querySelector("#footerContact");
-// var menuLang = document.querySelector(".menuLang");
 
 logo.href = "#/";
 logoFooter.href = "#/";
 menuHome.href = "#/";
+menuFooterHome.href = "#/";
 
 menuLearn.href = "#/learn";
 footerLearn.href = "#/learn";
@@ -51,8 +66,6 @@ footerShare.href = "#/share";
 
 footerContact.href = "#/contact";
 
-// footerContact.style.display = "block";
-
 // end js enabled link switching for footer and nav
 
 
@@ -62,12 +75,15 @@ navMain.on("click", "a:not([data-toggle])", null, function() {
     navMain.collapse('hide');
 });
 
-var navbar = $('.navbar');
-var footer = $('footer');
+var navbar = document.querySelector('.navbar');
 if (once === 0) { // nav and footer animation once
-    TweenMax.to(navbar, .5, {opacity:1});
-    TweenMax.to(footer, 1, {opacity:1});
+    TweenMax.to(navbar, .5, { opacity: 1 });
     once++;
+}
+
+function footerLoad() {
+    var footer = document.querySelector('footer');
+    TweenMax.to(footer, .5, { opacity: 1 });
 }
 
 //Controller for Home
@@ -111,7 +127,7 @@ app.controller('HomeCtrl', [function() {
         var btnHomeLearn = document.querySelector("#btnHomeLearn");
         btnHomeLearn.href = "#/learn";
         //End Linking changes
-
+        footerLoad();
     });
 }]);
 //Controller for Learn
@@ -121,13 +137,14 @@ app.controller('LearnCtrl', [function() {
 
         var learn = $('#learn');
         TweenMax.to(learn, .5, { opacity: 1 });
+        // TweenMax.to(window, 2, {scrollTo:"#someID"}); for Learn Page Sections
 
         $(document).ready(function() {
             //Initial Browser height for banners sizing
             $('#bannerLearn1').css({ 'height': (($(window).height())) + 'px' });
             $('#iconLearn').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconLearn').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
-            $('#statistics').css({ 'height': (($(window).height())) + 'px' });
+            // $('#statistics').css({ 'height': (($(window).height())) + 'px' });
             $('#icon1To8').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#icon3Days').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconPies').css({ 'height': (($(window).height() / 6)) + 'px' });
@@ -142,7 +159,7 @@ app.controller('LearnCtrl', [function() {
             $('#bannerLearn1').css({ 'height': (($(window).height())) + 'px' });
             $('#iconLearn').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconLearn').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
-            $('#statistics').css({ 'height': (($(window).height())) + 'px' });
+            // $('#statistics').css({ 'height': (($(window).height())) + 'px' });
             $('#icon1To8').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#icon3Days').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconPies').css({ 'height': (($(window).height() / 6)) + 'px' });
@@ -155,7 +172,7 @@ app.controller('LearnCtrl', [function() {
         btnLearnStats.href = "#/learn#statistics";
         btnLearnMyths.href = "#/learn#myths";
         //End Linking changes
-
+        footerLoad();
     });
 }]);
 //Controller for Stories
@@ -174,7 +191,7 @@ app.controller('StoriesCtrl', [function() {
 
             //Height of story box based on width
             var storyWidth = $('.story').width();
-            $('.story .inner').css({ 'height': (storyWidth * .75) + 'px' });
+            $('.story .inner').css({ 'height': (storyWidth * .6) + 'px' });
         });
         $(window).resize(function() {
             //Banner sizing adjustments based on resize
@@ -184,19 +201,47 @@ app.controller('StoriesCtrl', [function() {
 
             //Height of story box based on width
             var storyWidth = $('.story').width();
-            $('.story .inner').css({ 'height': (storyWidth * .75) + 'px' });
+            $('.story .inner').css({ 'height': (storyWidth * .6) + 'px' });
         });
 
+        // Linking changes on
+        var btnStoriesFooter = document.querySelector("#btnStoriesFooter");
+        btnStoriesFooter.href = "#/share-your-story";
+        //End Linking changes
+        footerLoad();
     });
 }]);
 //Controller for Story
 app.controller('StoryCtrl', [function() {
     angular.element(document).ready(function() {
-        document.title = "Share - " + siteTitle;
+        var person = "Sarah"; // Lauren I was thinking we could use ajax to pull the first name of story for title tag.
+        document.title = person + "'s story' - " + siteTitle;
 
         var story = document.querySelector("#story");
         TweenMax.to(story, 0.5, { startAt: { opacity: 0, y: 200 }, opacity: 1, y: 0 });
+        footerLoad();
+    });
+}]);
+//Controller for Submit Story
+app.controller('SubmitStoryCtrl', [function() {
+    angular.element(document).ready(function() {
+        document.title = "Share your Story - " + siteTitle;
 
+        var story = document.querySelector("#submitstory");
+        TweenMax.to(submitstory, 0.5, { startAt: { opacity: 0, y: 200 }, opacity: 1, y: 0 });
+
+        $(document).ready(function() {
+            //Initial Browser height for banners sizing
+            $('#submitstory').css({ 'height': (($(window).height())) + 'px' });
+            $('#submitstory form').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
+
+        });
+        $(window).resize(function() {
+            //Banner sizing adjustments based on resize
+            $('#submitstory').css({ 'height': (($(window).height())) + 'px' });
+            $('#submitstory form').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
+        });
+        footerLoad();
     });
 }]);
 //Controller for Share
@@ -210,27 +255,31 @@ app.controller('ShareCtrl', [function() {
         $(document).ready(function() {
             //Initial Browser height for banners sizing
             $('#bannerShare1').css({ 'height': (($(window).height())) + 'px' });
+            $('#twitter').css({ 'height': (($(window).height())) + 'px' });
+            $('#facebook').css({ 'height': (($(window).height())) + 'px' });
             $('#iconShare').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconShare').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
+            $('#twitter h4').css({ 'margin-top': (($(window).height() / 6)) + 'px' });
+            $('#facebook h4').css({ 'margin-top': (($(window).height() / 6)) + 'px' });
         });
         $(window).resize(function() {
             //Banner sizing adjustments based on resize
             $('#bannerShare1').css({ 'height': (($(window).height())) + 'px' });
+            $('#twitter').css({ 'height': (($(window).height())) + 'px' });
+            $('#facebook').css({ 'height': (($(window).height())) + 'px' });
             $('#iconShare').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconShare').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
-
+            $('#twitter h4').css({ 'margin-top': (($(window).height() / 6)) + 'px' });
+            $('#facebook h4').css({ 'margin-top': (($(window).height() / 6)) + 'px' });
 
         });
-
+        footerLoad();
     });
 }]);
 //Controller for Contact
 app.controller('ContactCtrl', [function() {
     angular.element(document).ready(function() {
         document.title = "Contact - " + siteTitle;
-
-        var contact = $('#contact');
-        TweenMax.to(contact, 2, { delay: 2, opacity: 1 });
 
         $(document).ready(function() {
             //Initial Browser height for banners sizing
@@ -245,6 +294,6 @@ app.controller('ContactCtrl', [function() {
             $('#contact').css({ 'height': (($(window).height())) + 'px' });
             $('#contact form').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
         });
-
+        footerLoad();
     });
 }]);
