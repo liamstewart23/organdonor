@@ -79,7 +79,7 @@ profound impact of organ donation on our communities. </p>
 		<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1 text-center">
 <div class="col-xs-12 col-md-12 col-md-12" id="storiesFooter">
 <h4><span class="red">Do you have a story about organ donation that you want to share?</span><br>Your experiences could be chosen and posted here to inspire others.</h4>
-	<a href="index.php?partial=shareStory" class="btnRed" id="btnStoriesFooter">share your story</a>
+	<a href="index.php?partial=story-form" class="btnRed" id="btnStoriesFooter">share your story</a>
 </div>
 
 		</div>
