@@ -9,9 +9,9 @@
 		<nav>
 		<h2 class="hidden">BecauseADonor Footer Navigation</h2>
 						<ul class="nav navbar-nav navbar-right desk-footer">
-					<li><a class="menuHome" id="footerHome" href="index.php?partial=home">
-							home
-					</a></li>
+							<li><a class="menuHome" id="footerHome" href="index.php?partial=home">
+					<i class="fa fa-home" aria-hidden="true"></i>
+				</a></li>
 					<li><a class="menuLearn" id="footerLearn" href="index.php?partial=learn">learn</a></li>
 					<li><a class="menuStories" id="footerStories" href="index.php?partial=stories">stories</a></li>
 					
