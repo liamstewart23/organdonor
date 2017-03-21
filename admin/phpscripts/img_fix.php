@@ -1,19 +1,21 @@
 <?php
 	//SCALING IMAGES TO A MAX-WIDTH OF 300
-	function imageResize($fileType, $targetpath,$resizeFile,$width,$height,$wmax,$hmax){
+	function imageResize($fileType, $targetpath,$resizeFile,$wmin,$hmin,$wmax,$hmax){
 		list($wfull, $hfull) = getimagesize($targetpath);
 		$scale_ratio = $wfull / $hfull;
-		echo $scale_ratio;
-		echo "  ".$wmax / $hmax;
 
-		if(($wmax / $hmax) > $scale_ratio){
-			$wmax = $hmax * $scale_ratio;
+		//SCALE IMAGE DOWN TO MIN WIDTH VARIABLES
+		if(($wmin / $hmin) < $scale_ratio){
+			$wmin = $hmin * $scale_ratio;
 		}else{
-			$hmax = $wmax / $scale_ratio;
+			$hmin = $wmin / $scale_ratio;
 		}
 
+		//CROP POSITION VARIABLES
+		$xcrop = ($wmin / 2) - ($wmax / 2);
+		$ycrop = ($hmin / 2) - ($hmax / 2);
+
 		$img = "";
-		//$ext = strtolower($ext);
 
 		if($fileType == "image/jpg" || $fileType == "image/jpeg"){
 			$img = imagecreatefromjpeg($targetpath);
@@ -23,8 +25,8 @@
 
 		$newImg = imagecreatetruecolor($wmax, $hmax);
 
-		imagecopyresampled($newImg, $img, 0, 0, 0, 0, $wmax, $hmax, $wfull, $hfull);
-
+		imagecopyresampled($newImg, $img, 0, 0, $xcrop, $ycrop, $wmin, $hmin, $wfull, $hfull);
+				
 		$newCopy = $targetpath;
 
 		if($fileType == "image/jpg" || $fileType == "image/jpeg"){
@@ -33,4 +35,3 @@
 			imagepng($newImg, $newCopy);
 		}
 	}
-?>

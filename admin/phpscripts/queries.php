@@ -62,6 +62,8 @@
 		include('config.php');
 		require_once('img_fix.php');
 		$photo = mysqli_real_escape_string($link,$photo); //Clean up the image name, prevent possible injection attacks in image name
+		$date = date("M_d_Y_s");
+		echo $date;
 		
 		//CHECK IF FILE IS JPG, JPEG OR PNG
 		$fileType = $_FILES['photo']['type'];
@@ -69,23 +71,28 @@
 		//$tempFolder = "../img/{$photo}";
 		if($fileType == "image/jpg" || $fileType == "image/jpeg" || $fileType == "image/png"){//check and limit file types
 			echo "This is an accepted file type";
-			$targetpath = "../img/{$photo}.jpg"; //where to send the file
+			$targetpath = "../img/stories/uploads/{$date}.jpg"; //where to send the file
 			echo $fileType;
 			$moveFile = move_uploaded_file($fileName, $targetpath);
 			if (!$moveFile){
 				echo "Error copying file";
 			}
 
-			$size = getimagesize($targetpath);
-				//echo $size[0]; //size is an array. width is [0], height is [1]
-				$width = $size[0];
-				$height = $size[1];
+			//$resizeFile = "../img/resized{$photo}";
 
-			$resizeFile = "../img/resized{$photo}";
-			$wmax = 300;
+			//FILE SIZE FOR STORY AUTHOR IMAGE
+			$wmin = 450;
+			$hmin = 300;
+			$wmax = 450;
 			$hmax = 300;
-			imageResize($fileType, $targetpath,$resizeFile,$width,$height,$wmax,$hmax);
+			imageResize($fileType, $targetpath,$resizeFile,$wmin,$hmin,$wmax,$hmax);
 
+			$query = "INSERT INTO tbl_stories VALUES(NULL,'{$name}','{$age}','{$organ}','{$city}','{$type}','{$story}','{$video}','{$photo}')";
+			$run = mysqli_query($link, $query);
+
+			if($run){
+				redirect_to('edit_stories.php');
+			}
 		}else{
 			$error =  "There was an error accessing this information. Please contact your admin.";
 			return $error;
