@@ -56,6 +56,7 @@
         <script src="js/vendor/angular.min.js"></script>
         <script src="js/vendor/angular-route.min.js"></script>
         <script src="js/vendor/TweenMax.min.js"></script>
+        <script src="js/vendor/ScrollToPlugin.min.js"></script>
         <script src="js/app.js"></script>
     </body>
 </html>
