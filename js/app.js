@@ -4,7 +4,6 @@ console.log("BecauseADonor JS started!")
 var app = angular.module('BecauseADonor', ['ngRoute']); //declare app + import ngRoute
 var siteTitle = "Because a Donor - Organ Donation Awareness | Ontario Canada"; //Site Title
 var once = 0; //run menu + logo animation once on homepage
-var onViewChange = 0;//brings to you to top of page on view change (0=yes,1=no)
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) { //Config routes
     $routeProvider
         .when("/", { templateUrl: "partials/home.php", controller: "HomeCtrl" }) //Home Page
@@ -26,19 +25,6 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     //$locationProvider.html5Mode(true);
 }]);
 
-
-// $('#btnLearnStats').click(function() {
-//     TweenMax.to(window, 2, { scrollTo:{y:$("#statistics")}});
-//     onViewChange = 1;
-// });
-
-// $('#btnLearnMyths').click(function() {
-//     TweenMax.to(window, 2, { scrollTo:{y:$("#mythTo")}});
-//     onViewChange = 1;
-// });
-
-if(onViewChange = 0) {//If using scrollTo vs switching views (partials)
-// Scrolls to top on route change - so you don't end up half way down a page if you go back to it via navigation(s)
 app.run(function($rootScope, $window) {
     $rootScope.$on('$routeChangeSuccess', function() {
         var interval = setInterval(function() {
@@ -49,11 +35,6 @@ app.run(function($rootScope, $window) {
         }, 1);
     });
 });
-}
-else {
-    onViewChange=0;
-}
-
 
 // JS is enabled! Switch links for footer and nav
 var logo = document.querySelector(".navbar-brand");
