@@ -4,6 +4,7 @@ console.log("BecauseADonor JS started!")
 var app = angular.module('BecauseADonor', ['ngRoute']); //declare app + import ngRoute
 var siteTitle = "Because a Donor - Organ Donation Awareness | Ontario Canada"; //Site Title
 var once = 0; //run menu + logo animation once on homepage
+var topOnViewChange = 0;//brings to you to top of page on view change (0=yes,1=no)
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) { //Config routes
     $routeProvider
         .when("/", { templateUrl: "partials/home.php", controller: "HomeCtrl" }) //Home Page
@@ -23,26 +24,33 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     //$locationProvider.html5Mode(true);
 }]);
 
-// // Scrolls to top on route change - so you don't end up half way down a page if you go back to it via navigation(s)
-// app.run(function($rootScope, $window) {
-//     $rootScope.$on('$routeChangeSuccess', function() {
-//         var interval = setInterval(function() {
-//             if (document.readyState == 'complete') {
-//                 $window.scrollTo(0, 0);
-//                 clearInterval(interval);
-//             }
-//         }, 300);
-//     });
-// });
-
 
 $('#btnLearnStats').click(function() {
-    TweenMax.to(window, 2, { scrollTo: "#statistics" });
+    TweenMax.to(window, 2, { scrollTo:{y:$("#statistics")}, ease:Expo.easeOut});
+    topOnViewChange = 1;
 });
 
 $('#btnLearnMyths').click(function() {
-    TweenMax.to(window, 2, { scrollTo: "#myths" });
+    TweenMax.to(window, 2, { scrollTo:{y:$("#myths")}, ease:Expo.easeOut});
+    topOnViewChange = 1;
 });
+
+if(topOnViewChange = 0) {
+// Scrolls to top on route change - so you don't end up half way down a page if you go back to it via navigation(s)
+app.run(function($rootScope, $window) {
+    $rootScope.$on('$routeChangeSuccess', function() {
+        var interval = setInterval(function() {
+            if (document.readyState == 'complete') {
+                $window.scrollTo(0, 0);
+                clearInterval(interval);
+            }
+        }, 1);
+    });
+});
+}
+else {
+    topOnViewChange=0;
+}
 
 
 // JS is enabled! Switch links for footer and nav
