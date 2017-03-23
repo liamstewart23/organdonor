@@ -20,16 +20,8 @@
 
 ?>
 
-<!doctype html>
+<?php include("includes/header.php")?>
 
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Welcome Company Name</title>
-	<link rel="stylesheet" href="css/main.css"/>
-</head>
-
-<body>
 <h1>Admin Login</h1>
 
 <?php if(!empty($message)) {echo $message;}	?>
@@ -48,5 +40,4 @@
 
 	</form>
 
-</body>
-</html>
+<?php include("includes/footer.php")?>

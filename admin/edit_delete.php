@@ -21,15 +21,7 @@
 	}
 ?>
 
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Welcome Company Name</title>
-<link rel="stylesheet" href="css/main.css"/>
-</head>
-
-	<body>
+<?php include("includes/header.php")?>
 	<h1>Delete this post?</h1>
 		<div>
 			<p>Are you sure you want to delete this post?</p>
@@ -41,5 +33,4 @@
 		</div>
 
 		
-	</body>
-</html>
+<?php include("includes/footer.php")?>

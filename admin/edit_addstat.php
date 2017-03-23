@@ -3,7 +3,7 @@
 	confirm_logged_in(); //comment out so you can test page without having to login
 
 	if (empty($_GET['id'])){//prevent people from typing in admin_editstory with no id
-		redirect_to('edit_stories.php');
+		redirect_to('edit_stats.php');
 	}
 
 	$id = $_GET['id'];
@@ -21,13 +21,14 @@
 		$story = trim($_POST['story']);
 		$video = trim($_POST['video']);
 
-		$result = editStory($id,$name,$age,$city,$organ,$photo,$story,$video);
+		$result = editStat($id,$name,$age,$city,$organ,$photo,$story,$video);
 		return $result;
 	}
 
 ?>
 
 <?php include("includes/header.php")?>
+
 	<h1>Stories</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<?php echo "<form action=\"edit_editstory.php?id={$id}\" method=\"post\" enctype=\"multipart/form-data\">"?>
