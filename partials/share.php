@@ -18,7 +18,7 @@
 		<div class="col-xs-12 col-md-12 col-md-6 text-center" id="twitter">
 		<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1">
 		<h4>Spread the Word</h4>
-		<p>Join our Twitter community with our hashtag <span class="red">#becauseadonor</span>. Help to spread awareness by sharing your story, or use one of our tweets below!</p>
+		<p>Join our Twitter community with our hashtag <a class="red" href="https://twitter.com/search?q=%40becauseadonor&src=typd" target="_blank">#becauseadonor</a>. Help to spread awareness by sharing your story, or use one of our tweets below!</p>
 		</div>
 </div>
 		<div class="col-xs-12 col-md-12 col-md-6 text-center" id="facebook">

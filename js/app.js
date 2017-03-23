@@ -23,17 +23,25 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     //$locationProvider.html5Mode(true);
 }]);
 
+// // Scrolls to top on route change - so you don't end up half way down a page if you go back to it via navigation(s)
+// app.run(function($rootScope, $window) {
+//     $rootScope.$on('$routeChangeSuccess', function() {
+//         var interval = setInterval(function() {
+//             if (document.readyState == 'complete') {
+//                 $window.scrollTo(0, 0);
+//                 clearInterval(interval);
+//             }
+//         }, 300);
+//     });
+// });
 
-// Scrolls to top on route change - so you don't end up half way down a page if you go back to it via navigation(s)
-app.run(function($rootScope, $window) {
-    $rootScope.$on('$routeChangeSuccess', function() {
-        var interval = setInterval(function() {
-            if (document.readyState == 'complete') {
-                $window.scrollTo(0, 0);
-                clearInterval(interval);
-            }
-        }, 300);
-    });
+
+$('#btnLearnStats').click(function() {
+    TweenMax.to(window, 2, { scrollTo: "#statistics" });
+});
+
+$('#btnLearnMyths').click(function() {
+    TweenMax.to(window, 2, { scrollTo: "#myths" });
 });
 
 
@@ -123,7 +131,7 @@ app.controller('HomeCtrl', [function() {
             $('#iconHeart').css({ 'height': (($(window).height() / 6)) + 'px' });
         });
 
-        // Linking changes on
+        // Linking changes
         var btnHomeLearn = document.querySelector("#btnHomeLearn");
         btnHomeLearn.href = "#/learn";
         //End Linking changes
