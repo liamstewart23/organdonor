@@ -9,6 +9,8 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     $routeProvider
         .when("/", { templateUrl: "partials/home.php", controller: "HomeCtrl" }) //Home Page
         .when("/learn", { templateUrl: "partials/learn.php", controller: "LearnCtrl" }) //Learn Page
+        .when("/statistics", { templateUrl: "partials/learn-stats.php", controller: "StatsCtrl" }) //Learn Statistics Page
+        .when("/myths-vs-facts", { templateUrl: "partials/learn-myths-v-facts.php", controller: "MVFCtrl" }) //Learn Myths vs. Facts Page
         .when("/stories", { templateUrl: "partials/stories.php", controller: "StoriesCtrl" }) //Stories Page
         .when('/story/:story_id', { //Story Page
             templateUrl: function(attrs) {
@@ -25,15 +27,15 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 }]);
 
 
-$('#btnLearnStats').click(function() {
-    TweenMax.to(window, 2, { scrollTo:{y:$("#statistics")}});
-    onViewChange = 1;
-});
+// $('#btnLearnStats').click(function() {
+//     TweenMax.to(window, 2, { scrollTo:{y:$("#statistics")}});
+//     onViewChange = 1;
+// });
 
-$('#btnLearnMyths').click(function() {
-    TweenMax.to(window, 2, { scrollTo:{y:$("#mythTo")}});
-    onViewChange = 1;
-});
+// $('#btnLearnMyths').click(function() {
+//     TweenMax.to(window, 2, { scrollTo:{y:$("#mythTo")}});
+//     onViewChange = 1;
+// });
 
 if(onViewChange = 0) {//If using scrollTo vs switching views (partials)
 // Scrolls to top on route change - so you don't end up half way down a page if you go back to it via navigation(s)
@@ -150,7 +152,7 @@ app.controller('HomeCtrl', [function() {
 app.controller('LearnCtrl', [function() {
     angular.element(document).ready(function() {
         document.title = "Learn - " + siteTitle;
-
+        $('footer').css({ 'display':'none' });
         var learn = $('#learn');
         TweenMax.to(learn, .5, { opacity: 1 });
         // TweenMax.to(window, 2, {scrollTo:"#someID"}); for Learn Page Sections
@@ -187,8 +189,74 @@ app.controller('LearnCtrl', [function() {
         // Linking changes on
         var btnLearnStats = document.querySelector("#btnLearnStats");
         var btnLearnMyths = document.querySelector("#btnLearnMyths");
-        btnLearnStats.href = "#/learn#statistics";
-        btnLearnMyths.href = "#/learn#myths";
+        btnLearnStats.href = "#/statistics";
+        btnLearnMyths.href = "#/myths-vs-facts";
+        //End Linking changes
+        footerLoad();
+    });
+}]);
+//Controller for Learn Statistics Page
+app.controller('StatsCtrl', [function() {
+    angular.element(document).ready(function() {
+        document.title = "Statistics - " + siteTitle;
+        $('footer').css({ 'display':'block' });
+        var stats = $('#stats');
+        TweenMax.to(stats, 1.5, { opacity: 1 });
+        // TweenMax.to(window, 2, {scrollTo:"#someID"}); for Learn Page Sections
+
+        $(document).ready(function() {
+            //Initial Browser height for banners sizing
+            $('#icon1To8').css({ 'height': (($(window).height() / 6)) + 'px' });
+            $('#icon3Days').css({ 'height': (($(window).height() / 6)) + 'px' });
+            $('#iconPies').css({ 'height': (($(window).height() / 6)) + 'px' });
+            $('#icon2Min').css({ 'height': (($(window).height() / 6)) + 'px' });
+
+        });
+        $(window).resize(function() {
+            //Initial Browser height for banners sizing
+            $('#icon1To8').css({ 'height': (($(window).height() / 6)) + 'px' });
+            $('#icon3Days').css({ 'height': (($(window).height() / 6)) + 'px' });
+            $('#iconPies').css({ 'height': (($(window).height() / 6)) + 'px' });
+            $('#icon2Min').css({ 'height': (($(window).height() / 6)) + 'px' });
+        });
+
+        // Linking changes on
+        // var btnLearnStats = document.querySelector("#btnLearnStats");
+        // var btnLearnMyths = document.querySelector("#btnLearnMyths");
+        // btnLearnStats.href = "#/learn#statistics";
+        // btnLearnMyths.href = "#/learn#myths";
+        //End Linking changes
+        footerLoad();
+    });
+}]);
+//Controller for Learn Myths vs Facts Page
+app.controller('MVFCtrl', [function() {
+    angular.element(document).ready(function() {
+        document.title = "Statistics - " + siteTitle;
+        $('footer').css({ 'display':'block' });
+        var mvf = $('#mvf');
+        TweenMax.to(mvf, 1.5, { opacity: 1 });
+        // TweenMax.to(window, 2, {scrollTo:"#someID"}); for Learn Page Sections
+
+        $(document).ready(function() {
+            //Initial Browser height for banners sizing
+            $('#myths').css({ 'height': (($(window).height() / 1.4)) + 'px' });
+            $('#iconMyth').css({ 'height': (($(window).height() / 6)) + 'px' });
+            $('#iconMyth').css({ 'margin-top': (($(window).height() / 6)) + 'px' });
+
+        });
+        $(window).resize(function() {
+            //Initial Browser height for banners sizing
+            $('#myths').css({ 'height': (($(window).height() / 1.5)) + 'px' });
+            $('#iconMyth').css({ 'height': (($(window).height() / 6)) + 'px' });
+            $('#iconMyth').css({ 'margin-top': (($(window).height() / 12)) + 'px' });
+        });
+
+        // Linking changes on
+        // var btnLearnStats = document.querySelector("#btnLearnStats");
+        // var btnLearnMyths = document.querySelector("#btnLearnMyths");
+        // btnLearnStats.href = "#/learn#statistics";
+        // btnLearnMyths.href = "#/learn#myths";
         //End Linking changes
         footerLoad();
     });

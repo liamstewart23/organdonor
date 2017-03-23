@@ -1,0 +1,20 @@
+#statistics {
+    margin-bottom: 50px;
+    h4 {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+}
+
+.stat-item {
+    background-color: $white;
+    color: $white;
+    padding: 5px 5px 5px 5px;
+    .inner {
+        background-color: $purple;
+        padding: 20px;
+        p {
+            font-weight: 200;
+        }
+    }
+}
