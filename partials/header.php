@@ -1,3 +1,5 @@
+<!-- <!doctype html> --> 
+<!-- Doctype for partial html validation testing  -->
 <nav class="navbar navbar-default navbar-fixed-top">
 	<h2 class="hidden">Website Navigation</h2>
 	<div class="container">
@@ -24,6 +26,6 @@
 				<li><a id="menuRegister" href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" target="_blank"><span class="btnRed">Register</span></a></li>
 				<li><a id="menuMobileRegister" class="red" href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" target="_blank">Register</a></li>
 			</ul>
-			</div>
 		</div>
-	</nav>
+	</div>
+</nav>
