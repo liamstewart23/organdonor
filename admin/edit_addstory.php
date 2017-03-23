@@ -30,15 +30,8 @@
 	}
 ?>
 
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Stories</title>
-<link rel="stylesheet" href="css/main.css"/>
-</head>
+<?php include("includes/header.php")?>
 
-	<body>
 	<h1>Stories</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<?php echo "<form action=\"edit_addstory.php?type={$type}\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
@@ -63,9 +56,9 @@
 				<?php 
 					if($type == "written"){
 						echo 	"<label>Written Story:</label><br>
-								<input required type=\"text\" name=\"story\" value=\"";
+								<textarea required type=\"text\" name=\"story\" value=\"";
 								if(!empty($story)){echo $story;}
-						echo 	"\";><br>";
+						echo 	"\";></textarea><br>";
 					}else if ($type == "video"){
 						echo 	"<label>Youtube Embeded Link:</label><br>
 								<input required type=\"text\" name=\"video\" value=\"";
@@ -81,5 +74,4 @@
 
 		</form>
 
-	</body>
-</html>
+<?php include("includes/footer.php")?>

@@ -1,6 +1,6 @@
 <?php
 	//SCALING IMAGES TO A MAX-WIDTH OF 300
-	function imageResize($fileType, $targetpath,$resizeFile,$wmin,$hmin,$wmax,$hmax){
+	function imageResize($fileType, $targetpath,$wmin,$hmin,$wmax,$hmax){
 		list($wfull, $hfull) = getimagesize($targetpath);
 		$scale_ratio = $wfull / $hfull;
 
@@ -26,7 +26,7 @@
 		$newImg = imagecreatetruecolor($wmax, $hmax);
 
 		imagecopyresampled($newImg, $img, 0, 0, $xcrop, $ycrop, $wmin, $hmin, $wfull, $hfull);
-				
+
 		$newCopy = $targetpath;
 
 		if($fileType == "image/jpg" || $fileType == "image/jpeg"){
@@ -34,4 +34,6 @@
 		}else if($fileType == "image/png"){
 			imagepng($newImg, $newCopy);
 		}
+
+		echo $newCopy;
 	}

@@ -19,16 +19,7 @@
 	$getMythFacts = getAll($tbl);
 
 ?>
-
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Welcome Company Name</title>
-<link rel="stylesheet" href="css/main.css"/>
-</head>
-
-	<body>
+<?php include("includes/header.php")?>
 	<h1>Stories</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<form action="edit_mythfact.php" method="post">
@@ -68,5 +59,4 @@
 
 		</form>
 
-	</body>
-</html>
+<?php include("includes/footer.php")?>
