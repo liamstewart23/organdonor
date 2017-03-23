@@ -1,0 +1,33 @@
+#myths {
+    background: url(../../img/learn/learn_ban2.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: $white;
+}
+
+#myth-vs-fact-search {
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+    input {
+        border: 0;
+        box-shadow: none;
+    }
+    button {
+        margin: 2px 0 0 0;
+        background: none;
+        box-shadow: none;
+        border: 0;
+        color: #666666;
+        padding: 0 8px 0 10px;
+        border-left: solid 1px #ccc;
+    }
+    button:hover {
+        border: 0;
+        box-shadow: none;
+        border-left: solid 1px #ccc;
+    }
+}
