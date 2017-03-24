@@ -19,7 +19,7 @@
 	$getMythFacts = getAll($tbl);
 
 ?>
-<?php include("includes/header.php")?>
+<?php include("includes/header.php") ?>
 	<h1>Stories</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<form action="edit_mythfact.php" method="post">
@@ -48,7 +48,7 @@
 							echo "<p>{$row['mf_myth']}</p>
 								<p>{$row['mf_fact']}</p>
 								<p>{$row['mf_keywords']}</p>
-								<a href=\"edit_myths.php?id={$row['mf_id']}\">Edit</a><br><br>
+								<a href=\"edit_editmythfact.php?id={$row['mf_id']}\">Edit</a><br><br>
 								<a href=\"edit_delete.php?table={$tbl}&col={$col}&id={$row['mf_id']}\">Delete</a><br><br>";
 						}
 					}else{
@@ -59,4 +59,4 @@
 
 		</form>
 
-<?php include("includes/footer.php")?>
+<?php include("includes/footer.php") ?>

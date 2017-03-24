@@ -21,7 +21,7 @@
 	}
 ?>
 
-<?php include("includes/header.php")?>
+<?php include("includes/header.php") ?>
 	<h1>Delete this post?</h1>
 		<div>
 			<p>Are you sure you want to delete this post?</p>
@@ -33,4 +33,4 @@
 		</div>
 
 		
-<?php include("includes/footer.php")?>
+<?php include("includes/footer.php") ?>
