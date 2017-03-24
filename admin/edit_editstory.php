@@ -1,6 +1,6 @@
 <?php
 	require_once('phpscripts/init.php');
-	confirm_logged_in(); //comment out so you can test page without having to login
+	confirm_logged_in();
 
 	if (empty($_GET['id'])){//prevent people from typing in admin_editstory with no id
 		redirect_to('edit_stories.php');
@@ -11,6 +11,7 @@
 	$tbl = 'tbl_stories';
 	$col = 'story_id';
 	$getStories = getTable($tbl, $col, $id);
+	$type = $getStories['story_type'];
 
 	if(isset($_POST['submit'])){
 		$name = trim($_POST['name']);
@@ -18,16 +19,22 @@
 		$city = trim($_POST['city']);
 		$organ = trim($_POST['organ']);
 		$photo = $_FILES['photo']['name'];
-		$story = trim($_POST['story']);
-		$video = trim($_POST['video']);
-
-		$result = editStory($id,$name,$age,$city,$organ,$photo,$story,$video);
-		return $result;
+		$video = "";
+		$story = "";
+		if($type == "written"){
+				$story = trim($_POST['story']);
+				$editStory = editStory($id,$name,$age,$city,$organ,$photo,$story,$video);
+				$message = $editStory;
+			}else if($type == "video"){
+				$video = trim($_POST['video']);
+				$editStory = editStory($id,$name,$age,$city,$organ,$photo,$story,$video);
+				$message = $editStory;
+			}
 	}
 
 ?>
 
-<?php include("includes/header.php")?>
+
 	<h1>Stories</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<?php echo "<form action=\"edit_editstory.php?id={$id}\" method=\"post\" enctype=\"multipart/form-data\">"?>
@@ -50,15 +57,20 @@
 				<p><?php echo $getStories['story_photo']; ?></p>
 				<input type="file" name="photo" value="<?php echo $getStories['story_photo']; ?>"><br>
 
-				<label>Written Story:</label><br>
-				<input type="text" name="story" value="<?php echo $getStories['story_text']; ?>"><br>
-
-				<label>Youtube Embeded Link:</label><br>
-				<input type="text" name="video" value="<?php echo $getStories['story_link']; ?>"><br>
-
 				<?php 
-
+					if($getStories['story_type'] == "written"){
+						echo 	"<label>Written Story:</label><br>
+								<textarea required type=\"text\" name=\"story\">";
+						echo 	$getStories['story_text'];
+						echo	"</textarea><br>";
+					}else if ($getStories['story_type'] == "video"){
+						echo 	"<label>Youtube Embeded Link:</label><br>
+								<input required type=\"text\" name=\"video\" value=\"";
+						echo 	$getStories['story_link'];
+						echo	"\"><br>";
+					}
 				?>
+				
 			</div>
 
 			<div class="addbtn">
@@ -67,4 +79,3 @@
 
 		</form>
 
-<?php include("includes/footer.php")?>
