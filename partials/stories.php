@@ -1,3 +1,13 @@
+<?php
+	ini_set('display_errors',1);
+    error_reporting(E_ALL);
+
+	require_once('../admin/phpscripts/init.php');
+
+	$tbl = 'tbl_stories';
+	$getStories = getAll($tbl);
+?>
+
 <!-- <!doctype html> --> 
 <!-- Doctype for partial html validation testing  -->
 <section id="stories">
@@ -17,57 +27,30 @@
 		<!-- 			<img src="img/icons/feather.svg" height="0" alt="Because a Donor" id="iconFeather">
 		<h4>Discover their Stories</h4> -->
 		<!-- Stories -->
-		<div class="col-xs-12 col-md-12 col-md-4 story">
-			<div class="inner">
-				story
-			</div>
+		<?php
+		if(!is_string($getStories)){
+			while($row = mysqli_fetch_array($getStories)){
+				echo "<div class=\"col-xs-12 col-md-12 col-md-4 story\">
+						<img src=\"img/stories/uploads/{$row['story_photo']}\" alt=\"{$row['story_name']}\">
+						<h2>{$row['story_name']}</h2>
+						<p>{$row['story_city']}</p>
+						<p>{$row['story_organ']}</p>
+						<a href=\"see-story.php?id={$row['story_id']}\">More...</a><br><br>
+					</div>";
+			}
+		}
+		?>
+	</div><!-- End Stories -->
+	
+	<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1 text-center" id="btnLoadStories">
+	<a href="#" class="btnBlue">load more stories</a>
+	</div>
+
+	</div>
+	<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1 text-center">
+		<div class="col-xs-12 col-md-12 col-md-12" id="storiesFooter">
+			<h4><span class="red">Do you have a story about organ donation that you want to share?</span><br>Your experiences could be chosen and posted here to inspire others.</h4>
+			<a href="index.php?partial=story-form" class="btnRed" id="btnStoriesFooter">share your story</a>
 		</div>
-		<div class="col-xs-12 col-md-12 col-md-4 story">
-			<div class="inner">
-				story
-			</div>
-		</div><div class="col-xs-12 col-md-12 col-md-4 story">
-		<div class="inner">
-			story
-		</div>
 	</div>
-	<div class="col-xs-12 col-md-12 col-md-4 story">
-		<div class="inner">
-			story
-		</div>
-	</div>
-	<div class="col-xs-12 col-md-12 col-md-4 story">
-		<div class="inner">
-			story
-		</div>
-	</div><div class="col-xs-12 col-md-12 col-md-4 story">
-	<div class="inner">
-		story
-	</div>
-</div>
-<div class="col-xs-12 col-md-12 col-md-4 story">
-	<div class="inner">
-		story
-	</div>
-</div>
-<div class="col-xs-12 col-md-12 col-md-4 story">
-	<div class="inner">
-		story
-	</div>
-</div><div class="col-xs-12 col-md-12 col-md-4 story">
-<div class="inner">
-	story
-</div>
-</div>
-<!-- End Stories -->
-<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1 text-center" id="btnLoadStories">
-<a href="#" class="btnBlue">load more stories</a>
-</div>
-</div>
-<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1 text-center">
-<div class="col-xs-12 col-md-12 col-md-12" id="storiesFooter">
-<h4><span class="red">Do you have a story about organ donation that you want to share?</span><br>Your experiences could be chosen and posted here to inspire others.</h4>
-<a href="index.php?partial=story-form" class="btnRed" id="btnStoriesFooter">share your story</a>
-</div>
-</div>
 </section>
