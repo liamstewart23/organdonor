@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2017 at 10:08 PM
+-- Generation Time: Mar 27, 2017 at 04:41 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.4
 
@@ -92,7 +92,6 @@ CREATE TABLE `tbl_myths_facts` (
 --
 
 INSERT INTO `tbl_myths_facts` (`mf_id`, `mf_myth`, `mf_fact`, `mf_keywords`) VALUES
-(1, 'If I donate my organs, I can\'t have an open casket funeral.', 'Organ donors can have open casket funerals. Your body will be fully clothed, and not disfigured. All signs of organ donation will not be visible, so your body will look as it did before you donated.  If you donate bones, they will be replaced with a rod, and any skin donated is taken in thin layers from your back.', ''),
 (2, '\r\nMyth: If I say yes to organ donation, they will take *all* my organs. I don\'t want an empty body.', 'When you register to become an organ donor, you will be given the option to choose which organs you would like to donate. Therefore, if you are uncomfortable with donating your liver, you can opt out.', ''),
 (3, 'If I am a registered organ donor, doctors won\'t work as hard to save my life.', 'When you are treated in hospital, your life comes first. Your organ donor status is not considered by doctors until your death certificate has been signed. ', ''),
 (4, 'What if I\'m not actually dead when they sign my death certificate?', 'Although there are a lot of horror stories surrounding this topic, it is very false. Doctors will in fact perform more tests to patients who are organ donors to make sure that they are in fact dead.', ''),
@@ -117,11 +116,10 @@ CREATE TABLE `tbl_statistics` (
 --
 
 INSERT INTO `tbl_statistics` (`stat_id`, `stat_img`, `stat_text`) VALUES
-(1, 'default.jpg', 'One donor can save up to 8 lives through organ donation, and 75 more through tissue donation.'),
-(2, 'default.jpg', 'Over 1500 Ontarians, of all ages, are waiting for an organ donor.'),
-(3, 'default.jpg', 'Every three days, one person dies waiting for an organ donation.'),
-(4, 'default.jpg', '85% of Ontarians agree with organ donation, but only 31% are actually registered donors.'),
-(5, 'default.jpg', 'It only takes 2 minutes to register. This could mean a life time to someone else.');
+(1, 'Mar_26_2017_213620.svg', 'One donor can save up to 8 lives through organ donation, and 75 more through tissue donation.'),
+(2, 'Mar_26_2017_213630.svg', 'Over 1500 Ontarians, of all ages, are waiting for an organ donor.'),
+(3, 'Mar_26_2017_213639.svg', 'Every three days, one person dies waiting for an organ donation.'),
+(4, 'Mar_26_2017_213650.svg', '85% of Ontarians agree with organ donation, but only 31% are actually registered donors.');
 
 -- --------------------------------------------------------
 
@@ -136,17 +134,20 @@ CREATE TABLE `tbl_stories` (
   `story_organ` varchar(150) NOT NULL,
   `story_city` varchar(100) NOT NULL,
   `story_type` varchar(30) NOT NULL,
-  `story_text` text NOT NULL,
-  `story_link` varchar(30) NOT NULL
+  `story_text` varchar(60000) NOT NULL,
+  `story_link` varchar(30) NOT NULL,
+  `story_photo` varchar(150) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_stories`
 --
 
-INSERT INTO `tbl_stories` (`story_id`, `story_name`, `story_age`, `story_organ`, `story_city`, `story_type`, `story_text`, `story_link`) VALUES
-(1, 'Laura Lee', '', 'Heart Recipient', 'London, ON', 'text', 'Ryley was only two months old when she became quite ill. It was in the ER that her mother, Joanna, heard the words "enlarged heart." She remembers asking the doctor, "So you\'re telling me that my baby is going to die? And he said, \'No. But there\'s a good chance she\'s going to need a heart transplant.\'"\r\n\r\nJoanna and her husband were living in a hotel near the transplant centre when they received a 2:00 a.m. call that a heart was available for Ryley. By 9:30 p.m. that night, they were able to see their daughter after her transplant surgery. "She was on a breathing tube...but she was pink. And she just looked so wonderful."\r\n\r\nRyley hasn\'t looked back since her transplant. She\'s an active, loving and brave little girl. Having faced the fear of losing her own child, Joanna is so thankful to the donor family and would encourage all Ontarians to become registered organ donors.\r\n\r\n"If you needed an organ, would you take one? If you would...why wouldn\'t you share yours to save somebody else\'s life? It makes you a hero."', ''),
-(2, 'Sda', 'as', 'sa', 'sa', 'written', 'sa', 'sa');
+INSERT INTO `tbl_stories` (`story_id`, `story_name`, `story_age`, `story_organ`, `story_city`, `story_type`, `story_text`, `story_link`, `story_photo`) VALUES
+(27, 'Joanne', '8', 'Heart Recipient', 'Toronto,ON', 'written', 'Ryley was only two months old when she became quite ill. It was in the ER that her mother, Joanna, heard the words', '', 'Mar_23_2017_225200.jpeg'),
+(59, 'Debbie', '22', 'Heart Recipient', 'London, ON', 'video', '', 'youtube.com', 'Mar_26_2017_164856.jpg'),
+(29, 'Kathleen', '21', 'Double Lung Recipient', 'Toronto,ON', 'written', 'My name is Kathleen and I have Cystic Fibrosis.  I was diagnosed with CF at 4 months of age.  I am the oldest of 3 children, and share this disease with my younger brother, Clayton.', '', '1524177_10202813386075912_196358239_o.jpg'),
+(52, 'Andrea', '30', 'Heart Recipient', 'Brampton, ON', 'written', 'It started with some weird symptoms. Trouble with her peripheral vision. Trouble opening small packages. A shooting pain down her left side. Andrea knew there was something going on. "When I was wheeled into the hospital, I had a heart rate of 130 at rest. And that was the day that they diagnosed me with dilated cardiomyopathy."\r\n\r\nAndrea soon realized that only a heart transplant would bring her "real life back". Thankfully, and fortunately, she received the call.\r\n\r\nAfter the transplant, she noticed the changes right away. "The first thing that I noticed was that I had a heartbeat and it was so loudâ€¦ I knew I had a strong heart in there."\r\n\r\nThough it was a joyous time for her and her family, Andrea thinks often of her donor\'s family and their grief. "Every moment a thought goes out to them. I want to make them proud by living and taking care of what\'s been given to me."\r\nIt\'s easy to start your own registration drive. Do it as an individual or on behalf of your company or community group.\r\nRyley\'s story thumbnail\r\n\r\nMeet Ryley\r\n\r\nRyley was only two months old when she became quite ill. It was in the ER that her mother, Joanna, heard the words "enlarged heart."\r\nLearn More\r\nJustin\'s story thumbnail\r\n\r\nMeet Justin\r\n\r\nAt 10 years old the hospital determined that the strep bacterial Justin contracted had triggered an autoimmune disease,\r\nLearn More\r\nCarol\'s story thumbnail\r\n\r\nMeet Carol\r\n\r\nIt started with a bout of pneumonia that Carol thought would eventually go away. Unfortunately it didn\'t.\r\nLearn More', '', 'Mar_23_2017_140644.jpg');
 
 -- --------------------------------------------------------
 
@@ -174,9 +175,9 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_lname`, `user_username`, `user_password`, `user_email`, `user_level`, `user_status`, `user_time`, `user_attempts`, `user_locked_time`, `user_ip`) VALUES
-(1, 'Lauren', 'Koza', 'lowin', 'koza', 'lowin', 3, 'Clear', 'March 18th, 2017 5:15pm', 0, 0, '::1'),
-(2, 'Liam', 'Stewart', 'leem', 'stewie', 'stew', 1, 'Clear', 'March 16th, 2017 10:24pm', 1, 0, '::1'),
-(3, 'Jillian', 'Matthies', 'jill', 'matty', 'jill@gmail.com', 2, 'Clear', 'March 17th, 2017 7:52pm', 0, 0, '::1');
+(1, 'Lauren', 'Koza', 'lowin', 'koza', 'lowin', 3, 'Clear', 'March 26th, 2017 4:48pm', 0, 0, '::1'),
+(2, 'Liam', 'Stewart', 'leem', 'stewie', 'stew', 1, 'Clear', 'March 19th, 2017 6:11pm', 2, 1489961497, '::1'),
+(3, 'Jillian', 'Matthies', 'jill', 'matty', 'jill@gmail.com', 2, 'Clear', 'March 19th, 2017 6:14pm', 0, 0, '::1');
 
 --
 -- Indexes for dumped tables
@@ -236,17 +237,17 @@ ALTER TABLE `tbl_facebook_pic`
 -- AUTO_INCREMENT for table `tbl_myths_facts`
 --
 ALTER TABLE `tbl_myths_facts`
-  MODIFY `mf_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `mf_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `tbl_statistics`
 --
 ALTER TABLE `tbl_statistics`
-  MODIFY `stat_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `stat_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `tbl_stories`
 --
 ALTER TABLE `tbl_stories`
-  MODIFY `story_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `story_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
