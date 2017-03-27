@@ -203,7 +203,7 @@
 				$hmax = 300;
 				imageResize($fileType, $targetpath,$wmin,$hmin,$wmax,$hmax); //Send to resize file
 
-				$query = "UPDATE tbl_statistics SET stat_img = '{$image}', stat_text = '{$text}' WHERE stat_id = {$id}";
+				$query = "UPDATE tbl_statistics SET stat_img = '{$newImage}', stat_text = '{$text}' WHERE stat_id = {$id}";
 				$run = mysqli_query($link, $query);
 				
 				if($run){
@@ -217,7 +217,7 @@
 					echo "Error copying file";
 				}
 
-				$query = "INSERT INTO tbl_statistics VALUES(NULL,'{$text}','{$newImage}')";
+				$query = "UPDATE tbl_statistics SET stat_img = '{$newImage}', stat_text = '{$text}' WHERE stat_id = {$id}";
 				$run = mysqli_query($link, $query);
 
 				if($run){
@@ -236,6 +236,9 @@
 				
 				if($run){
 					redirect_to('edit_stats.php');
+				}else{
+					$error =  "There was an error accessing this information. Please contact your admin.";
+					return $error;
 				}
 			}
 		mysqli_close($link);
