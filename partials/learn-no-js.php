@@ -4,7 +4,7 @@
 <?php
 	ini_set('display_errors',1);
     error_reporting(E_ALL);
-	include('../admin/phpscripts/init.php');
+	include('admin/phpscripts/init.php');
 ?>
 
 <section id="learn">
@@ -26,7 +26,7 @@
 			</div>
 		</div>
 
-<?php include("../partials/learn-stats.php") ?>
-<?php include("../partials/learn-myths-v-facts.php") ?>
+<?php include("partials/learn-stats.php") ?>
+<?php include("partials/learn-myths-v-facts.php") ?>
 
 </section>

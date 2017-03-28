@@ -13,7 +13,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         .when("/stories", { templateUrl: "partials/stories.php", controller: "StoriesCtrl" }) //Stories Page
         .when('/story/:story_id', { //Story Page
             templateUrl: function(attrs) {
-                return 'includes/story.php?story_id=' + attrs.story_id;
+                return 'includes/see-story.php?story_id=' + attrs.story_id;
             },
             controller: "StoryCtrl"
         })
@@ -143,10 +143,7 @@ app.controller('LearnCtrl', [function() {
             $('#bannerLearn1').css({ 'height': (($(window).height())) + 'px' });
             $('#iconLearn').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconLearn').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
-            $('#icon1To8').css({ 'height': (($(window).height() / 6)) + 'px' });
-            $('#icon3Days').css({ 'height': (($(window).height() / 6)) + 'px' });
-            $('#iconPies').css({ 'height': (($(window).height() / 6)) + 'px' });
-            $('#icon2Min').css({ 'height': (($(window).height() / 6)) + 'px' });
+            $('.statsIcon').css({ 'height': (($(window).height() / 4)) + 'px' });
             $('#myths').css({ 'height': (($(window).height() / 1.5)) + 'px' });
             $('#iconMyth').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconMyth').css({ 'margin-top': (($(window).height() / 12)) + 'px' });
@@ -157,14 +154,10 @@ app.controller('LearnCtrl', [function() {
             $('#bannerLearn1').css({ 'height': (($(window).height())) + 'px' });
             $('#iconLearn').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconLearn').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
-            $('#icon1To8').css({ 'height': (($(window).height() / 6)) + 'px' });
-            $('#icon3Days').css({ 'height': (($(window).height() / 6)) + 'px' });
-            $('#iconPies').css({ 'height': (($(window).height() / 6)) + 'px' });
-            $('#icon2Min').css({ 'height': (($(window).height() / 6)) + 'px' });
+            $('.staticon').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#myths').css({ 'height': (($(window).height() / 1.5)) + 'px' });
             $('#iconMyth').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconMyth').css({ 'margin-top': (($(window).height() / 12)) + 'px' });
-
         });
 
         // Linking changes on
