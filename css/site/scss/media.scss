@@ -1,46 +1,68 @@
-@media screen and (min-width : 15.625em) {/*250px*/
-  body {font-size: 1.2em;}
-
+@media screen and (min-width: 15.625em) {
+    /*250px*/
+    body {
+        font-size: 1.2em;
+    }
 }
-@media screen and (min-width : 31.25em) {/*500px*/
-  body {font-size: 1.4em;}
-    #footerNav{
-    display: inline-block;
-    text-align: center;
-  }
 
-  #footerNav ul{
-    display: inline-block;
-    text-align: center;
-  }
-
-  #footerNav ul li a{
-    display: inline-block;
-    text-align: center;
-  }
-  .desk-footer{
-    display: inline-block!important;
-  }   
-
+@media screen and (min-width: 31.25em) {
+    /*500px*/
+    body {
+        font-size: 1.4em;
+    }
+    #footerNav {
+        display: inline-block;
+        text-align: center;
+        ul {
+            display: inline-block;
+            text-align: center;
+            li a {
+                display: inline-block;
+                text-align: center;
+            }
+        }
+    }
+    .desk-footer {
+        display: inline-block!important;
+    }
 }
-@media screen and (min-width : 46.5625em) {/*745px*/
-  body {font-size: 1.5em;}
-  #menuMobileHome {display: none;}
-  #menuMobileRegister {display: none;}
-  #menuHome {display: block;}
-  #menuRegister {display: block;}          
-  .desk-footer {display: none;}
-}
-@media screen and (min-width : 50.375em) {/*950px*/
-  body {font-size: 1.4em;}
 
-  /*FOOTER------------------------------*/
- .menuFacebook,.menuTwitter{ 
-    margin: 20px 0;
-  }
+@media screen and (min-width: 46.5625em) {
+    /*745px*/
+    body {
+        font-size: 1.5em;
+    }
+    #menuMobileHome {
+        display: none;
+    }
+    #menuMobileRegister {
+        display: none;
+    }
+    #menuHome {
+        display: block;
+    }
+    #menuRegister {
+        display: block;
+    }
 }
-@media screen and (min-width : 81.25em) {/*1300px*/
-  body {font-size: 1.7em;}    
-  .menuMobileHome {display: block;}
-  .menuMobileRegister {display: block;color:#eb1f27;} 
+
+@media screen and (min-width: 50.375em) {
+    /*950px*/
+    body {
+        font-size: 1.4em;
+    }
+}
+
+@media screen and (min-width: 81.25em) {
+    /*1300px*/
+    body {
+        font-size: 1.7em;
+    }
+    .menuMobileHome {
+        display: block;
+    }
+    .menuMobileRegister {
+        display: block;
+        color: #eb1f27;
+    }
 }

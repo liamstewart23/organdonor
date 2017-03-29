@@ -2,7 +2,7 @@
 	ini_set('display_errors',1);
     error_reporting(E_ALL);
 
-	require_once('../admin/phpscripts/init.php');
+	require_once('admin/phpscripts/init.php');
 
 	$tbl = 'tbl_stories';
 	$getStories = getAll($tbl);
@@ -24,26 +24,21 @@
 		</div>
 	</div>
 	<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1 text-center" id="storiesContainer">
-		<!-- 			<img src="img/icons/feather.svg" height="0" alt="Because a Donor" id="iconFeather">
-		<h4>Discover their Stories</h4> -->
 		<!-- Stories -->
 		<?php
 		if(!is_string($getStories)){
 			while($row = mysqli_fetch_array($getStories)){
-				echo "<div class=\"col-xs-12 col-md-4 story\">
+				echo "<div class=\"col-xs-12 col-md-12 col-md-4 story\">
 						<img src=\"img/stories/uploads/{$row['story_photo']}\" alt=\"{$row['story_name']}\">
 						<h2>{$row['story_name']}</h2>
 						<p>{$row['story_city']}</p>
 						<p>{$row['story_organ']}</p>
-						<a href=\"#stories/{$row['story_id']}\" class=\"storyLink\">More...</a><br><br>
+						<a href=\"see-story.php?id={$row['story_id']}\">More...</a><br><br>
 					</div>";
 			}
 		}
 		?>
-
-
-	</div>
-	<!-- End Stories -->
+	</div><!-- End Stories -->
 	
 	<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1 text-center" id="btnLoadStories">
 	<a href="#" class="btnBlue">load more stories</a>

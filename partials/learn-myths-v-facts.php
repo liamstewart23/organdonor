@@ -1,17 +1,7 @@
 <?php
-	ini_set('display_errors',1);
-    error_reporting(E_ALL);
-
-	require_once('../admin/phpscripts/init.php');
-
 	$tbl = 'tbl_myths_facts';
 	$getFacts = getAll($tbl);
 ?>
-
-<!-- <!doctype html> -->
-<!-- Doctype for partial html validation testing  -->
-<section id="mvf">
-	<h2 class="hidden">Because a Donor Website - Myths vs. Facts</h2>
 	<div class="row">
 		<!-- Search -->
 		<div class="col-xs-12 col-md-12 col-md-12 text-center" id="myths">
@@ -57,4 +47,3 @@
 		</div>
 		<!-- End Learn Footer -->
 	</div>
-</section>

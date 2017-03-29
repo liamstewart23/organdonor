@@ -4,9 +4,7 @@ Design: The design for the website and branding material was created by Moragh C
 
 Logo: The BecauseADonor logo was designed by Lauren Koza.
 
-Website: Frontend Angular website and backend CodeIgniter CMS developed by Lauren Koza and Liam Stewart.
-
-Project GitHub: https://github.com/liamstewart23/organdonor
+Website: Frontend AngularJS website and backend CMS developed by Lauren Koza and Liam Stewart.
 
 Roles:
 Jillian Matthies - Project Manager
@@ -19,5 +17,7 @@ www.jillianmatthies
 www.laurenkoza.com
 www.moraghcrossley.com
 www.liamstewart.ca
+
+Project GitHub: https://github.com/liamstewart23/organdonor
 
 Project Year: 2017
