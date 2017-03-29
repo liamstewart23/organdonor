@@ -19,14 +19,14 @@
 					
 					<li><a class="menuShare" id="footerShare" href="index.php?partial=share">share</a></li>
 					<li><a class="menuContact" id="footerContact" href="index.php?partial=contact">contact</a></li>
-					<li><a id="footerFacebook" href="#" target="_blank">
+					<li><a id="footerFacebook" href="https://www.facebook.com/becauseadonor/" target="_blank">
 						<i class="fa fa-facebook-square" aria-hidden="true"></i>
 					</a></li>
 					<li><a id="footerSnapChat" href="#" target="_blank">
 						<i class="fa fa-snapchat-square" aria-hidden="true"></i>
 					</a></li>
 					
-					<li><a id="footerTwitter" href="#" target="_blank">
+					<li><a id="footerTwitter" href="https://twitter.com/becauseadonor" target="_blank">
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 					</a></li>
 					

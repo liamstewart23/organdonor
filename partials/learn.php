@@ -17,12 +17,12 @@
 				<p>Surveys have found that the majority of non-donors have not
 					registered because they feel as though they aren’t informed enough.<br>
 				Let’s fix that.</p>
-				<div class="col-xs-12 col-sm-offset-0 col-md-6" id="mobileLearnBannerFix">
+<!-- 				<div class="col-xs-12 col-sm-offset-0 col-md-6" id="mobileLearnBannerFix">
 					<a href="index.php?partial=learn-stats" class="btnB1" id="btnLearnStats">statistics</a>
 				</div>
 				<div class="col-xs-12 col-sm-offset-0 col-md-6">
 					<a href="index.php?partial=learn-myths-v-facts" class="btnB2" id="btnLearnMyths">myth vs. fact</a>
-				</div>
+				</div> -->
 			</div>
 		</div>
 
