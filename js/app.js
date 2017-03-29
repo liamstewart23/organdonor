@@ -36,6 +36,7 @@ app.run(function($rootScope, $window) {
     });
 });
 
+
 // JS is enabled! Switch links for footer and nav
 var logo = document.querySelector(".navbar-brand");
 var logoFooter = document.querySelector("#logoFooter");

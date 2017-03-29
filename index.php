@@ -9,25 +9,27 @@
         <meta name="author" content="Liam Stewart, www.liamstewart.ca">
         <meta name="description" content="">
         <meta name="HandheldFriendly" content="True" />
-        <!-- <link rel="canonical" href="#" /> -->
+        <!-- <link rel="canonical" href="https://becauseadonor.ca" /> -->
         <meta property="og:title" content="Because a Donor - Organ Donation Awareness | Ontario Canada">
         <meta property="og:type" content="website">
         <meta property="og:locale" content="en_US"/>
         <!-- <meta property="og:image" content="img/social-logo.png"> -->
-       <!--  <meta property="og:url" content="#"> -->
+       <!--  <meta property="og:url" content="https://becauseadonor.ca"> -->
         <meta property="og:description" content="">
         <meta name="twitter:card" content="summary">
-        <!-- <meta name="twitter:url" content="#"> -->
+        <!-- <meta name="twitter:url" content="https://becauseadonor.ca"> -->
         <meta name="twitter:title" content="">
       <!--   <meta name="twitter:image" content="img/social-logo.png"> -->
-      <meta name="keywords" content="" />
+        <meta name="keywords" content="because a donor, donor, organ, organs, donor, donation, recipient, recipients, donations, trillium, becauseadonor, ontario, canada" />
         <meta name="rating" content="General" />
         <meta name="distribution" content="Global" />
         <meta name="revisit-after" content="7 days">
         <meta name="language" content="english">
         <meta name="googlebot" content="noodp">
         <meta name="fragment" content="!">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,700|Fjalla+One|Oswald:200" rel="stylesheet"> 
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,700|Fjalla+One|Oswald:200" rel="stylesheet"> 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/site/app.css">
@@ -38,25 +40,24 @@
         <?php include 'partials/header.php';?>
         <div ng-view class="container-fluid" id="page">
             <noscript>
-            <link rel="stylesheet" href="css/site/no-js.css"><!-- Brings in classes for when js is disabled -->
+            <link rel="stylesheet" href="css/site/no-js.css">
             <?php
-            if (isset($_GET['partial'])) {//If partial is in url
-            $partial =  $_GET['partial'];//set variable of of partial
-            // echo $_GET['partial']; // Checking for getting partial in route
-            include 'partials/'.$partial.'.php';//include
+            if (isset($_GET['partial'])) {
+            $partial =  $_GET['partial'];
+            include 'partials/'.$partial.'.php';
             }
             else {
-            include 'partials/home.php';//otherwise include
+            include 'partials/home.php';
             }?>
             </noscript>
         </div>  
         <?php include 'partials/footer.php';?>
-        <script src="js/vendor/jquery-3.1.1.min.js"></script>
+        <script src="js/vendor/jquery.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/angular.min.js"></script>
         <script src="js/vendor/angular-route.min.js"></script>
         <script src="js/vendor/TweenMax.min.js"></script>
-        <script src="js/vendor/ScrollToPlugin.min.js"></script>
         <script src="js/app.js"></script>
     </body>
+<!-- Website developed by Liam Stewart and Lauren Koza - 2017 -->
 </html>
