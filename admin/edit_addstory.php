@@ -9,7 +9,6 @@
 	$type = $_GET['type'];
 
 	if(isset($_POST['submit'])){
-		
 		$name = trim($_POST['name']);
 		$age = trim($_POST['age']);
 		$city = trim($_POST['city']);
@@ -18,14 +17,19 @@
 		$thumb = "th_{$photo}";
 		$video = "";
 		$story = "";
+		$status = $_POST['status'];
 		if($type == "written"){
 			$story = trim($_POST['story']);
-			$addStory = addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video,$type);
+			$addStory = addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
 			$message = $addStory;
 		}else if($type == "video"){
 			$video = trim($_POST['video']);
-			$addStory = addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video,$type);
+			$addStory = addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
 			$message = $addStory;
+		}
+
+		if ($message == 1){//if story was successfully added
+				redirect_to('admin_stories.php');
 		}
 	}
 ?>
@@ -56,16 +60,23 @@
 				<?php 
 					if($type == "written"){
 						echo 	"<label>Written Story:</label><br>
-								<textarea required type=\"text\" name=\"story\" value=\"";
+								<textarea required type=\"text\" name=\"story\" value=\"\";>";
 								if(!empty($story)){echo $story;}
-						echo 	"\";></textarea><br>";
+						echo 	"</textarea><br>";
 					}else if ($type == "video"){
 						echo 	"<label>Youtube Embeded Link:</label><br>
-								<input required type=\"text\" name=\"video\" value=\"";
+								<input required type=\"text\" name=\"video\" value=\"\";>";
 								if(!empty($video)){echo $video;}
-						echo 	"\";><br>";
+						echo 	"<br>";
 					}
 				?>
+
+				<label>Do you wish to post this story to the site right away?</label><br>
+				<select name="status" required ><br>
+					<option value="">Options</option><!--forces user to choose an option-->
+					<option value="pending">No, place story in pending section for review</option>
+					<option value="posted">Yes, post this story to the site</option>
+				</select>
 			</div>
 
 			<div class="addbtn">

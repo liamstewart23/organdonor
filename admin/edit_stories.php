@@ -9,17 +9,9 @@
 
 ?>
 
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Stories</title>
-<link rel="stylesheet" href="css/main.css"/>
-</head>
+<?php include("includes/header.php") ?>
 
-	<body>
 	<h1>Stories</h1>
-
 		<h2>Add a New Story</h2>
 		<a href="edit_addstory.php?type=written">Written</a>
 		<a href="edit_addstory.php?type=video">Video</a>
@@ -41,6 +33,4 @@
 			?>
 		</div>
 
-	
-	</body>
-</html>
+<?php include("includes/footer.php") ?>

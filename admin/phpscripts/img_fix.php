@@ -35,5 +35,5 @@
 			imagepng($newImg, $newCopy);
 		}
 
-		echo $newCopy;
+		//echo $newCopy;
 	}

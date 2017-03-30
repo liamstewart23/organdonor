@@ -41,7 +41,7 @@
 			</div>
 
 			<div>
-			<h2>Edit Stories</h2>
+			<h2>Myths vs Facts</h2>
 				<?php 
 					if(!is_string($getMythFacts)){
 						while($row = mysqli_fetch_array($getMythFacts)){
