@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2017 at 04:41 PM
+-- Generation Time: Mar 30, 2017 at 03:52 AM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.4
 
@@ -136,18 +136,25 @@ CREATE TABLE `tbl_stories` (
   `story_type` varchar(30) NOT NULL,
   `story_text` varchar(60000) NOT NULL,
   `story_link` varchar(30) NOT NULL,
-  `story_photo` varchar(150) NOT NULL
+  `story_photo` varchar(150) NOT NULL,
+  `story_status` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_stories`
 --
 
-INSERT INTO `tbl_stories` (`story_id`, `story_name`, `story_age`, `story_organ`, `story_city`, `story_type`, `story_text`, `story_link`, `story_photo`) VALUES
-(27, 'Joanne', '8', 'Heart Recipient', 'Toronto,ON', 'written', 'Ryley was only two months old when she became quite ill. It was in the ER that her mother, Joanna, heard the words', '', 'Mar_23_2017_225200.jpeg'),
-(59, 'Debbie', '22', 'Heart Recipient', 'London, ON', 'video', '', 'youtube.com', 'Mar_26_2017_164856.jpg'),
-(29, 'Kathleen', '21', 'Double Lung Recipient', 'Toronto,ON', 'written', 'My name is Kathleen and I have Cystic Fibrosis.  I was diagnosed with CF at 4 months of age.  I am the oldest of 3 children, and share this disease with my younger brother, Clayton.', '', '1524177_10202813386075912_196358239_o.jpg'),
-(52, 'Andrea', '30', 'Heart Recipient', 'Brampton, ON', 'written', 'It started with some weird symptoms. Trouble with her peripheral vision. Trouble opening small packages. A shooting pain down her left side. Andrea knew there was something going on. "When I was wheeled into the hospital, I had a heart rate of 130 at rest. And that was the day that they diagnosed me with dilated cardiomyopathy."\r\n\r\nAndrea soon realized that only a heart transplant would bring her "real life back". Thankfully, and fortunately, she received the call.\r\n\r\nAfter the transplant, she noticed the changes right away. "The first thing that I noticed was that I had a heartbeat and it was so loudâ€¦ I knew I had a strong heart in there."\r\n\r\nThough it was a joyous time for her and her family, Andrea thinks often of her donor\'s family and their grief. "Every moment a thought goes out to them. I want to make them proud by living and taking care of what\'s been given to me."\r\nIt\'s easy to start your own registration drive. Do it as an individual or on behalf of your company or community group.\r\nRyley\'s story thumbnail\r\n\r\nMeet Ryley\r\n\r\nRyley was only two months old when she became quite ill. It was in the ER that her mother, Joanna, heard the words "enlarged heart."\r\nLearn More\r\nJustin\'s story thumbnail\r\n\r\nMeet Justin\r\n\r\nAt 10 years old the hospital determined that the strep bacterial Justin contracted had triggered an autoimmune disease,\r\nLearn More\r\nCarol\'s story thumbnail\r\n\r\nMeet Carol\r\n\r\nIt started with a bout of pneumonia that Carol thought would eventually go away. Unfortunately it didn\'t.\r\nLearn More', '', 'Mar_23_2017_140644.jpg');
+INSERT INTO `tbl_stories` (`story_id`, `story_name`, `story_age`, `story_organ`, `story_city`, `story_type`, `story_text`, `story_link`, `story_photo`, `story_status`) VALUES
+(27, 'Joanne', '18', 'Heart Recipient', 'Toronto,ON', 'written', 'Ryley was only two months old when she became quite ill. It was in the ER that her mother, Joanna, heard the words', '', 'Mar_23_2017_225200.jpeg', 'posted'),
+(59, 'Debbie', '32', 'Heart Recipient', 'London, ON', 'video', '', 'youtube.com', 'Mar_26_2017_164856.jpg', 'pending'),
+(29, 'Kathleen', '21', 'Double Lung Recipient', 'Toronto,ON', 'written', 'My name is Kathleen and I have Cystic Fibrosis.  I was diagnosed with CF at 4 months of age.  I am the oldest of 3 children, and share this disease with my younger brother, Clayton.', '', '1524177_10202813386075912_196358239_o.jpg', 'posted'),
+(52, 'Andrea', '30', 'Heart Recipient', 'Brampton, ON', 'written', 'It started with some weird symptoms. Trouble with her peripheral vision. Trouble opening small packages. A shooting pain down her left side. Andrea knew there was something going on. "When I was wheeled into the hospital, I had a heart rate of 130 at rest. And that was the day that they diagnosed me with dilated cardiomyopathy."\r\n\r\nAndrea soon realized that only a heart transplant would bring her "real life back". Thankfully, and fortunately, she received the call.\r\n\r\nAfter the transplant, she noticed the changes right away. "The first thing that I noticed was that I had a heartbeat and it was so loudâ€¦ I knew I had a strong heart in there."\r\n\r\nThough it was a joyous time for her and her family, Andrea thinks often of her donor\'s family and their grief. "Every moment a thought goes out to them. I want to make them proud by living and taking care of what\'s been given to me."\r\nIt\'s easy to start your own registration drive. Do it as an individual or on behalf of your company or community group.\r\nRyley\'s story thumbnail\r\n\r\nMeet Ryley\r\n\r\nRyley was only two months old when she became quite ill. It was in the ER that her mother, Joanna, heard the words "enlarged heart."\r\nLearn More\r\nJustin\'s story thumbnail\r\n\r\nMeet Justin\r\n\r\nAt 10 years old the hospital determined that the strep bacterial Justin contracted had triggered an autoimmune disease,\r\nLearn More\r\nCarol\'s story thumbnail\r\n\r\nMeet Carol\r\n\r\nIt started with a bout of pneumonia that Carol thought would eventually go away. Unfortunately it didn\'t.\r\nLearn More', '', 'Mar_23_2017_140644.jpg', 'pending'),
+(60, 'dsa', 'sa', 'as', 'sa', 'written', 'sadasdad', '', 'Mar_29_2017_232954.jpg', 'pending'),
+(61, 'saAS', 'dsaA', 'sa', 'SAa', 'written', 'saS', '', 'Mar_29_2017_233734.JPG', 'pending'),
+(62, 'dasd', 'dsad', 'd', 'd', 'written', 'dsds', '', 'Mar_29_2017_234014.png', 'posted'),
+(63, 'dw', 'dw', 'dw', 'dw', 'written', 'dwdw', '', 'Mar_29_2017_234213.png', 'posted'),
+(64, 'dsa', 'dsa', 'dsa', 'sda', 'written', 'sdas', '', 'Mar_29_2017_234410.jpg', 'posted'),
+(65, 'dsa', 'ad', 's', 's', 'video', '', 'asds', 'Mar_29_2017_234613.jpg', 'posted');
 
 -- --------------------------------------------------------
 
@@ -175,7 +182,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_lname`, `user_username`, `user_password`, `user_email`, `user_level`, `user_status`, `user_time`, `user_attempts`, `user_locked_time`, `user_ip`) VALUES
-(1, 'Lauren', 'Koza', 'lowin', 'koza', 'lowin', 3, 'Clear', 'March 26th, 2017 4:48pm', 0, 0, '::1'),
+(1, 'Lauren', 'Koza', 'lowin', 'koza', 'lowin', 3, 'Clear', 'March 29th, 2017 11:29pm', 0, 0, '::1'),
 (2, 'Liam', 'Stewart', 'leem', 'stewie', 'stew', 1, 'Clear', 'March 19th, 2017 6:11pm', 2, 1489961497, '::1'),
 (3, 'Jillian', 'Matthies', 'jill', 'matty', 'jill@gmail.com', 2, 'Clear', 'March 19th, 2017 6:14pm', 0, 0, '::1');
 
@@ -247,7 +254,7 @@ ALTER TABLE `tbl_statistics`
 -- AUTO_INCREMENT for table `tbl_stories`
 --
 ALTER TABLE `tbl_stories`
-  MODIFY `story_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `story_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --

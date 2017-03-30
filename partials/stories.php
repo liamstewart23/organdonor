@@ -30,17 +30,18 @@
 		<?php
 		if(!is_string($getStories)){
 			while($row = mysqli_fetch_array($getStories)){
-				echo "<div class=\"col-xs-12 col-md-4 story\">
-						<img src=\"img/stories/uploads/{$row['story_photo']}\" alt=\"{$row['story_name']}\">
-						<h2>{$row['story_name']}</h2>
-						<p>{$row['story_city']}</p>
-						<p>{$row['story_organ']}</p>
-						<a href=\"#stories/{$row['story_id']}\" class=\"storyLink\">More...</a><br><br>
-					</div>";
+				if($row['story_status'] == "posted"){
+					echo "<div class=\"col-xs-12 col-md-4 story\">
+							<img src=\"img/stories/uploads/{$row['story_photo']}\" alt=\"{$row['story_name']}\">
+							<h2>{$row['story_name']}</h2>
+							<p>{$row['story_city']}</p>
+							<p>{$row['story_organ']}</p>
+							<a href=\"#stories/{$row['story_id']}\" class=\"storyLink\">More...</a><br><br>
+						</div>";
+				}
 			}
 		}
 		?>
-
 
 	</div>
 	<!-- End Stories -->

@@ -21,20 +21,23 @@
 		$photo = $_FILES['photo']['name'];
 		$video = "";
 		$story = "";
+		$status = $_POST['status'];
 		if($type == "written"){
 				$story = trim($_POST['story']);
-				$editStory = editStory($id,$name,$age,$city,$organ,$photo,$story,$video);
+				$editStory = editStory($id,$name,$age,$city,$organ,$photo,$story,$video,$status);
 				$message = $editStory;
+
 			}else if($type == "video"){
 				$video = trim($_POST['video']);
-				$editStory = editStory($id,$name,$age,$city,$organ,$photo,$story,$video);
+				$editStory = editStory($id,$name,$age,$city,$organ,$photo,$story,$video,$status);
 				$message = $editStory;
 			}
+		if ($message == 1){//if story was successfully added
+				redirect_to('admin_stories.php');
+		}
 	}
 
 ?>
-
-
 	<h1>Stories</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<?php echo "<form action=\"edit_editstory.php?id={$id}\" method=\"post\" enctype=\"multipart/form-data\">"?>
@@ -70,6 +73,14 @@
 						echo	"\"><br>";
 					}
 				?>
+
+				<p>Current Status: <?php echo $getStories['story_status']; ?></p>
+				<label>Do you wish to post these edits to the site right away?</label><br>
+				<select name="status" required><br>
+					<option value="">Options</option><!--forces user to choose an option-->
+					<option value="pending">No, place story in pending section for review</option>
+					<option value="posted">Yes, post edits of this story to the site</option>
+				</select>
 				
 			</div>
 

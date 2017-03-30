@@ -247,7 +247,7 @@
 
 	// ----- STORY FUNCTIONS ----- //
 
-	function addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video,$type){
+	function addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video,$type,$status){
 		include('config.php');
 		require_once('img_fix.php');
 
@@ -255,9 +255,13 @@
 		nl2br($story);
 
 		//prevent possible SQLI injection attacks
+		$name = mysqli_real_escape_string($link,$name);
+		$city = mysqli_real_escape_string($link,$city);
+		$organ = mysqli_real_escape_string($link,$organ);
 		$story = mysqli_real_escape_string($link,$story);
 		$video = mysqli_real_escape_string($link,$video); 
 		$photo = mysqli_real_escape_string($link,$photo);
+
 
 		//Set Timezone, get date for image name (M = Month, d = day, Y = year, H = hour(24), i = minute, s = second, ex. Jan_01_2017_030201)
 		date_default_timezone_set('America/Toronto');
@@ -286,23 +290,24 @@
 			$hmax = 300;
 			imageResize($fileType, $targetpath,$wmin,$hmin,$wmax,$hmax); //Send to resize file
 
-			$query = "INSERT INTO tbl_stories VALUES(NULL,'{$name}','{$age}','{$organ}','{$city}','{$type}','{$story}','{$video}','{$newImage}')";
+			$query = "INSERT INTO tbl_stories VALUES(NULL,'{$name}','{$age}','{$organ}','{$city}','{$type}','{$story}','{$video}','{$newImage}','{$status}')";
 			$run = mysqli_query($link, $query);
 
 			if($run){
-				redirect_to('edit_stories.php');
+				return $run;
+				//redirect_to('edit_stories.php');
 			}else{
 				$message = "There was an error entering this information. Please contact your admin.";
 				return $message;
 			}
 		}else{
-			$error =  "There was an error adding your image. Please try again.";
-			return $error;
+			$message =  "There was an error adding your image. Please try again.";
+			return $message;
 		}
 	mysqli_close($link);
 	}
 
-	function editStory($id,$name,$age,$city,$organ,$photo,$story,$video){
+	function editStory($id,$name,$age,$city,$organ,$photo,$story,$video,$status){
 		include('config.php');
 		require_once('img_fix.php');
 
@@ -314,9 +319,9 @@
 		$story = mysqli_real_escape_string($link,$story);
 		$video = mysqli_real_escape_string($link,$video); 
 		$photo = mysqli_real_escape_string($link,$photo);
-		echo $photo;
+		//echo $photo;
 
-		if(!empty($photo)){echo "Working";
+		if(!empty($photo)){//echo "Working";
 			//Set Timezone, get date for image name (M = Month, d = day, Y = year, H = hour(24), i = minute, s = second, ex. Jan_01_2017_030201)
 			date_default_timezone_set('America/Toronto');
 			$date = date("M_d_Y_His");
@@ -334,7 +339,7 @@
 				$targetpath = "../img/stories/uploads/{$newImage}"; //where to send & name the file
 				$moveFile = move_uploaded_file($fileName, $targetpath);
 				if (!$moveFile){
-					echo "Error copying file";
+					//echo "Error copying file";
 				}
 
 				//FILE SIZE FOR STORY AUTHOR IMAGE
@@ -344,23 +349,25 @@
 				$hmax = 300;
 				imageResize($fileType, $targetpath,$wmin,$hmin,$wmax,$hmax); //Send to resize file
 				
-				$query = "UPDATE tbl_stories SET story_name = '{$name}', story_age = '{$age}', story_organ = '{$organ}', story_city = '{$city}', story_photo = '{$newImage}', story_text = '{$story}', story_link = '{$video}' WHERE story_id = {$id}";
+				$query = "UPDATE tbl_stories SET story_name = '{$name}', story_age = '{$age}', story_organ = '{$organ}', story_city = '{$city}', story_photo = '{$newImage}', story_text = '{$story}', story_link = '{$video}', story_status = '{$status}' WHERE story_id = {$id}";
 				$run = mysqli_query($link, $query);
-				echo $query;
+				//echo $query;
 				if($run){
-					redirect_to('edit_stories.php');
+					return $run;
+					//redirect_to('edit_stories.php');
 				}else{
 					$error = "There was an error accessing this information. Please contact your admin.";
 					return $error;
 				}
 			}
 		}else if(empty($photo)){ //if photo hasn't been updated
-			$query = "UPDATE tbl_stories SET story_name = '{$name}', story_age = '{$age}', story_organ = '{$organ}', story_city = '{$city}',  story_text = '{$story}', story_link = '{$video}' WHERE story_id = {$id}";
+			$query = "UPDATE tbl_stories SET story_name = '{$name}', story_age = '{$age}', story_organ = '{$organ}', story_city = '{$city}',  story_text = '{$story}', story_link = '{$video}', story_status = '{$status}'  WHERE story_id = {$id}";
 				$run = mysqli_query($link, $query);
-				echo $query;
+				//echo $query;
 
 				if($run){
-					redirect_to('edit_stories.php');
+					return $run;
+					//redirect_to('edit_stories.php');
 				}else{
 					$error = "There was an error accessing this information. Please contact your admin.";
 					return $error;
