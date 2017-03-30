@@ -25,6 +25,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     //$locationProvider.html5Mode(true);
 }]);
 
+//fix scroll on view change
 app.run(function($rootScope, $window) {
     $rootScope.$on('$routeChangeSuccess', function() {
         var interval = setInterval(function() {
@@ -35,6 +36,13 @@ app.run(function($rootScope, $window) {
         }, 1);
     });
 });
+
+
+//Oudated browser notice
+(function(u) {
+    var s = document.createElement('script'); s.async = true; s.src = u;
+    var b = document.getElementsByTagName('script')[0]; b.parentNode.insertBefore(s, b);
+})('//updatemybrowser.org/umb.js');
 
 
 // JS is enabled! Switch links for footer and nav
@@ -101,6 +109,7 @@ app.controller('HomeCtrl', [function() {
             $('#bannerHome4').css({ 'height': (($(window).height() / 2.5)) + 'px' });
             $('#bannerHome3').css({ 'padding-top': (($(window).height() / 15)) + 'px' });
             $('#bannerHome4').css({ 'padding-top': (($(window).height() / 15)) + 'px' });
+            $('#content1').css({ 'height': (($(window).height())) + 'px' });
             $('#iconCheckmark').css({ 'height': (($(window).height() / 8)) + 'px' });
             $('#iconBook').css({ 'height': (($(window).height() / 8)) + 'px' });
             $('#iconCheckmark').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
@@ -122,8 +131,13 @@ app.controller('HomeCtrl', [function() {
         });
 
         // Linking changes
-        var btnHomeLearn = document.querySelector("#btnHomeLearn");
+        var btnHomeLearn = document.querySelector("#btnHomeLearn"),
+            btnHomeStories = document.querySelector("#btnHomeStories"),
+            btnHomeShare = document.querySelector("#btnHomeShare")
+        ;
         btnHomeLearn.href = "#/learn";
+        btnHomeStories.href = "#/stories";
+        btnHomeShare.href = "#/share";
         //End Linking changes
         footerLoad();
     });
