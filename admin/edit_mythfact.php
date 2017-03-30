@@ -1,10 +1,9 @@
 <?php
 	require_once('phpscripts/init.php');
 	confirm_logged_in();
-
+	editor_only();
 
 	if(isset($_POST['submit'])){
-		
 		$myth = trim($_POST['myth']);
 		$fact = trim($_POST['fact']);
 		$keyword = trim($_POST['keyword']);
@@ -17,23 +16,22 @@
 	//$tblurl = 'stories';
 	$col = 'mf_id';
 	$getMythFacts = getAll($tbl);
-
 ?>
-<?php include("includes/header.php") ?>
-	<h1>Stories</h1>
+
+	<h1>Myths Vs Facts</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<form action="edit_mythfact.php" method="post">
 		<h2>Add a New Myth vs Fact</h2>
 
 			<div class="upForm">
 				<label>Myth:</label><br>
-				<input type="text" name="myth"><br>
+				<input type="text" name="myth" value="<?php if(!empty($myth)){echo $myth;} ?>"><br>
 
 				<label>Fact:</label><br>
-				<input type="text" name="fact"><br>
+				<input type="text" name="fact" value="<?php if(!empty($fact)){echo $fact;} ?>"><br>
 
 				<label>Keywords:</label><br>
-				<input type="text" name="keyword"><br>
+				<input type="text" name="keyword" value="<?php if(!empty($keyword)){echo $keyword;} ?>"><br>
 			</div>
 
 			<div class="addbtn">
@@ -56,7 +54,4 @@
 					}
 				?>
 			</div>
-
 		</form>
-
-<?php include("includes/footer.php") ?>
