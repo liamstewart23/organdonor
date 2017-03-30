@@ -5,7 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="IE=edge,IE=9,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <title>Because a Donor - Organ Donation Awareness | Ontario Canada</title>
-        <!-- <link rel="icon" type="image/x-icon" href="favicon.ico" /> -->
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <meta name="author" content="Liam Stewart, www.liamstewart.ca">
         <meta name="description" content="">
         <meta name="HandheldFriendly" content="True" />
@@ -14,12 +14,12 @@
         <meta property="og:type" content="website">
         <meta property="og:locale" content="en_US"/>
         <!-- <meta property="og:image" content="img/social-logo.png"> -->
-       <!--  <meta property="og:url" content="https://becauseadonor.ca"> -->
+        <!--  <meta property="og:url" content="https://becauseadonor.ca"> -->
         <meta property="og:description" content="">
         <meta name="twitter:card" content="summary">
         <!-- <meta name="twitter:url" content="https://becauseadonor.ca"> -->
         <meta name="twitter:title" content="">
-      <!--   <meta name="twitter:image" content="img/social-logo.png"> -->
+        <!--   <meta name="twitter:image" content="img/social-logo.png"> -->
         <meta name="keywords" content="because a donor, donor, organ, organs, donor, donation, recipient, recipients, donations, trillium, becauseadonor, ontario, canada" />
         <meta name="rating" content="General" />
         <meta name="distribution" content="Global" />
@@ -27,9 +27,19 @@
         <meta name="language" content="english">
         <meta name="googlebot" content="noodp">
         <meta name="fragment" content="!">
-        <meta name="msapplication-TileColor" content="#ffffff">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="img/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="img/favicons/favicon-194x194.png" sizes="194x194">
+        <link rel="icon" type="image/png" href="img/favicons/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="img/favicons/manifest.json">
+        <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#945db7">
+        <link rel="shortcut icon" href="img/favicons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#945db7">
+        <meta name="msapplication-TileImage" content="img/favicons/mstile-144x144.png">
+        <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,700|Fjalla+One|Oswald:200" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,700|Fjalla+One|Oswald:200" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/site/app.css">
@@ -43,14 +53,14 @@
             <link rel="stylesheet" href="css/site/no-js.css">
             <?php
             if (isset($_GET['partial'])) {
-            $partial =  $_GET['partial'];
-            include 'partials/'.$partial.'.php';
+                $partial =  $_GET['partial'];
+                include 'partials/'.$partial.'.php';
             }
             else {
-            include 'partials/home.php';
+                include 'partials/home.php';
             }?>
             </noscript>
-        </div>  
+        </div>
         <?php include 'partials/footer.php';?>
         <script src="js/vendor/jquery.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
@@ -59,5 +69,5 @@
         <script src="js/vendor/TweenMax.min.js"></script>
         <script src="js/app.js"></script>
     </body>
-<!-- Website developed by Liam Stewart and Lauren Koza - 2017 -->
+    <!-- Website developed by Liam Stewart and Lauren Koza - 2017 -->
 </html>

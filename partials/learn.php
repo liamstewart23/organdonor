@@ -16,11 +16,14 @@ error_reporting(E_ALL);
 					registered because they feel as though they aren’t informed enough.<br>
 				Let’s fix that.</p>
 				<!-- 				<div class="col-xs-12 col-sm-offset-0 col-md-6" id="mobileLearnBannerFix">
-						<a href="index.php?partial=learn-stats" class="btnB1" id="btnLearnStats">statistics</a>
+					<a href="index.php?partial=learn-stats" class="btnB1" id="btnLearnStats">statistics</a>
 				</div>
 				<div class="col-xs-12 col-sm-offset-0 col-md-6">
-						<a href="index.php?partial=learn-myths-v-facts" class="btnB2" id="btnLearnMyths">myth vs. fact</a>
+					<a href="index.php?partial=learn-myths-v-facts" class="btnB2" id="btnLearnMyths">myth vs. fact</a>
 				</div> -->
+				<div class="col-xs-12 col-md-12 text-center">
+					<?php include("arrow-down.html") ?>
+				</div>
 			</div>
 		</div>
 		<?php include("../partials/learn-stats.php") ?>
@@ -29,8 +32,16 @@ error_reporting(E_ALL);
 		<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1 text-center">
 			<div class="col-xs-12 col-md-12 col-md-12" id="storiesFooter">
 				<h4><span class="red">Want to find out more about organ donation and registration?</span><br>Check out these valuable resources:</h4>
-				<div class="col-xs-12 col-md-12 col-md-4">
-					<img src="" alt="">
+				<div class="col-xs-12 col-md-10 col-md-offset-1 text-center">
+					<div class="col-xs-12 col-md-4">
+						<img src="img/learn/beadonor.jpg" alt="be a donor" class="img-responsive">
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<img src="img/learn/trillium.jpg" alt="trillium gift of life network" class="img-responsive">
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<img src="img/learn/serviceontario.jpg" alt="service ontario" class="img-responsive">
+					</div>
 				</div>
 			</div>
 		</div>
