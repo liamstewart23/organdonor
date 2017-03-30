@@ -10,9 +10,9 @@
         //sendMessage($name,$email,$company,$msg,$direct);
             if($honeypot==="") {
                 //echo "Email sent";
-                sendMessage($name,$email,$company,$msg,$direct);
+                sendMessage($name,$email,$subject,$msg,$direct);
             } else {
-                echo "Nice try, 'bot!";
+                echo "This is contact form is not for robots.";
             }
     } else {
         //echo "Don't be lazy, fill out the form";

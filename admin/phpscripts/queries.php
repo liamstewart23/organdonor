@@ -1,5 +1,6 @@
 <?php
 
+	// ----- GET ALL FROM ONE TABLE ----- //
 	function getAll($tbl) {
 		include('config.php');
 		$queryAll = "SELECT * FROM {$tbl}";
@@ -13,6 +14,7 @@
 	mysqli_close($link);
 	}
 
+	// ----- GET ONE ENTRY FROM A TABLE ----- //
 	function getTable($tbl, $col, $id){
 		include('config.php');
 		$queryTable = "SELECT * FROM {$tbl} WHERE {$col} = {$id}";
@@ -28,6 +30,7 @@
 	mysqli_close($link);
 	}
 
+	// ----- DELETE POST ----- //
 	function deletePost($tbl,$col,$id){
 		include('config.php');
 
@@ -51,6 +54,14 @@
 		}
 	mysqli_close($link);
 	}
+
+	// ----- SEND EMAIL ----- //
+	function sendMessage($name,$email,$subject,$msg,$direct) {
+		$to = "becauseadonor@gmail.com";
+		$from = "Reply-To: {$email}";
+		$body = "From: {$name}\n\nMessage: {$msg}";
+		mail($to, $subject, $body, $from);
+		redirect_to($direct);	}
 
 	// ----- MYTHS VS FACTS FUNCTIONS ----- //
 
@@ -316,7 +327,7 @@
 
 		//prevent possible SQLI injection attacks
 		$story = mysqli_real_escape_string($link,$story);
-		$video = mysqli_real_escape_string($link,$video); 
+		$video = mysqli_real_escape_string($link,$video);
 		$photo = mysqli_real_escape_string($link,$photo);
 		//echo $photo;
 
