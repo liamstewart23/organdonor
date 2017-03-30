@@ -37,8 +37,6 @@ app.run(function($rootScope, $window) {
     });
 });
 
-//contact form thankyou message
-
 
 //Oudated browser notice
 (function(u) {
@@ -250,37 +248,15 @@ app.controller('StoriesCtrl', [function() {
 app.controller('StoryCtrl', [function() {
     angular.element(document).ready(function() {
         var person = "Sarah"; // Lauren I was thinking we could use ajax to pull the first name of story for title tag.
-        document.title = person + "'s Story - " + siteTitle;
+        document.title = " Story - " + siteTitle;
 
         var story = $('#story');
         TweenMax.to(story, .5, { opacity: 1 });
 
-        $('#story').css({ 'height': (($(window).height())) + 'px' });
+        $('#story').css({ 'height': (($(window).height()*2)) + 'px' });
 
 
 
-        footerLoad();
-    });
-}]);
-//Controller for Submit Story
-app.controller('SubmitStoryCtrl', [function() {
-    angular.element(document).ready(function() {
-        document.title = "Share your Story - " + siteTitle;
-
-        var story = document.querySelector("#submitstory");
-        TweenMax.to(submitstory, 0.5, { startAt: { opacity: 0, y: 200 }, opacity: 1, y: 0 });
-
-        $(document).ready(function() {
-            //Initial Browser height for banners sizing
-            $('#submitstory').css({ 'height': (($(window).height())) + 'px' });
-            $('#submitstory form').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
-
-        });
-        $(window).resize(function() {
-            //Banner sizing adjustments based on resize
-            $('#submitstory').css({ 'height': (($(window).height())) + 'px' });
-            $('#submitstory form').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
-        });
         footerLoad();
     });
 }]);
@@ -297,8 +273,11 @@ app.controller('ShareCtrl', [function() {
             $('#bannerShare1').css({ 'height': (($(window).height())) + 'px' });
             $('#twitter').css({ 'height': (($(window).height())) + 'px' });
             $('#facebook').css({ 'height': (($(window).height())) + 'px' });
+            $('#shareStoryBanner').css({ 'height': (($(window).height()/1.5)) + 'px' });
             $('#iconShare').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconShare').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
+            $('#iconShare2').css({ 'height': (($(window).height() / 6)) + 'px' });
+            $('#iconShare2').css({ 'margin-top': (($(window).height() / 12)) + 'px' });
             $('#twitter h4').css({ 'margin-top': (($(window).height() / 6)) + 'px' });
             $('#facebook h4').css({ 'margin-top': (($(window).height() / 6)) + 'px' });
         });

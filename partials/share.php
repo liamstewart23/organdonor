@@ -63,7 +63,7 @@
 					donor. Join me!
 				#becauseadonor”</p>
 				<div class="col-xs-12 col-md-12">
-					<a href="#" class="btnB1" id="btnShareStory">Tweet it!</a>
+					<a href="https://twitter.com" target="_blank" class="btnB1">Tweet it!</a>
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-12">
@@ -75,53 +75,66 @@
 		<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1">
 			<h4>Show Your Support</h4>
 			<p>Start a movement with your community.<br>Use our generator to use our profile photo filter below!</p>
+			<div class="fbPP text-center">
+				<div class="col-xs-12 col-md-12">
+					<a href="https://www.isupportcause.com/campaign/because-a-donor" target="_blank"><img src="img/share/filters/profile_filter_Im-a-donor.png" alt="because a donor profile filters" class="img-responsive fbPPExample"></a><br>
+					<a href="https://www.isupportcause.com/campaign/because-a-donor" target="_blank" class="btnB2" id="btnFBPP">Login with Facebook</a>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="col-xs-12 text-center" id="shareStory">
+	<div class="col-xs-12 col-sm-offset-0 col-md-12 banner" id="shareStoryBanner">
+		<div class="col-xs-12 col-sm-offset-0 col-md-6 col-md-offset-3 text-center">
+			<img src="img/icons/speech.svg" height="0" alt="Because a Donor" id="iconShare2">
+			<h3 class="bannerHeading">Tell Us Your Story</h3>
+			<p>Help inspire Canadians become organ donors by sharing your story. To help you out, we’ve outlined some talking points to make sure you’re story is as effective as possible.</p>
+		</div>
+	</div>
+	<!-- <div class="col-xs-12 text-center" id="shareStory">
 		<h4>Share Your Story</h4>
 		<p></p>
 		<div id="written-form">
-			<?php if(!empty($message)){echo $message;} ?>
-			<?php echo "<form action=\"#/share\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
+			<?php //if(!empty($message)){echo $message;} ?>
+			<?php //echo "<form action=\"#/share\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
 				<h2>Written Story</h2>
 				<div class="upForm">
 					<label>Name:</label><br>
-					<input required type="text" name="name" value="<?php if(!empty($name)){echo $name;} ?>"><br>
+					<input required type="text" name="name" value="<?php //if(!empty($name)){echo $name;} ?>"><br>
 					<label>City:</label><br>
-					<input required type="text" name="city" value="<?php if(!empty($city)){echo $city;} ?>"><br>
+					<input required type="text" name="city" value="<?php //if(!empty($city)){echo $city;} ?>"><br>
 					<label>Organ:</label><br>
-					<input required type="text" name="organ" value="<?php if(!empty($organ)){echo $organ;} ?>"><br>
+					<input required type="text" name="organ" value="<?php //if(!empty($organ)){echo $organ;} ?>"><br>
 					<label>Photo:</label><br>
-					<input required type="file" name="photo" value="<?php if(!empty($photo)){echo $photo;} ?>"><br>
+					<input required type="file" name="photo" value="<?php //if(!empty($photo)){echo $photo;} ?>"><br>
 					<label>Written Story:</label><br>
-					<textarea required type="text" name="story" value=""><?php if(!empty($story)){echo $story;} ?></textarea><br>
+					<textarea required type="text" name="story" value=""><?php //if(!empty($story)){echo $story;} ?></textarea><br>
 				</div>
 				<div class="submit-btn">
 					<input type="submit" name="submitWritten" value="Add Story">
 				</div>
 			</form>
-			</div><!--end Written Story Form-->
-			<div id="video-form">
-				<?php if(!empty($message)){echo $message;} ?>
-				<?php echo "<form action=\"/#/share.php\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
+			</div>
+			 <div id="video-form">
+				<?php //if(!empty($message)){echo $message;} ?>
+				<?php //echo "<form action=\"/#/share.php\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
 					<h2>Video Story</h2>
 					<div class="upForm">
 						<label>Name:</label><br>
-						<input required type="text" name="name" value="<?php if(!empty($name)){echo $name;} ?>"><br>
+						<input required type="text" name="name" value="<?php //if(!empty($name)){echo $name;} ?>"><br>
 						
 						<label>City:</label><br>
-						<input required type="text" name="city" value="<?php if(!empty($city)){echo $city;} ?>"><br>
+						<input required type="text" name="city" value="<?php //if(!empty($city)){echo $city;} ?>"><br>
 						<label>Organ:</label><br>
-						<input required type="text" name="organ" value="<?php if(!empty($organ)){echo $organ;} ?>"><br>
+						<input required type="text" name="organ" value="<?php //if(!empty($organ)){echo $organ;} ?>"><br>
 						<label>Photo:</label><br>
-						<input required type="file" name="photo" value="<?php if(!empty($photo)){echo $photo;} ?>"><br>
+						<input required type="file" name="photo" value="<?php //if(!empty($photo)){echo $photo;} ?>"><br>
 						<label>Youtube Embeded Link:</label><br>
-						<input required type="text" name="video" value="<?php if(!empty($video)){echo $video;} ?>"><br>
+						<input required type="text" name="video" value="<?php //if(!empty($video)){echo $video;} ?>"><br>
 					</div>
 					<div class="submit-btn">
 						<input type="submit" name="submitVideo" value="Add Story">
 					</div>
 				</form>
-				</div><!--end Video Story Form-->
+				</div>
 			</div>
 		</section>
