@@ -57,7 +57,7 @@
 	function learnSearch($tbl, $col1, $col2, $col3){
 		include('config.php');
 
-		$query = "SELECT * FROM {$tbl} WHERE {$col1}, {$col2}, {$col3}"
+		$query = "SELECT * FROM {$tbl} WHERE {$col1}, {$col2}, {$col3}";
 	}
 
 
