@@ -18,7 +18,14 @@
 	function admin_only() { //only admins (admin & super admin) allowed on this page
 		
 		if($_SESSION['users_level'] == 1){
-			redirect_to('editor_index.php');
+			redirect_to('admin_index.php');
+		}
+	}
+
+	function superadmin_only() { //only admins (admin & super admin) allowed on this page
+		
+		if($_SESSION['users_level'] == 1 || $_SESSION['users_level'] == 2){
+			redirect_to('admin_index.php');
 		}
 	}
 
