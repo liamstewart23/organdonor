@@ -2,8 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome Company Name</title>
+<title>Because a Donor - Admin</title>
 <link rel="stylesheet" href="css/main.css"/>
 </head>
 
 <body>
+
