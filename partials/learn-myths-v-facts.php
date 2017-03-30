@@ -1,6 +1,17 @@
 <?php
 	$tbl = 'tbl_myths_facts';
 	$getFacts = getAll($tbl);
+
+	if(isset($POST)){
+		$tbl = 'tbl_myths_facts';
+		$col1 = 'mf_myth';
+		$col2 = 'mf_fact';
+		$col3 = 'mf_keywords';
+
+		$searchResult = learnSearch($tbl, $col1, $col2, $col3);
+
+	}
+
 ?>
 <div class="row">
 	<!-- Search -->
@@ -11,12 +22,14 @@
 			
 			<div id="myth-vs-fact-search">
 				<div class="input-group col-md-12">
-					<input type="text" class="form-control input-lg" placeholder="eg. 'funeral', 'age', etc." />
-					<span class="input-group-btn">
-						<button class="btn btn-info btn-lg" type="button">
-						<i class="fa fa-search" aria-hidden="true"></i>
-						</button>
-					</span>
+					<!--<form action="#/learn" method="post">-->
+						<input type="text" name="filter" class="form-control input-lg" placeholder="eg. 'funeral', 'age', etc." />
+						<span class="input-group-btn">
+							<button id="searchbtn" class="btn btn-info btn-lg" type="submit" name="submit">
+							<i class="fa fa-search" aria-hidden="true"></i>
+							</button>
+						</span>
+					<!--</form>-->
 				</div>
 			</div>
 		</div>

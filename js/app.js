@@ -171,6 +171,39 @@ app.controller('LearnCtrl', [function() {
             $('#iconMyth').css({ 'margin-top': (($(window).height() / 12)) + 'px' });
         });
 
+            // AJAX FOR SEARCH FUNCTION MYTHS VS FACTS
+            var searchbtn = document.querySelector('#searchbtn');
+
+
+            function makeRequest(url,e){
+                console.log('clicked');
+                httpRequest = new XMLHttpRequest();
+
+                if(!httpRequest){ // Checking to make sure the browser isn't too old    
+                    alert('Sorry, your browser is too old to access this content.');
+                    return false; // This exits out of a function, will execute the next line after function is closed
+                }
+
+                httpRequest.onreadystatechange = searchResults;               
+                httpRequest.open('GET', 'includes/search-query.php?search='+this.id); //Passing in a url through a get protocol
+                httpRequest.send();
+            }
+
+            function searchResults(url,e){
+                if(httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200){
+                    var sResult = JSON.parse(httpRequest.responseText);
+
+                    
+                    //bigPhoto.src = "images/gallery/"+picData.gallery_name;              
+                    //bigCreds.innerHTML = picData.gallery_att;
+                    //bigDesc.innerHTML = picData.gallery_desc;
+                }
+            }
+
+            searchbtn.addEventListener('click', makeRequest, false);
+
+
+
         footerLoad();
     });
 }]);
