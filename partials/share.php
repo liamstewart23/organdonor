@@ -3,7 +3,6 @@
 
 	if(isset($_POST['submitWritten'])){
 		$name = trim($_POST['name']);
-		$age = trim($_POST['age']);
 		$city = trim($_POST['city']);
 		$organ = trim($_POST['organ']);
 		$photo = $_FILES['photo']['name'];
@@ -12,7 +11,7 @@
 		$story = trim($_POST['story']);
 		$type = "written";
 		$status = "pending";
-		$addStory = addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
+		$addStory = addStory($name,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
 		$message = $addStory;
 
 		if ($message == 1){//if story was successfully added
@@ -21,7 +20,6 @@
 	}
 	if(isset($_POST['submitVideo'])){
 		$name = trim($_POST['name']);
-		$age = trim($_POST['age']);
 		$city = trim($_POST['city']);
 		$organ = trim($_POST['organ']);
 		$photo = $_FILES['photo']['name'];
@@ -30,7 +28,7 @@
 		$story = "";
 		$type = "video";
 		$status = "pending";
-		$addStory = addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
+		$addStory = addStory($name,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
 		$message = $addStory;
 
 		if ($message == 1){//if story was successfully added
@@ -80,9 +78,6 @@
 					<label>Name:</label><br>
 					<input required type="text" name="name" value="<?php if(!empty($name)){echo $name;} ?>"><br>
 
-					<label>Age:</label><br>
-					<input required type="text" name="age" value="<?php if(!empty($age)){echo $age;} ?>"><br>
-
 					<label>City:</label><br>
 					<input required type="text" name="city" value="<?php if(!empty($city)){echo $city;} ?>"><br>
 
@@ -109,10 +104,7 @@
 				<div class="upForm">
 					<label>Name:</label><br>
 					<input required type="text" name="name" value="<?php if(!empty($name)){echo $name;} ?>"><br>
-
-					<label>Age:</label><br>
-					<input required type="text" name="age" value="<?php if(!empty($age)){echo $age;} ?>"><br>
-
+					
 					<label>City:</label><br>
 					<input required type="text" name="city" value="<?php if(!empty($city)){echo $city;} ?>"><br>
 
