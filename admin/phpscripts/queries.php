@@ -247,7 +247,7 @@
 
 	// ----- STORY FUNCTIONS ----- //
 
-	function addStory($name,$age,$city,$organ,$photo,$thumb,$story,$video,$type,$status){
+	function addStory($name,$city,$organ,$photo,$thumb,$story,$video,$type,$status){
 		include('config.php');
 		require_once('img_fix.php');
 
@@ -290,7 +290,7 @@
 			$hmax = 300;
 			imageResize($fileType, $targetpath,$wmin,$hmin,$wmax,$hmax); //Send to resize file
 
-			$query = "INSERT INTO tbl_stories VALUES(NULL,'{$name}','{$age}','{$organ}','{$city}','{$type}','{$story}','{$video}','{$newImage}','{$status}')";
+			$query = "INSERT INTO tbl_stories VALUES(NULL,'{$name}','{$organ}','{$city}','{$type}','{$story}','{$video}','{$newImage}','{$status}')";
 			$run = mysqli_query($link, $query);
 
 			if($run){
@@ -307,7 +307,7 @@
 	mysqli_close($link);
 	}
 
-	function editStory($id,$name,$age,$city,$organ,$photo,$story,$video,$status){
+	function editStory($id,$name,$city,$organ,$photo,$story,$video,$status){
 		include('config.php');
 		require_once('img_fix.php');
 
@@ -349,7 +349,7 @@
 				$hmax = 300;
 				imageResize($fileType, $targetpath,$wmin,$hmin,$wmax,$hmax); //Send to resize file
 				
-				$query = "UPDATE tbl_stories SET story_name = '{$name}', story_age = '{$age}', story_organ = '{$organ}', story_city = '{$city}', story_photo = '{$newImage}', story_text = '{$story}', story_link = '{$video}', story_status = '{$status}' WHERE story_id = {$id}";
+				$query = "UPDATE tbl_stories SET story_name = '{$name}', story_organ = '{$organ}', story_city = '{$city}', story_photo = '{$newImage}', story_text = '{$story}', story_link = '{$video}', story_status = '{$status}' WHERE story_id = {$id}";
 				$run = mysqli_query($link, $query);
 				//echo $query;
 				if($run){
@@ -361,7 +361,7 @@
 				}
 			}
 		}else if(empty($photo)){ //if photo hasn't been updated
-			$query = "UPDATE tbl_stories SET story_name = '{$name}', story_age = '{$age}', story_organ = '{$organ}', story_city = '{$city}',  story_text = '{$story}', story_link = '{$video}', story_status = '{$status}'  WHERE story_id = {$id}";
+			$query = "UPDATE tbl_stories SET story_name = '{$name}', story_organ = '{$organ}', story_city = '{$city}',  story_text = '{$story}', story_link = '{$video}', story_status = '{$status}'  WHERE story_id = {$id}";
 				$run = mysqli_query($link, $query);
 				//echo $query;
 
