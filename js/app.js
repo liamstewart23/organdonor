@@ -171,8 +171,11 @@ app.controller('LearnCtrl', [function() {
             $('#iconMyth').css({ 'margin-top': (($(window).height() / 12)) + 'px' });
         });
 
+        //-- add function to output json of all results from tbl_myths_facts
+
             // AJAX FOR SEARCH FUNCTION MYTHS VS FACTS
             var searchbtn = document.querySelector('#searchbtn');
+            var searchtext = document.querySelector('#searchtext');
 
 
             function makeRequest(url,e){
@@ -185,22 +188,19 @@ app.controller('LearnCtrl', [function() {
                 }
 
                 httpRequest.onreadystatechange = searchResults;               
-                httpRequest.open('GET', 'includes/search-query.php?search='+this.id); //Passing in a url through a get protocol
+                httpRequest.open('GET', 'includes/search-query.php?search='+searchtext); //Passing in a url through a get protocol
                 httpRequest.send();
             }
 
             function searchResults(url,e){
                 if(httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200){
                     var sResult = JSON.parse(httpRequest.responseText);
+                    //json output object array here for search results
 
-                    
-                    //bigPhoto.src = "images/gallery/"+picData.gallery_name;              
-                    //bigCreds.innerHTML = picData.gallery_att;
-                    //bigDesc.innerHTML = picData.gallery_desc;
                 }
             }
 
-            searchbtn.addEventListener('click', makeRequest, false);
+            searchbtn.addEventListener('click', makeRequest, false); //start ajax search on search click
 
 
 
