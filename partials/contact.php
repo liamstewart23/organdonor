@@ -1,20 +1,45 @@
+<?php if(isset($_POST['name'])) {
+        //echo "Thanks, {$_POST['name']}";
+        
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $subject = $_POST['subject'];
+        $msg = $_POST['message'];
+        $honeypot = $_POST['phone'];
+        $direct = "thankyou.php";
+        //sendMessage($name,$email,$company,$msg,$direct);
+            if($honeypot==="") {
+                //echo "Email sent";
+                sendMessage($name,$email,$company,$msg,$direct);
+            } else {
+                echo "Nice try, 'bot!";
+            }
+    } else {
+        //echo "Don't be lazy, fill out the form";
+    }
+?>
 <!-- <!doctype html> --> 
 <!-- Doctype for partial html validation testing  -->
+
 <section id="contact">
     <h2 class="hidden">Because a Donor Website - Contact Us</h2>
     <div class="row">
         <div class="col-xs-12 col-sm-offset-0 col-md-6 col-md-offset-3">
-            <form>
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <h3>Contact Us</h3>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" placeholder="John..." required="required" />
+                            <input type="text" class="form-control" id="name" name="name" placeholder="John..." required="required" />
+                        </div>
+                        <div class="hidden">
+                            <label for="name">Phone:</label>
+                            <input type="phone" name="phone" placeholder="519..." />
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" placeholder="name@website.com" required="required" /></div>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="name@website.com" required="required" /></div>
                             <div class="form-group">
                                 <!-- <label for="subject">I'm contacting regarding:</label> -->
                                 <select id="subject" name="subject" class="form-control" required="required">
