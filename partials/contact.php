@@ -34,7 +34,7 @@
                                 placeholder="I'd like to edit some content on my story."></textarea>
                             </div>
                         </div>
-                        <div class="col-md-4 col-md-offset-8">
+                        <div class="col-md-5 col-md-offset-7">
                             <button type="submit" class="btnB3" id="btnContactUs">
                             Send Message</button>
                         </div>

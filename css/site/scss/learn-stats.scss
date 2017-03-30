@@ -8,17 +8,20 @@
 .stat-item {
     background-color: $white;
     color: $white;
-    padding:20px;
+    padding:25px;
     min-height: 250px;
     margin-bottom:100px;
     min-height: 250px;
     background-color: $purple;
-      display: flex;
+    display: flex;
   justify-content: center;
   flex-direction: column;
     .statsIcon {
         background-color: transparent;
         height: 0;
+            display: flex;
+  justify-content: center;
+  flex-direction: column;
     }
     p {
         font-weight: 200;

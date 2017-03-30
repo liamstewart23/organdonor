@@ -1,12 +1,10 @@
 <!-- <!doctype html> -->
 <!-- Doctype for partial html validation testing  -->
-
 <?php
 	ini_set('display_errors',1);
-    error_reporting(E_ALL);
+error_reporting(E_ALL);
 	include('../admin/phpscripts/init.php');
 ?>
-
 <section id="learn">
 	<h2 class="hidden">Because a Donor Website - Learn about organ donation</h2>
 	<div class="row">
@@ -17,16 +15,24 @@
 				<p>Surveys have found that the majority of non-donors have not
 					registered because they feel as though they aren’t informed enough.<br>
 				Let’s fix that.</p>
-<!-- 				<div class="col-xs-12 col-sm-offset-0 col-md-6" id="mobileLearnBannerFix">
-					<a href="index.php?partial=learn-stats" class="btnB1" id="btnLearnStats">statistics</a>
+				<!-- 				<div class="col-xs-12 col-sm-offset-0 col-md-6" id="mobileLearnBannerFix">
+						<a href="index.php?partial=learn-stats" class="btnB1" id="btnLearnStats">statistics</a>
 				</div>
 				<div class="col-xs-12 col-sm-offset-0 col-md-6">
-					<a href="index.php?partial=learn-myths-v-facts" class="btnB2" id="btnLearnMyths">myth vs. fact</a>
+						<a href="index.php?partial=learn-myths-v-facts" class="btnB2" id="btnLearnMyths">myth vs. fact</a>
 				</div> -->
 			</div>
 		</div>
-
-<?php include("../partials/learn-stats.php") ?>
-<?php include("../partials/learn-myths-v-facts.php") ?>
-
-</section>
+		<?php include("../partials/learn-stats.php") ?>
+		<?php include("../partials/learn-myths-v-facts.php") ?>
+		<!-- Learn Footer -->
+		<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1 text-center">
+			<div class="col-xs-12 col-md-12 col-md-12" id="storiesFooter">
+				<h4><span class="red">Want to find out more about organ donation and registration?</span><br>Check out these valuable resources:</h4>
+				<div class="col-xs-12 col-md-12 col-md-4">
+					<img src="" alt="">
+				</div>
+			</div>
+		</div>
+		<!-- End Learn Footer -->
+	</section>

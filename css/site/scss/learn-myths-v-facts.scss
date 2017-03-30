@@ -7,6 +7,27 @@
     color: $white;
 }
 
+.myth-fact {
+    padding: 25px 0px 25px 0px;
+    h3 {
+    font-size:1.1em;
+    }
+    p {
+        font-size:.85em;
+    }
+    .green {
+        color: $green;
+    }
+}
+
+.myth-fact-bg {
+    background-color: $white;
+}
+
+.myth-fact-bg-offset {
+    background-color: $myth-fact-offset;
+}
+
 #myth-vs-fact-search {
     padding: 3px;
     border: solid 1px #E4E4E4;
