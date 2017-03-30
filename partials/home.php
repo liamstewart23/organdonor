@@ -39,10 +39,10 @@
 		</div>
 	</div>
 	<div class="col-xs-12 col-sm-offset-0 col-md-6 text-center homeBannerText" id="bannerHome4">
-		<h3>See What is Possible</h3>
-		<p>See the changes you can make by registering as an organ donor.</p>
+		<h3>Share the Message</h3>
+		<p>Help us show others why they should register as an organ donor</p>
 		<div class="subBannerBtn">
-			<a href="index.php?partial=share" class="btnB4" id="btnHomeShare">discover stories</a>
+			<a href="index.php?partial=share" class="btnB4" id="btnHomeShare">raise awareness</a>
 		</div>
 	</div>
 </div>
