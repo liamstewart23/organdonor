@@ -22,16 +22,8 @@
 ?>
 
 
-<!doctype html>
+<?php include('includes/header.php'); ?>
 
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Welcome Company Name</title>
-<link rel="stylesheet" href="css/main.css"/>
-</head>
-
-	<body>
 	<h1>Create User Account</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<form action="admin_createuser.php" method="post">

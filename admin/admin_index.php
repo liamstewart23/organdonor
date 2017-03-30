@@ -12,16 +12,7 @@
 ?>
 
 
-<!doctype html>
-
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Welcome to Paddy's Secret Admin</title>
-<link rel="stylesheet" href="css/main.css"/>
-</head>
-
-	<body>
+<?php include('includes/header.php'); ?>
 		<nav>
 			<div>
 				<a href="phpscripts/caller.php?caller_id=logout">Sign Out</a>

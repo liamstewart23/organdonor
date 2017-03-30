@@ -23,15 +23,8 @@
 		$message = $result;
 	}
 ?>
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Welcome Company Name</title>
-<link rel="stylesheet" href="css/main.css"/>
-</head>
+<?php include('includes/header.php'); ?>
 
-	<body>
 	<h1>Edit User Account</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<form action="admin_edituser.php?id=<?php echo $popForm['user_id']; ?>" method="post">

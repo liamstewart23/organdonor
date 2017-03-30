@@ -22,16 +22,8 @@
 ?>
 
 
-<!doctype html>
+<?php include('includes/header.php'); ?>
 
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Welcome Company Name</title>
-<link rel="stylesheet" href="css/main.css"/>
-</head>
-
-	<body>
 	<h1>Setup Account Password</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<form action="admin_setupaccount.php" method="post">
