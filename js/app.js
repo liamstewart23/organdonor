@@ -37,6 +37,8 @@ app.run(function($rootScope, $window) {
     });
 });
 
+//contact form thankyou message
+
 
 //Oudated browser notice
 (function(u) {
