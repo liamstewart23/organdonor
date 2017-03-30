@@ -45,7 +45,7 @@
 				<p>Have you or a loved one had an experience with organ donation?<br>Want us to share your story? Click the button bellow to find our how to share your video or written story to help raise awareness.</p>
 				
 				<!-- 				<div class="col-xs-12 col-sm-offset-0 col-md-12">
-						<a href="#" class="btnB1" id="btnShareStory">share your story</a>
+					<a href="#" class="btnB1" id="btnShareStory">share your story</a>
 				</div> -->
 				<div class="col-xs-12 col-md-12 text-center">
 					<?php include("arrow-down.html") ?>
@@ -58,6 +58,17 @@
 		<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1">
 			<h4>Spread the Word</h4>
 			<p>Join our Twitter community with our hashtag <a class="red" href="https://twitter.com/search?q=%40becauseadonor&src=typd" target="_blank">#becauseadonor</a>. Help to spread awareness by sharing your story, or use one of our tweets below!</p>
+			<div class="premadeTweets">
+				<p>“Today I became an organ
+					donor. Join me!
+				#becauseadonor”</p>
+				<div class="col-xs-12 col-md-12">
+					<a href="#" class="btnB1" id="btnShareStory">Tweet it!</a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-12">
+				<i class="fa fa-twtitter fa-5x" aria-hidden="true"></i>
+			</div>
 		</div>
 	</div>
 	<div class="col-xs-12 col-md-12 col-md-6 text-center" id="facebook">

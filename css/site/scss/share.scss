@@ -18,4 +18,25 @@
         #facebook {
         	background-color: $shareRightSide;
         }
+        .premadeTweets {
+            background-color: $purple;
+            color: $white;
+            padding: 50px 50px 50px 50px;
+            border: 2px solid $purple;
+            display: flex;
+            align-content: center !important;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 50px;
+            -webkit-border-radius:50px;
+            -moz-border-radius:50px;
+            -ms-border-radius:50px;
+            margin-top: 50px;
+            min-height: 250px;
+            p {
+                font-weight: 200;
+                font-size: 1em;
+                margin-bottom: 20px;
+            }
+        }
 }
