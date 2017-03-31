@@ -196,6 +196,13 @@ li {
  -webkit-font-smoothing: antialiased;
 }
 
+.bounceArrow {
+    margin-top: -50px;
+    i {
+        color:$white;
+    }
+}
+
 .bounce {
  position: absolute;
  bottom: 0px;
