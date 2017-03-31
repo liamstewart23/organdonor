@@ -4,7 +4,7 @@
 	<h2 class="hidden">Because a Donor Website</h2>
 	<div class="row">
 		<div class="col-xs-12 col-md-12"></div>
-		<div class="col-xs-12 col-sm-offset-0 col-md-6 text-center" id="bannerHome1">
+		<div class="col-xs-12 col-md-6 text-center" id="bannerHome1">
 			<img src="img/icons/checkmark.svg" height="0" alt="Because a Donor" id="iconCheckmark">
 			<h3 class="bannerHeading">Become a Donor</h3>
 			<a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" target="_blank" class="btnB1" id="btnRegister">Register now</a>
@@ -16,7 +16,7 @@
 				<a href="index.php?partial=learn" class="btnB2" id="btnHomeLearn">learn more</a>
 			</div>
 		</div>
-		<div class="col-xs-12 col-md-12 text-center">
+		<div class="col-xs-12 col-md-12 text-center" id="homeArrow">
 			<?php include("arrow-down.html") ?>
 		</div>
 	</div>
@@ -31,14 +31,14 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-xs-12 col-sm-offset-0 col-md-6 text-center homeBannerText" id="bannerHome3">
+	<div class="col-xs-12 col-md-6 text-center homeBannerText" id="bannerHome3">
 		<h3>See What is Possible</h3>
 		<p>See the changes you can make by registering as an organ donor.</p>
 		<div class="subBannerBtn">
 			<a href="index.php?partial=stories" class="btnB4" id="btnHomeStories">discover stories</a>
 		</div>
 	</div>
-	<div class="col-xs-12 col-sm-offset-0 col-md-6 text-center homeBannerText" id="bannerHome4">
+	<div class="col-xs-12 col-md-6 text-center homeBannerText" id="bannerHome4">
 		<h3>Share the Message</h3>
 		<p>Help us show others why they should register as an organ donor</p>
 		<div class="subBannerBtn">

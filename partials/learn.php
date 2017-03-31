@@ -8,8 +8,8 @@ error_reporting(E_ALL);
 <section id="learn">
 	<h2 class="hidden">Because a Donor Website - Learn about organ donation</h2>
 	<div class="row">
-		<div class="col-xs-12 col-sm-offset-0 col-md-12 banner" id="bannerLearn1">
-			<div class="col-xs-12 col-sm-offset-0 col-md-6 col-md-offset-3 text-center">
+		<div class="col-xs-12 col-md-12 banner" id="bannerLearn1">
+			<div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
 				<img src="img/icons/lightbulb.svg" height="0" alt="Because a Donor" id="iconLearn">
 				<h3 class="bannerHeading">Get the Facts</h3>
 				<p>Surveys have found that the majority of non-donors have not
@@ -34,13 +34,13 @@ error_reporting(E_ALL);
 				<h4><span class="red">Want to find out more about organ donation and registration?</span><br>Check out these valuable resources:</h4>
 				<div class="col-xs-12 col-md-10 col-md-offset-1 text-center">
 					<div class="col-xs-12 col-md-4">
-						<img src="img/learn/beadonor.jpg" alt="be a donor" class="img-responsive">
+						<a href="https://beadonor.ca/" target="_blank"><img src="img/learn/beadonor.jpg" alt="be a donor" class="img-responsive"></a>
 					</div>
 					<div class="col-xs-12 col-md-4">
-						<img src="img/learn/trillium.jpg" alt="trillium gift of life network" class="img-responsive">
+						<a href="https://www.giftoflife.on.ca/" target="_blank"><img src="img/learn/trillium.jpg" alt="trillium gift of life network" class="img-responsive"></a>
 					</div>
 					<div class="col-xs-12 col-md-4">
-						<img src="img/learn/serviceontario.jpg" alt="service ontario" class="img-responsive">
+						<a href="https://www.services.gov.on.ca/sf/" target="_blank"><img src="img/learn/serviceontario.jpg" alt="service ontario" class="img-responsive"></a>
 					</div>
 				</div>
 			</div>

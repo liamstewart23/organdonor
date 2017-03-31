@@ -3,7 +3,7 @@ console.log("BecauseADonor JS started!")
 
 var app = angular.module('BecauseADonor', ['ngRoute']); //declare app + import ngRoute
 var siteTitle = "Because a Donor - Organ Donation Awareness | Ontario Canada"; //Site Title
-var once = 0; //run menu + logo animation once on homepage
+var once = 0; //run header animation once
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) { //Config routes
     $routeProvider
         .when("/", { templateUrl: "partials/home.php", controller: "HomeCtrl" }) //Home Page
@@ -37,11 +37,13 @@ app.run(function($rootScope, $window) {
     });
 });
 
-
 //Oudated browser notice
 (function(u) {
-    var s = document.createElement('script'); s.async = true; s.src = u;
-    var b = document.getElementsByTagName('script')[0]; b.parentNode.insertBefore(s, b);
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = u;
+    var b = document.getElementsByTagName('script')[0];
+    b.parentNode.insertBefore(s, b);
 })('//updatemybrowser.org/umb.js');
 
 
@@ -87,6 +89,7 @@ var navbar = document.querySelector('.navbar');
 if (once === 0) { // nav and footer animation once
     TweenMax.to(navbar, .5, { opacity: 1 });
     once++;
+    footerLoad();
 }
 
 function footerLoad() {
@@ -123,6 +126,7 @@ app.controller('HomeCtrl', [function() {
             $('#bannerHome4').css({ 'height': (($(window).height() / 2.5)) + 'px' });
             $('#bannerHome3').css({ 'padding-top': (($(window).height() / 15)) + 'px' });
             $('#bannerHome4').css({ 'padding-top': (($(window).height() / 15)) + 'px' });
+            $('#content1').css({ 'height': (($(window).height())) + 'px' });
             $('#iconCheckmark').css({ 'height': (($(window).height() / 8)) + 'px' });
             $('#iconBook').css({ 'height': (($(window).height() / 8)) + 'px' });
             $('#iconCheckmark').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
@@ -133,8 +137,7 @@ app.controller('HomeCtrl', [function() {
         // Linking changes
         var btnHomeLearn = document.querySelector("#btnHomeLearn"),
             btnHomeStories = document.querySelector("#btnHomeStories"),
-            btnHomeShare = document.querySelector("#btnHomeShare")
-        ;
+            btnHomeShare = document.querySelector("#btnHomeShare");
         btnHomeLearn.href = "#/learn";
         btnHomeStories.href = "#/stories";
         btnHomeShare.href = "#/share";
@@ -173,34 +176,34 @@ app.controller('LearnCtrl', [function() {
 
         //-- add function to output json of all results from tbl_myths_facts
 
-            // AJAX FOR SEARCH FUNCTION MYTHS VS FACTS
-            var searchbtn = document.querySelector('#searchbtn');
-            var searchtext = document.querySelector('#searchtext');
+        // // AJAX FOR SEARCH FUNCTION MYTHS VS FACTS
+        // var searchbtn = document.querySelector('#searchbtn');
+        // var searchtext = document.querySelector('#searchtext');
 
 
-            function makeRequest(url,e){
-                console.log('clicked');
-                httpRequest = new XMLHttpRequest();
+        // function makeRequest(url,e){
+        //     console.log('clicked');
+        //     httpRequest = new XMLHttpRequest();
 
-                if(!httpRequest){ // Checking to make sure the browser isn't too old    
-                    alert('Sorry, your browser is too old to access this content.');
-                    return false; // This exits out of a function, will execute the next line after function is closed
-                }
+        //     if(!httpRequest){ // Checking to make sure the browser isn't too old    
+        //         alert('Sorry, your browser is too old to access this content.');
+        //         return false; // This exits out of a function, will execute the next line after function is closed
+        //     }
 
-                httpRequest.onreadystatechange = searchResults;               
-                httpRequest.open('GET', 'includes/search-query.php?search='+searchtext); //Passing in a url through a get protocol
-                httpRequest.send();
-            }
+        //     httpRequest.onreadystatechange = searchResults;               
+        //     httpRequest.open('GET', 'includes/search-query.php?search='+searchtext); //Passing in a url through a get protocol
+        //     httpRequest.send();
+        // }
 
-            function searchResults(url,e){
-                if(httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200){
-                    var sResult = JSON.parse(httpRequest.responseText);
-                    //json output object array here for search results
+        // function searchResults(url,e){
+        //     if(httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200){
+        //         var sResult = JSON.parse(httpRequest.responseText);
+        //         //json output object array here for search results
 
-                }
-            }
+        //     }
+        // }
 
-            searchbtn.addEventListener('click', makeRequest, false); //start ajax search on search click
+        // searchbtn.addEventListener('click', makeRequest, false); //start ajax search on search click
 
 
 
@@ -238,7 +241,7 @@ app.controller('StoriesCtrl', [function() {
 
         // Linking changes on
         var btnStoriesFooter = document.querySelector("#btnStoriesFooter");
-        btnStoriesFooter.href = "#/share-your-story";
+        btnStoriesFooter.href = "#/share";
         storyLink.href = "#story/{$row['story_id']}";
         //End Linking changes
         footerLoad();
@@ -253,9 +256,7 @@ app.controller('StoryCtrl', [function() {
         var story = $('#story');
         TweenMax.to(story, .5, { opacity: 1 });
 
-        $('#story').css({ 'height': (($(window).height()*2)) + 'px' });
-
-
+        $('#story').css({ 'height': (($(window).height() * 2)) + 'px' });
 
         footerLoad();
     });
@@ -273,7 +274,7 @@ app.controller('ShareCtrl', [function() {
             $('#bannerShare1').css({ 'height': (($(window).height())) + 'px' });
             $('#twitter').css({ 'height': (($(window).height())) + 'px' });
             $('#facebook').css({ 'height': (($(window).height())) + 'px' });
-            $('#shareStoryBanner').css({ 'height': (($(window).height()/1.5)) + 'px' });
+            $('#shareStoryBanner').css({ 'height': (($(window).height() / 1.5)) + 'px' });
             $('#iconShare').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconShare').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
             $('#iconShare2').css({ 'height': (($(window).height() / 6)) + 'px' });
@@ -286,12 +287,42 @@ app.controller('ShareCtrl', [function() {
             $('#bannerShare1').css({ 'height': (($(window).height())) + 'px' });
             $('#twitter').css({ 'height': (($(window).height())) + 'px' });
             $('#facebook').css({ 'height': (($(window).height())) + 'px' });
+            $('#shareStoryBanner').css({ 'height': (($(window).height() / 1.5)) + 'px' });
             $('#iconShare').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconShare').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
+            $('#iconShare2').css({ 'height': (($(window).height() / 6)) + 'px' });
+            $('#iconShare2').css({ 'margin-top': (($(window).height() / 12)) + 'px' });
             $('#twitter h4').css({ 'margin-top': (($(window).height() / 6)) + 'px' });
             $('#facebook h4').css({ 'margin-top': (($(window).height() / 6)) + 'px' });
-
         });
+
+        //Premade tweets
+        var tweets = [{
+            tweet: '"Today I became an organ donor. Join me! #becauseadonor"',
+            link: "https://twitter.com/intent/tweet?url=http://becauseadonor.ca&text=Today%20I%20became%20an%20organ%20donor.%20Join%20me!%20%23becauseadonor"
+        }, {
+            tweet: '"Everyday is a new adventure! #becauseadonor"',
+            link: "https://twitter.com/intent/tweet?url=http://becauseadonor.ca&text=Everyday%20is%20a%20new%20adventure!%20%23becauseadonor"
+        }, {
+            tweet: '"I\'m alive today #becauseadonor and cherish every second! Help others like me in need and register today!"',
+            link: "https://twitter.com/intent/tweet?url=http://becauseadonor.ca&text=I%27m%20alive%20today%20%23becauseadonor%20and%20cherish%20every%20second!%20Help%20others%20like%20me%20in%20need%20and%20register%20today!"
+        }, {
+            tweet: '"I visited becauseadonor.ca and was inspired to register as an organ donor today. Join the movement today #becauseadonor"',
+            link: "https://twitter.com/intent/tweet?text=I%20visited%20http://becauseadonor.ca%20and%20was%20inspired%20to%20register%20as%20an%20organ%20donor%20today.%20Join%20the%20movement%20today%20%23becauseadonor"
+        }];
+
+        //loop to switch tweet text and href
+        setInterval(function() {
+            var i = Math.round((Math.random()) * tweets.length);
+            if (i == tweets.length) --i;
+            $("#tweet").html(tweets[i].tweet);
+            $("#tweetLink").attr("href", tweets[i].link);
+        }, 8 * 1000);
+
+        //end premade tweets
+
+
+
         footerLoad();
     });
 }]);
