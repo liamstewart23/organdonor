@@ -176,6 +176,7 @@ app.controller('LearnCtrl', [function() {
 
         //-- add function to output json of all results from tbl_myths_facts
 
+
         // // AJAX FOR SEARCH FUNCTION MYTHS VS FACTS
         // var searchbtn = document.querySelector('#searchbtn');
         // var searchtext = document.querySelector('#searchtext');
@@ -189,6 +190,7 @@ app.controller('LearnCtrl', [function() {
         //         alert('Sorry, your browser is too old to access this content.');
         //         return false; // This exits out of a function, will execute the next line after function is closed
         //     }
+
 
         //     httpRequest.onreadystatechange = searchResults;               
         //     httpRequest.open('GET', 'includes/search-query.php?search='+searchtext); //Passing in a url through a get protocol

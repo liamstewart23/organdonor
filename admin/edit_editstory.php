@@ -37,6 +37,9 @@
 	}
 
 ?>
+
+<?php include('includes/header.php') ?>
+
 	<h1>Stories</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<?php echo "<form action=\"edit_editstory.php?id={$id}\" method=\"post\" enctype=\"multipart/form-data\">"?>

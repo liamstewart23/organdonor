@@ -13,7 +13,7 @@
 		$addStory = addStory($name,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
 		$message = $addStory;
 		if ($message == 1){//if story was successfully added
-				redirect_to('#/share');
+				redirect_to('../#/share');
 		}
 	}
 	if(isset($_POST['submitVideo'])){
@@ -29,7 +29,7 @@
 		$addStory = addStory($name,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
 		$message = $addStory;
 		if ($message == 1){//if story was successfully added
-				redirect_to('#/share');
+				redirect_to('../#/share');
 		}
 	}
 ?>
@@ -109,6 +109,7 @@
 
 
 			<?php if(!empty($message)){echo $message;} ?>
+
 <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
 
 <!-- Text input-->

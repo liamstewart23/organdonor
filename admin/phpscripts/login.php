@@ -68,11 +68,8 @@
 					return $message;
 				}
 			}
-			if ($userlevel == 1){
-				redirect_to('editor_index.php');//redirect to this page when successfully logged in
-			} else if ($userlevel == 2 || $userlevel == 3){
-				redirect_to('admin_index.php');
-			}
+				redirect_to('admin_index.php');//redirect to this page when successfully logged in
+			
 			
 
 

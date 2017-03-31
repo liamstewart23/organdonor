@@ -13,7 +13,7 @@
 			<div id="myth-vs-fact-search">
 				<div class="input-group col-md-12">
 					<!--<form action="#/learn" method="post">-->
-						<input id="searchtext" type="text" name="filter" class="form-control input-lg" placeholder="eg. 'funeral', 'age', etc." />
+						<input id="searchtext" type="text" value="nothing" ng-model="searchfilter" name="filter" class="form-control input-lg" placeholder="eg. 'funeral', 'age', etc.">
 						<span class="input-group-btn">
 							<button id="searchbtn" class="btn btn-info btn-lg" type="submit" name="submit">
 							<i class="fa fa-search" aria-hidden="true"></i>
@@ -48,4 +48,5 @@
 		}
 	?>
 	<!-- End Myths v Facts -->
+
 </div>

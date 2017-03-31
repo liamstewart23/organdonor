@@ -40,7 +40,6 @@
 <?php //include('edit_mythfact.php') ?>
 
 	<div>
-		<h1>Statictics</h1>
 		<div>
 		<h2>Add a New Statistic</h2>
 		<?php if(!empty($message)){echo $message;} ?>
