@@ -15,6 +15,7 @@
 
 	if(isset($_POST['submit'])){
 		$name = trim($_POST['name']);
+		$email = trim($_POST['email']);
 		$city = trim($_POST['city']);
 		$organ = trim($_POST['organ']);
 		$photo = $_FILES['photo']['name'];
@@ -23,12 +24,12 @@
 		$status = $_POST['status'];
 		if($type == "written"){
 				$story = trim($_POST['story']);
-				$editStory = editStory($id,$name,$city,$organ,$photo,$story,$video,$status);
+				$editStory = editStory($id,$name,$email,$city,$organ,$photo,$story,$video,$status);
 				$message = $editStory;
 
 			}else if($type == "video"){
 				$video = trim($_POST['video']);
-				$editStory = editStory($id,$name,$city,$organ,$photo,$story,$video,$status);
+				$editStory = editStory($id,$name,$email,$city,$organ,$photo,$story,$video,$status);
 				$message = $editStory;
 			}
 		if ($message == 1){//if story was successfully added
@@ -48,6 +49,9 @@
 			<div class="upForm">
 				<label>Name:</label><br>
 				<input type="text" name="name" value="<?php echo $getStories['story_name']; ?>"><br>
+
+				<label>Email:</label><br>
+				<input type="email" name="email" value="<?php echo $getStories['story_email']; ?>"><br>
 
 				<label>City:</label><br>
 				<input type="text" name="city" value="<?php echo $getStories['story_city']; ?>"><br>

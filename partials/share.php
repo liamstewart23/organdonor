@@ -2,6 +2,7 @@
 	require_once('../admin/phpscripts/init.php');
 	if(isset($_POST['submitWritten'])){
 		$name = trim($_POST['name']);
+		$email = trim($_POST['email']);
 		$city = trim($_POST['city']);
 		$organ = trim($_POST['organ']);
 		$photo = $_FILES['photo']['name'];
@@ -10,7 +11,7 @@
 		$story = trim($_POST['story']);
 		$type = "written";
 		$status = "pending";
-		$addStory = addStory($name,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
+		$addStory = addStory($name,$email,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
 		$message = $addStory;
 		if ($message == 1){//if story was successfully added
 				redirect_to('../#/share');
@@ -18,6 +19,7 @@
 	}
 	if(isset($_POST['submitVideo'])){
 		$name = trim($_POST['name']);
+		$email = trim($_POST['email']);
 		$city = trim($_POST['city']);
 		$organ = trim($_POST['organ']);
 		$photo = $_FILES['photo']['name'];
@@ -26,7 +28,7 @@
 		$story = "";
 		$type = "video";
 		$status = "pending";
-		$addStory = addStory($name,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
+		$addStory = addStory($name,$email,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
 		$message = $addStory;
 		if ($message == 1){//if story was successfully added
 				redirect_to('../#/share');
@@ -159,7 +161,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="story">Written Story:</label>
   <div class="col-md-4">                     
-    <textarea id="story" name="story"></textarea>
+    <textarea id="story" name="story"><?php if(!empty($story)){echo $story;} ?></textarea>
   </div>
 </div>
 					<div class="submit-btn">

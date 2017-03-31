@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2017 at 09:54 PM
+-- Generation Time: Mar 31, 2017 at 04:00 AM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.4
 
@@ -31,6 +31,7 @@ CREATE TABLE `tbl_banners` (
   `banner_title` varchar(100) NOT NULL,
   `banner_desc` text NOT NULL,
   `banner_btn` varchar(30) NOT NULL,
+  `banner_link` varchar(100) NOT NULL,
   `banner_img` varchar(150) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -38,17 +39,17 @@ CREATE TABLE `tbl_banners` (
 -- Dumping data for table `tbl_banners`
 --
 
-INSERT INTO `tbl_banners` (`banner_id`, `banner_title`, `banner_desc`, `banner_btn`, `banner_img`) VALUES
-(1, 'Become a Donor', '', '', ''),
-(2, 'Why Donate?', '', '', ''),
-(3, 'See What is Possible', 'See the change you can make by registering as an organ donor.', '', ''),
-(4, 'Share Your Story', 'Have a story that will inspire others to register? Share yours today.', '', ''),
-(5, 'Get the Facts', 'Most Ontarians have not registered as an organ donor because they don\'t feel informed enough. We\'re here to change that.', '', ''),
-(6, 'Organ Donation Statistics', '', '', ''),
-(7, 'Myths vs Facts', '', '', ''),
-(8, 'Share the Message', 'Have you or a loved one had an experience with organ donation? Want us to share your story? Click the button below to find out how.', '', ''),
-(9, 'Tell Us Your Story', 'Help inspire Canadians to register as organ donors by sharing your story. Let us know your experience with organ donation and why people should register.', '', ''),
-(10, 'Discover Their Stories', 'We have gathered the stories of donors, donor families, and organ recipients from across Ontario. See for yourself the truly profound impact organ donation has on our communities.', '', '');
+INSERT INTO `tbl_banners` (`banner_id`, `banner_title`, `banner_desc`, `banner_btn`, `banner_link`, `banner_img`) VALUES
+(1, 'Become a Donor', '', '', '', ''),
+(2, 'Why Donate?', '', '', '', ''),
+(3, 'See What is Possible', 'See the change you can make by registering as an organ donor.', '', '', ''),
+(4, 'Share Your Story', 'Have a story that will inspire others to register? Share yours today.', '', '', ''),
+(5, 'Get the Facts', 'Most Ontarians have not registered as an organ donor because they don\'t feel informed enough. We\'re here to change that.', '', '', ''),
+(6, 'Organ Donation Statistics', '', '', '', ''),
+(7, 'Myths vs Facts', '', '', '', ''),
+(8, 'Share the Message', 'Have you or a loved one had an experience with organ donation? Want us to share your story? Click the button below to find out how.', '', '', ''),
+(9, 'Tell Us Your Story', 'Help inspire Canadians to register as organ donors by sharing your story. Let us know your experience with organ donation and why people should register.', '', '', ''),
+(10, 'Discover Their Stories', 'We have gathered the stories of donors, donor families, and organ recipients from across Ontario. See for yourself the truly profound impact organ donation has on our communities.', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -97,7 +98,7 @@ CREATE TABLE `tbl_myths_facts` (
   `mf_id` int(10) UNSIGNED NOT NULL,
   `mf_myth` varchar(500) NOT NULL,
   `mf_fact` varchar(500) NOT NULL,
-  `mf_keywords` varchar(150) NOT NULL
+  `mf_keywords` varchar(500) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -105,12 +106,12 @@ CREATE TABLE `tbl_myths_facts` (
 --
 
 INSERT INTO `tbl_myths_facts` (`mf_id`, `mf_myth`, `mf_fact`, `mf_keywords`) VALUES
-(2, 'If I say yes to organ donation, they will take *all* my organs. I don\'t want an empty body.', 'When you register to become an organ donor, you will be given the option to choose which organs you would like to donate. Therefore, if you are uncomfortable with donating your liver, you can opt out.', 'no yes death life empty body casket funeral'),
-(3, 'If I am a registered organ donor, doctors won\'t work as hard to save my life.', 'When you are treated in hospital, your life comes first. Your organ donor status is not considered by doctors until your death certificate has been signed. ', ''),
-(4, 'What if I\'m not actually dead when they sign my death certificate?', 'Although there are a lot of horror stories surrounding this topic, it is very false. Doctors will in fact perform more tests to patients who are organ donors to make sure that they are in fact dead.', ''),
-(5, 'I would like to donate my organs, but I think it\'s against my religion.', 'Organ donation is actually approved by most religions. These include the Roman Catholics, Islam, and most Jewish and Protestant branches. If you\'re still unsure of whether you can donate your organs, ask a member of your faith.', ''),
-(6, 'I am under 18 years old, and I feel like I\'m too young to make this decision right now.', 'While being under the legal age is a reasonable concern, and thinking of your death is no fun either, it is important to consider the good you could be doing someone. There some children who are on the waiting list. If you donate your organs at a young age, you could help up to 8 younger patients live full and grateful lives.', ''),
-(7, 'It seems like a lot of work to become an organ donor. I don\'t feel like doing any paperwork.', 'It only takes a couple of minutes to become an organ donor, no paperwork required! Simply go to beadonor.ca and enter your information into their secure form to register or check your status as a register.', '');
+(2, 'If I say yes to organ donation, they will take *all* my organs. I don\'t want an empty body.', 'When you register to become an organ donor, you will be given the option to choose which organs you would like to donate. Therefore, if you are uncomfortable with donating your liver, you can opt out.', 'open casket funeral coffin death organ all harvest empty body no organs'),
+(3, 'If I am a registered organ donor, doctors won\'t work as hard to save my life.', 'When you are treated in hospital, your life comes first. Your organ donor status is not considered by doctors until your death certificate has been signed.', 'die in hospital too early young soon before i am dead death sick ill unexpected unexpectedly nurse doctor on purpose'),
+(4, 'What if I\'m not actually dead when they sign my death certificate?', 'Although there are a lot of horror stories surrounding this topic, it is very false. Doctors will in fact perform more tests to patients who are organ donors to make sure that they are in fact dead.', 'dead too soon die not really work hard kill me on purpose death certificate'),
+(5, 'I would like to donate my organs, but I think it\'s against my religion.', 'Organ donation is actually approved by most religions. These include the Roman Catholics, Islam, and most Jewish and Protestant branches. If you\'re still unsure of whether you can donate your organs, ask a member of your faith.', 'religion faith against pope god bible angel spiritual spirituality muslim islam jewish jew catholic christian priest pastor imam kohen protestant hell heaven'),
+(6, 'I am under 18 years old, and I feel like I\'m too young to make this decision right now.', 'While being under the legal age is a reasonable concern, and thinking of your death is no fun either, it is important to consider the good you could be doing someone. There some children who are on the waiting list. If you donate your organs at a young age, you could help up to 8 younger patients live full and grateful lives.', 'am I too young under aged underaged highschool graduate decide decision legal age'),
+(7, 'It seems like a lot of work to become an organ donor. I don\'t feel like doing any paperwork.', 'It only takes a couple of minutes to become an organ donor, no paperwork required! Simply go to beadonor.ca and enter your information into their secure form to register or check your status as a register.', 'complicated how hard is it to sign up how when where');
 
 -- --------------------------------------------------------
 
@@ -143,6 +144,7 @@ INSERT INTO `tbl_statistics` (`stat_id`, `stat_img`, `stat_text`) VALUES
 CREATE TABLE `tbl_stories` (
   `story_id` int(10) UNSIGNED NOT NULL,
   `story_name` varchar(100) NOT NULL,
+  `story_email` varchar(150) NOT NULL,
   `story_organ` varchar(150) NOT NULL,
   `story_city` varchar(100) NOT NULL,
   `story_type` varchar(30) NOT NULL,
@@ -156,11 +158,11 @@ CREATE TABLE `tbl_stories` (
 -- Dumping data for table `tbl_stories`
 --
 
-INSERT INTO `tbl_stories` (`story_id`, `story_name`, `story_organ`, `story_city`, `story_type`, `story_text`, `story_link`, `story_photo`, `story_status`) VALUES
-(27, 'Joanne', 'Heart Recipient', 'Toronto,ON', 'written', 'Ryley was only two months old when she became quite ill. It was in the ER that her mother, Joanna, heard the words', '', 'Mar_30_2017_175333.jpg', 'posted'),
-(59, 'Ryley', 'Heart Recipient', 'London, ON', 'video', '', 'youtube.com', 'Mar_30_2017_175235.jpg', 'posted'),
-(29, 'Kathleen', 'Double Lung Recipient', 'Toronto,ON', 'written', 'My name is Kathleen and I have Cystic Fibrosis.  I was diagnosed with CF at 4 months of age.  I am the oldest of 3 children, and share this disease with my younger brother, Clayton.', '', 'Mar_30_2017_175414.jpg', 'posted'),
-(52, 'Andrea', 'Heart Recipient', 'Brampton, ON', 'written', 'It started with some weird symptoms. Trouble with her peripheral vision. Trouble opening small packages. A shooting pain down her left side. Andrea knew there was something going on. "When I was wheeled into the hospital, I had a heart rate of 130 at rest. And that was the day that they diagnosed me with dilated cardiomyopathy."\r\n\r\nAndrea soon realized that only a heart transplant would bring her "real life back". Thankfully, and fortunately, she received the call.\r\n\r\nAfter the transplant, she noticed the changes right away. "The first thing that I noticed was that I had a heartbeat and it was so loudâ€¦ I knew I had a strong heart in there."\r\n\r\nThough it was a joyous time for her and her family, Andrea thinks often of her donor\'s family and their grief. "Every moment a thought goes out to them. I want to make them proud by living and taking care of what\'s been given to me."\r\nIt\'s easy to start your own registration drive. Do it as an individual or on behalf of your company or community group.\r\nRyley\'s story thumbnail\r\n\r\nMeet Ryley\r\n\r\nRyley was only two months old when she became quite ill. It was in the ER that her mother, Joanna, heard the words "enlarged heart."\r\nLearn More\r\nJustin\'s story thumbnail\r\n\r\nMeet Justin\r\n\r\nAt 10 years old the hospital determined that the strep bacterial Justin contracted had triggered an autoimmune disease,\r\nLearn More\r\nCarol\'s story thumbnail\r\n\r\nMeet Carol\r\n\r\nIt started with a bout of pneumonia that Carol thought would eventually go away. Unfortunately it didn\'t.\r\nLearn More', '', 'Mar_23_2017_140644.jpg', 'pending');
+INSERT INTO `tbl_stories` (`story_id`, `story_name`, `story_email`, `story_organ`, `story_city`, `story_type`, `story_text`, `story_link`, `story_photo`, `story_status`) VALUES
+(27, 'Joanne', '', 'Heart Recipient', 'Toronto,ON', 'written', 'Ryley was only two months old when she became quite ill. It was in the ER that her mother, Joanna, heard the words', '', 'Mar_30_2017_175333.jpg', 'posted'),
+(59, 'Ryley', '', 'Heart Recipient', 'London, ON', 'video', '', 'youtube.com', 'Mar_30_2017_175235.jpg', 'posted'),
+(29, 'Kathleen', '', 'Double Lung Recipient', 'Toronto,ON', 'written', 'My name is Kathleen and I have Cystic Fibrosis.  I was diagnosed with CF at 4 months of age.  I am the oldest of 3 children, and share this disease with my younger brother, Clayton.', '', 'Mar_30_2017_175414.jpg', 'posted'),
+(52, 'Andrea', 'andrea@gmail.com', 'Heart Recipient', 'Brampton, ON', 'written', 'It started with some weird symptoms. Trouble with her peripheral vision. Trouble opening small packages. A shooting pain down her left side. Andrea knew there was something going on. "When I was wheeled into the hospital, I had a heart rate of 130 at rest. And that was the day that they diagnosed me with dilated cardiomyopathy."\r\n\r\nAndrea soon realized that only a heart transplant would bring her "real life back". Thankfully, and fortunately, she received the call.\r\n\r\nAfter the transplant, she noticed the changes right away. "The first thing that I noticed was that I had a heartbeat and it was so loudâ€¦ I knew I had a strong heart in there."\r\n\r\nThough it was a joyous time for her and her family, Andrea thinks often of her donor\'s family and their grief. "Every moment a thought goes out to them. I want to make them proud by living and taking care of what\'s been given to me."\r\nIt\'s easy to start your own registration drive. Do it as an individual or on behalf of your company or community group.\r\nRyley\'s story thumbnail\r\n\r\nMeet Ryley\r\n\r\nRyley was only two months old when she became quite ill. It was in the ER that her mother, Joanna, heard the words "enlarged heart."\r\nLearn More\r\nJustin\'s story thumbnail\r\n\r\nMeet Justin\r\n\r\nAt 10 years old the hospital determined that the strep bacterial Justin contracted had triggered an autoimmune disease,\r\nLearn More\r\nCarol\'s story thumbnail\r\n\r\nMeet Carol\r\n\r\nIt started with a bout of pneumonia that Carol thought would eventually go away. Unfortunately it didn\'t.\r\nLearn More', '', 'Mar_23_2017_140644.jpg', 'pending');
 
 -- --------------------------------------------------------
 
@@ -188,8 +190,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_lname`, `user_username`, `user_password`, `user_email`, `user_level`, `user_status`, `user_time`, `user_attempts`, `user_locked_time`, `user_ip`) VALUES
-(1, 'Lauren', 'Koza', 'superadmin', 'superadmin', 'becauseadonor@gmail.com', 3, 'Clear', 'March 30th, 2017 4:34pm', 0, 0, '::1'),
-(2, 'Liam', 'Stewart', 'editor', 'editor', 'becauseadonor@gmail.com', 1, 'Clear', 'March 30th, 2017 5:51pm', 2, 1490910678, '::1'),
+(1, 'Lauren', 'Koza', 'superadmin', 'superadmin', 'becauseadonor@gmail.com', 3, 'Clear', 'March 30th, 2017 11:30pm', 0, 0, '::1'),
+(2, 'Liam', 'Stewart', 'editor', 'editor', 'becauseadonor@gmail.com', 1, 'Clear', 'March 30th, 2017 10:13pm', 0, 1490910678, '::1'),
 (3, 'Jillian', 'Matthies', 'admin', 'admin', 'becauseadonor@gmail.com', 2, 'Clear', 'March 30th, 2017 5:51pm', 0, 0, '::1');
 
 --
@@ -271,7 +273,7 @@ ALTER TABLE `tbl_statistics`
 -- AUTO_INCREMENT for table `tbl_stories`
 --
 ALTER TABLE `tbl_stories`
-  MODIFY `story_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `story_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
