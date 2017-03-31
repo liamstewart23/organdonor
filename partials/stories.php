@@ -17,11 +17,11 @@ error_reporting(E_ALL);
 				<p>Here we have gathered the stories of donors, donor families,
 					and organ recipients from across Ontario. See for yourself the truly
 				profound impact of organ donation on our communities. </p>
-				<div class="col-xs-12 col-md-12 text-center">
-					<?php include("arrow-down.html") ?>
-				</div>
 			</div>
 		</div>
+								<div class="col-xs-12 col-md-12 text-center bounceArrow">
+					<?php include("arrow-down.html") ?>
+				</div>
 	</div>
 	<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1 text-center" id="storiesContainer">
 		<!-- 			<img src="img/icons/feather.svg" height="0" alt="Because a Donor" id="iconFeather">

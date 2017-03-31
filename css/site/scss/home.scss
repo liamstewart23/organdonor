@@ -1,8 +1,11 @@
 #home {
     margin-top: 50px;
+    .bounce {
+        margin-bottom:80px;
     i {
         color:$white;
     }
+}
 }
 
 #bannerHome1 {
@@ -64,8 +67,4 @@
         color: $black;
         margin-top: 20px;
     }
-}
-
-#homeArrow {
-    margin-top: -50px;
 }

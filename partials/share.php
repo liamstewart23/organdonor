@@ -47,12 +47,11 @@
 				<!-- 				<div class="col-xs-12 col-sm-offset-0 col-md-12">
 					<a href="#" class="btnB1" id="btnShareStory">share your story</a>
 				</div> -->
-				<div class="col-xs-12 col-md-12 text-center">
-					<?php include("arrow-down.html") ?>
-				</div>
-				
 			</div>
 		</div>
+						<div class="col-xs-12 col-md-12 text-center bounceArrow">
+					<?php include("arrow-down.html") ?>
+				</div>
 	</div>
 	<div class="col-xs-12 col-md-12 col-md-6 text-center" id="twitter">
 		<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1">

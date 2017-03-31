@@ -21,11 +21,11 @@ error_reporting(E_ALL);
 				<div class="col-xs-12 col-sm-offset-0 col-md-6">
 					<a href="index.php?partial=learn-myths-v-facts" class="btnB2" id="btnLearnMyths">myth vs. fact</a>
 				</div> -->
-				<div class="col-xs-12 col-md-12 text-center">
-					<?php include("arrow-down.html") ?>
-				</div>
 			</div>
 		</div>
+						<div class="col-xs-12 col-md-12 text-center bounceArrow">
+					<?php include("arrow-down.html") ?>
+				</div>
 		<?php include("../partials/learn-stats.php") ?>
 		<?php include("../partials/learn-myths-v-facts.php") ?>
 		<!-- Learn Footer -->
