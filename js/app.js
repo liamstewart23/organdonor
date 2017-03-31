@@ -17,7 +17,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
             },
             controller: "StoryCtrl"
         })
-        .when("/share-your-story", { templateUrl: "partials/story-form.php", controller: "SubmitStoryCtrl" }) //Submit your Story Page
+        //.when("/share-your-story", { templateUrl: "partials/story-form.php", controller: "SubmitStoryCtrl" }) //Submit your Story Page
         .when("/share", { templateUrl: "partials/share.php", controller: "ShareCtrl" }) //Share Page
         .when("/contact", { templateUrl: "partials/contact.php", controller: "ContactCtrl" }) //Contact Page
 
@@ -228,7 +228,7 @@ app.controller('StoriesCtrl', [function() {
 
             //Height of story box based on width
             var storyWidth = $('.story').width();
-            $('.story .inner').css({ 'height': (storyWidth * .6) + 'px' });
+            //$('.story .inner').css({ 'height': (storyWidth * .6) + 'px' });
         });
         $(window).resize(function() {
             //Banner sizing adjustments based on resize

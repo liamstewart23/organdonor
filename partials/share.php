@@ -84,9 +84,9 @@
 			<br>
 		</div>
 	</div>
-	<div class="col-xs-12 col-md-12 text-center" id="shareArrow">
-		<?php include("arrow-down.html") ?>
-	</div>
+<!-- 	<div class="col-xs-12 col-md-12 text-center" id="shareArrow">
+		<?php //include("arrow-down.html") ?>
+	</div> -->
 	<a href="https://teespring.com/" target="_blank">
 	<div class="col-xs-12 col-md-12 text-center" id="shareMerch">
 		Want to show your support? Click here to buy our Merch
@@ -164,7 +164,7 @@
 							</div>
 							<div class="form-group">
 								<div class="submit-btn col-md-12 text-center">
-									<input type="submit" name="submitWritten" value="Add Story" class="btnRed">
+									<input type="submit" name="submitWritten" value="Submit Story" class="btnRed">
 								</div>
 							</div>
 						</form>
@@ -228,7 +228,7 @@
 								</div>
 							</div>
 							<div class="submit-btn">
-								<input type="submit" name="submitVideo" value="Add Story" class="btnRed">
+								<input type="submit" name="submitVideo" value="Submit Story" class="btnRed">
 							</div>
 						</form>
 					</div>

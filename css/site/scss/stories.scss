@@ -14,12 +14,21 @@
 
 .story {
     background-color: $white;
-    padding: 5px 5px 5px 5px;
+    color: $white;
+
+         a {
+          color: $white;
+        }
+        a:hover {
+          text-decoration: none;
+          opacity: .8;
+        }   
+.inner {
+    background-color: $purple;
+        padding: 5px 5px 5px 5px;
+}
 }
 
-.story .inner {
-    background-color: $purple;
-}
 
 #btnLoadStories {
     margin-top: 50px;
@@ -32,28 +41,4 @@
 
 #storiesFooter h4 {
     margin-bottom: 50px;
-}
-
-.imgWrap {
-  position: relative;
-  height: 200px;
-  width: 257px;
-}
-.imgDescription {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(29, 106, 154, 0.72);
-  color: #fff;
-  visibility: hidden;
-  opacity: 0;
-  /*remove comment if you want a gradual transition between states
-      -webkit-transition: visibility opacity 0.2s;
-      */
-}
-.imgWrap:hover .imgDescription {
-  visibility: visible;
-  opacity: 1;
 }

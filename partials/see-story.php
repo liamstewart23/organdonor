@@ -33,7 +33,7 @@
 				";
 				//echo "<div class=\"row\"><div class=\"col-xs-12 col-md-12 story-content text-center\">";
 			if($getStory['story_type'] == 'written'){
-				echo "<br><br><p>{$getStory['story_text']}</p></div>";
+				echo "</div><div class=\"row\"><div class=\"col-xs-12 col-md-10 col-md-offset-1 story-content\"><p>{$getStory['story_text']}</p>";
 			}else if($getStory['story_type'] == 'video'){
 				//{$getStory['story_link']}
 				echo "</div><div class=\"row\"><div class=\"col-xs-12 col-md-12 story-content text-center\">
