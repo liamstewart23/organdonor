@@ -65,9 +65,10 @@
 					<a href="https://twitter.com/intent/tweet?url=http://becauseadonor.ca&text=Today%20I%20became%20an%20organ%20donor.%20Join%20me!%20%23becauseadonor" target="_blank" class="btnB1" id="tweetLink">Tweet it!</a>
 				</div>
 			</div>
-			<div class="col-xs-12 col-md-12">
+			<br>
+<!-- 			<div class="col-xs-12 col-md-12">
 				<i class="fa fa-twtitter fa-5x" aria-hidden="true"></i>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<div class="col-xs-12 col-md-12 col-md-6 text-center" id="facebook">
@@ -80,14 +81,16 @@
 					<a href="https://www.isupportcause.com/campaign/because-a-donor" target="_blank" class="btnB2" id="btnFBPP">Login with Facebook</a>
 				</div>
 			</div>
+			<br>
 		</div>
 	</div>
 	<div class="col-xs-12 col-md-12 text-center" id="shareArrow">
 		<?php include("arrow-down.html") ?>
 	</div>
+	<a href="https://teespring.com/" target="_blank">
 	<div class="col-xs-12 col-md-12 text-center" id="shareMerch">
-		hello world
-	</div>
+		Want to show your support? Click here to buy our Merch
+	</div></a>
 	<div class="col-xs-12 col-md-12 banner" id="shareStoryBanner">
 		<div class="col-xs-12 col-sm-offset-0 col-md-6 col-md-offset-3 text-center">
 			<img src="img/icons/speech.svg" height="0" alt="Because a Donor" id="iconShare2">
