@@ -10,8 +10,8 @@ error_reporting(E_ALL);
 <section id="stories">
 	<h2 class="hidden">Because a Donor Website - Organ Donation Recipient Stories</h2>
 	<div class="row">
-		<div class="col-xs-12 col-sm-offset-0 col-md-12 banner" id="bannerStories1">
-			<div class="col-xs-12 col-sm-offset-0 col-md-6 col-md-offset-3 text-center">
+		<div class="col-xs-12 col-md-12 banner" id="bannerStories1">
+			<div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
 				<img src="img/icons/feather.svg" height="0" alt="Because a Donor" id="iconStories">
 				<h3 class="bannerHeading">Discover Their Stories</h3>
 				<p>Here we have gathered the stories of donors, donor families,
@@ -32,7 +32,7 @@ error_reporting(E_ALL);
 			while($row = mysqli_fetch_array($getStories)){
 				if($row['story_status'] == "posted"){
 					echo "<div class=\"col-xs-12 col-md-4 story\">
-								<img src=\"img/stories/uploads/{$row['story_photo']}\" alt=\"{$row['story_name']}\">
+								<img src=\"img/stories/uploads/{$row['story_photo']}\" alt=\"{$row['story_name']}\" class=\"img-responsive\">
 								<h2>{$row['story_name']}</h2>
 								<p>{$row['story_city']}</p>
 								<p>{$row['story_organ']}</p>
@@ -52,7 +52,7 @@ error_reporting(E_ALL);
 <div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1 text-center">
 	<div class="col-xs-12 col-md-12 col-md-12" id="storiesFooter">
 		<h4><span class="red">Do you have a story about organ donation that you want to share?</span><br>Your experiences could be chosen and posted here to inspire others.</h4>
-		<a href="index.php?partial=story-form" class="btnRed" id="btnStoriesFooter">share your story</a>
+		<a href="index.php?partial=share" class="btnRed" id="btnStoriesFooter">share your story</a>
 	</div>
 </div>
 </section>

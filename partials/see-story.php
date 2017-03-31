@@ -23,14 +23,23 @@
 <section id="story">
 	<h2 class="hidden">Because a Donor Website - User Submitted Story</h2>
 		<?php
-			echo "<div class=\"col-xs-12 storyPage\">
-				<img src=\"img/stories/uploads/{$getStory['story_photo']}\" alt=\"{$getStory['story_name']}\">
-				<h2>{$getStory['story_name']}<br><span>from {$getStory['story_city']}</span></h2>
-				<h3>{$getStory['story_organ']}</h3>";
+			echo "<div class=\"col-xs-12 col-md-12 storyPage\">
+				<div class=\"col-xs-12 col-md-4\">
+				<img src=\"img/stories/uploads/{$getStory['story_photo']}\" alt=\"{$getStory['story_name']}\" class=\"img-responsive\">
+				</div>
+				<div class=\"col-xs-12 col-md-8\">
+				<h3>{$getStory['story_name']}</h3>
+				<h4>{$getStory['story_organ']}</h4>
+				</div>";
+				echo "<div class=\"row\"><div class=\"col-xs-12 col-md-12 story-content text-center\">";
 			if($getStory['story_type'] == 'written'){
-				echo "<p>{$getStory['story_written']}</p>";
+				echo "<p>{$getStory['story_text']}</p>";
 			}else if($getStory['story_type'] == 'video'){
-				echo "{$getStory['story_link']}";
+				//{$getStory['story_link']}
+				echo "<div class=\"videoWrapper\">
+				    <iframe src=\"https://player.vimeo.com/video/121366735\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</div>";
 			}
+			echo "</div></div>";
 		?>
 </section>
