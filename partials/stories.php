@@ -32,11 +32,17 @@ error_reporting(E_ALL);
 			while($row = mysqli_fetch_array($getStories)){
 				if($row['story_status'] == "posted"){
 					echo "<div class=\"col-xs-12 col-md-4 story\">
+<a href=\"#stories/{$row['story_id']}\" class=\"storyLink\">
+					<div class=\"inner\">
 								<img src=\"img/stories/uploads/{$row['story_photo']}\" alt=\"{$row['story_name']}\" class=\"img-responsive\">
+								
 								<h2>{$row['story_name']}</h2>
 								<p>{$row['story_city']}</p>
 								<p>{$row['story_organ']}</p>
-								<a href=\"#stories/{$row['story_id']}\" class=\"storyLink\">More...</a><br><br>
+
+								
+</div></a>
+								<br><br>
 						</div>";
 				}
 			}
