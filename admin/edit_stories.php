@@ -10,6 +10,7 @@
 
 	if(isset($_POST['submitWritten'])){
 		$name = trim($_POST['name']);
+		$email = trim($_POST['email']);
 		$city = trim($_POST['city']);
 		$organ = trim($_POST['organ']);
 		$photo = $_FILES['photo']['name'];
@@ -18,7 +19,7 @@
 		$story = trim($_POST['story']);
 		$type = "written";
 		$status = $_POST['status'];
-		$addStory = addStory($name,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
+		$addStory = addStory($name,$email,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
 		$message = $addStory;
 
 		if ($message == 1){//if story was successfully added
@@ -27,6 +28,7 @@
 	}
 	if(isset($_POST['submitVideo'])){
 		$name = trim($_POST['name']);
+		$email = trim($_POST['email']);
 		$city = trim($_POST['city']);
 		$organ = trim($_POST['organ']);
 		$photo = $_FILES['photo']['name'];
@@ -35,7 +37,7 @@
 		$story = "";
 		$type = "video";
 		$status = $_POST['status'];
-		$addStory = addStory($name,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
+		$addStory = addStory($name,$email,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
 		$message = $addStory;
 
 		if ($message == 1){//if story was successfully added
@@ -59,6 +61,9 @@
 					<div class="upForm">
 						<label>Name:</label><br>
 						<input required type="text" name="name" value="<?php if(!empty($name)){echo $name;} ?>"><br>
+
+						<label>Email:</label><br>
+						<input type="email" name="email" value="<?php if(!empty($email)){echo $email;} ?>"><br>
 
 						<label>City:</label><br>
 						<input required type="text" name="city" value="<?php if(!empty($city)){echo $city;} ?>"><br>
