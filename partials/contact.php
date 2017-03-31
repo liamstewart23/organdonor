@@ -31,7 +31,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="John..." required="required" />
+                            <input type="text" class="form-control" id="name" name="name" placeholder="John Smith" required="required" />
                         </div>
                         <div class="hidden">
                             <label for="name">Phone:</label>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="name@website.com" required="required" /></div>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="johnsmith@gmail.com" required="required" /></div>
                             <div class="form-group">
                                 <!-- <label for="subject">I'm contacting regarding:</label> -->
                                 <select id="subject" name="subject" class="form-control" required="required">
@@ -56,7 +56,7 @@
                             <div class="form-group">
                                 <label for="name">Message:</label>
                                 <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
-                                placeholder="I'd like to edit some content on my story."></textarea>
+                                placeholder=""></textarea>
                             </div>
                         </div>
                         <div class="col-md-5 col-md-offset-7">

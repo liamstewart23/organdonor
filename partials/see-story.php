@@ -30,16 +30,18 @@
 				<div class=\"col-xs-12 col-md-8\">
 				<h3>{$getStory['story_name']}</h3>
 				<h4>{$getStory['story_organ']}</h4>
-				</div>";
-				echo "<div class=\"row\"><div class=\"col-xs-12 col-md-12 story-content text-center\">";
+				";
+				//echo "<div class=\"row\"><div class=\"col-xs-12 col-md-12 story-content text-center\">";
 			if($getStory['story_type'] == 'written'){
-				echo "<p>{$getStory['story_text']}</p>";
+				echo "<br><br><p>{$getStory['story_text']}</p></div>";
 			}else if($getStory['story_type'] == 'video'){
 				//{$getStory['story_link']}
-				echo "<div class=\"videoWrapper\">
+				echo "</div><div class=\"row\"><div class=\"col-xs-12 col-md-12 story-content text-center\">
+
+				<div class=\"videoWrapper\">
 				    <iframe src=\"https://player.vimeo.com/video/121366735\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				</div>";
 			}
-			echo "</div></div>";
+			echo "</div></div></div>";
 		?>
 </section>

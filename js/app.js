@@ -276,11 +276,11 @@ app.controller('ShareCtrl', [function() {
             $('#bannerShare1').css({ 'height': (($(window).height())) + 'px' });
             $('#twitter').css({ 'height': (($(window).height())) + 'px' });
             $('#facebook').css({ 'height': (($(window).height())) + 'px' });
-            $('#shareStoryBanner').css({ 'height': (($(window).height() / 1.5)) + 'px' });
+            $('#shareStoryBanner').css({ 'height': (($(window).height() / 1.35)) + 'px' });
             $('#iconShare').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconShare').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
             $('#iconShare2').css({ 'height': (($(window).height() / 6)) + 'px' });
-            $('#iconShare2').css({ 'margin-top': (($(window).height() / 12)) + 'px' });
+            $('#iconShare2').css({ 'margin-top': (($(window).height() / 16)) + 'px' });
             $('#twitter h4').css({ 'margin-top': (($(window).height() / 6)) + 'px' });
             $('#facebook h4').css({ 'margin-top': (($(window).height() / 6)) + 'px' });
         });
@@ -289,11 +289,11 @@ app.controller('ShareCtrl', [function() {
             $('#bannerShare1').css({ 'height': (($(window).height())) + 'px' });
             $('#twitter').css({ 'height': (($(window).height())) + 'px' });
             $('#facebook').css({ 'height': (($(window).height())) + 'px' });
-            $('#shareStoryBanner').css({ 'height': (($(window).height() / 1.5)) + 'px' });
+            $('#shareStoryBanner').css({ 'height': (($(window).height() / 1.35)) + 'px' });
             $('#iconShare').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconShare').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
             $('#iconShare2').css({ 'height': (($(window).height() / 6)) + 'px' });
-            $('#iconShare2').css({ 'margin-top': (($(window).height() / 12)) + 'px' });
+            $('#iconShare2').css({ 'margin-top': (($(window).height() / 16)) + 'px' });
             $('#twitter h4').css({ 'margin-top': (($(window).height() / 6)) + 'px' });
             $('#facebook h4').css({ 'margin-top': (($(window).height() / 6)) + 'px' });
         });
@@ -322,6 +322,16 @@ app.controller('ShareCtrl', [function() {
         }, 8 * 1000);
 
         //end premade tweets
+
+
+        //File upload for share page photo
+        $(document).on('click', '.browse', function(){
+            var file = $(this).parent().parent().parent().find('.file');
+            file.trigger('click');
+        });
+        $(document).on('change', '.file', function(){
+            $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+        });
 
 
 

@@ -92,3 +92,11 @@ label {
     margin-top: -50px;
     color: $purple !important;
 }
+
+.file {
+  visibility: hidden;
+  position: absolute;
+}
+#written-form,#video-form {
+    margin: 50px 0px 50px 0px;
+}
