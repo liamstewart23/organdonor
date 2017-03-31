@@ -15,6 +15,8 @@
 		return $result;
 	}
 ?>
+
+<?php include('includes/header.php') ?>
 	<h1>Statictics</h1>
 
 		<h2>Add a New Statistic</h2>

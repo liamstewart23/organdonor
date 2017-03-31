@@ -177,11 +177,11 @@ app.controller('LearnCtrl', [function() {
 
             // AJAX FOR SEARCH FUNCTION MYTHS VS FACTS
             var searchbtn = document.querySelector('#searchbtn');
-            var searchtext = document.querySelector('#searchtext');
+            var searchtext = document.querySelector('filter').value;
 
 
             function makeRequest(url,e){
-                console.log('clicked');
+                console.log(searchtext+"working");
                 httpRequest = new XMLHttpRequest();
 
                 if(!httpRequest){ // Checking to make sure the browser isn't too old    
@@ -190,7 +190,7 @@ app.controller('LearnCtrl', [function() {
                 }
 
                 httpRequest.onreadystatechange = searchResults;               
-                httpRequest.open('GET', 'includes/search-query.php?search='+searchtext); //Passing in a url through a get protocol
+                httpRequest.open('GET', 'admin/phpscripts/search-query.php?search='+searchtext); //Passing in a url through a get protocol
                 httpRequest.send();
             }
 
@@ -198,7 +198,7 @@ app.controller('LearnCtrl', [function() {
                 if(httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200){
                     var sResult = JSON.parse(httpRequest.responseText);
                     //json output object array here for search results
-
+                    
                 }
             }
 

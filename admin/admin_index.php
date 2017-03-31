@@ -13,12 +13,6 @@
 
 
 <?php include('includes/header.php'); ?>
-		<nav>
-			<div>
-				<a href="phpscripts/caller.php?caller_id=logout">Sign Out</a>
-			</div>
-		</nav>
-
 
 		<div class="contentCon">
 			<h1><?php 	if ($hour >= 5 && $hour < 12) {echo "Good Morning";} 
@@ -71,9 +65,4 @@
 				?>
 		</div>
 
-		<div id="lastLog">
-			<p>Your last login was on: <?php echo $lastSession ?></p>
-		</div>
-
-	</body>
-</html>
+<?php include('includes/footer.php'); ?>

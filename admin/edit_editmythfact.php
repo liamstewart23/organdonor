@@ -41,7 +41,7 @@
 			</div>
 
 			<div class="addbtn">
-				<input type="submit" name="submit" value="Add Myth vs Fact">
+				<input type="submit" name="submit" value="Save Edits">
 			</div>
 
 			<div>

@@ -10,14 +10,7 @@
 	$fetchUsers = getAll($tbl);
 
 ?>
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Users</title>
-<link rel="stylesheet" href="css/main.css"/>
-</head>
-
+<?php include('includes/header.php') ?>
 	<body>
 	<div>
 		<h2>Add New User</h2>

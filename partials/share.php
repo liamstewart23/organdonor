@@ -13,7 +13,7 @@
 		$addStory = addStory($name,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
 		$message = $addStory;
 		if ($message == 1){//if story was successfully added
-				redirect_to('#/share');
+				redirect_to('../#/share');
 		}
 	}
 	if(isset($_POST['submitVideo'])){
@@ -29,7 +29,7 @@
 		$addStory = addStory($name,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
 		$message = $addStory;
 		if ($message == 1){//if story was successfully added
-				redirect_to('#/share');
+				redirect_to('../#/share');
 		}
 	}
 ?>
@@ -82,7 +82,7 @@
 		<p></p>
 		<div id="written-form">
 			<?php if(!empty($message)){echo $message;} ?>
-			<?php echo "<form action=\"#/share\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
+			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
 				<h2>Written Story</h2>
 				<div class="upForm">
 					<label>Name:</label><br>
@@ -103,7 +103,7 @@
 			</div><!--end Written Story Form-->
 			<div id="video-form">
 				<?php if(!empty($message)){echo $message;} ?>
-				<?php echo "<form action=\"/#/share.php\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
+				<?php echo "<form action=\"#/share\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
 					<h2>Video Story</h2>
 					<div class="upForm">
 						<label>Name:</label><br>

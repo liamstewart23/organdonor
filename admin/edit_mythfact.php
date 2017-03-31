@@ -18,6 +18,8 @@
 	$getMythFacts = getAll($tbl);
 ?>
 
+<?php include('includes/header.php') ?>
+
 	<h1>Myths Vs Facts</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<form action="edit_mythfact.php" method="post">
