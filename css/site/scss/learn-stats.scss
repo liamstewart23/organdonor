@@ -16,9 +16,13 @@
     display: flex;
   justify-content: center;
   flex-direction: column;
+  .iconWrap {
+                display: flex;
+  justify-content: center;
+  flex-direction: column;
+  }
     .statsIcon {
         background-color: transparent;
-        height: 0;
             display: flex;
   justify-content: center;
   flex-direction: column;
