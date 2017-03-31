@@ -6,6 +6,7 @@
     background-size: cover;
     color: $white;
 }
+
 #shareStoryBanner {
     background: url(../../img/share/share_ban2.jpg) no-repeat center center;
     -webkit-background-size: cover;
@@ -16,42 +17,78 @@
 }
 
 #share {
-	h4 {
-		font-weight: 500;
-		margin-bottom: 50px;
-	}
-        #twitter {
-        	background-color: $white;
+    h3 {
+        margin-top:60px;
+    }
+    h4 {
+        font-weight: 500;
+        margin-bottom: 50px;
+    }
+    .premadeTweets {
+        background-color: $purple;
+        color: $white;
+        padding: 50px 50px 50px 50px;
+        border: 2px solid $purple;
+        display: flex;
+        align-content: center !important;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 50px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        -ms-border-radius: 50px;
+        margin-top: 50px;
+        min-height: 250px;
+        p {
+            font-weight: 200;
+            font-size: 1em;
+            margin-bottom: 20px;
         }
-        #facebook {
-        	background-color: $shareRightSide;
-            p {
-                margin-bottom: 50px;
-            }
-            .fbPPExample {
-                height: 200px;
-                margin: 0 auto;
-            }
-        }
-        .premadeTweets {
-            background-color: $purple;
-            color: $white;
-            padding: 50px 50px 50px 50px;
-            border: 2px solid $purple;
-            display: flex;
-            align-content: center !important;
-            justify-content: center;
-            flex-direction: column;
-            border-radius: 50px;
-            -webkit-border-radius:50px;
-            -moz-border-radius:50px;
-            -ms-border-radius:50px;
-            margin-top: 50px;
-            min-height: 250px;
-            p {
-                font-weight: 200;
-                font-size: 1em;
-                margin-bottom: 20px;
+    }
+    .tab-container {
+        ul {
+            li:hover {
+                cursor: pointer;
             }
         }
+    }
+}
+
+#twitter {
+    background-color: $white;
+}
+
+#facebook {
+    background-color: $shareRightSide;
+    p {
+        margin-bottom: 50px;
+    }
+    .fbPPExample {
+        height: 200px;
+        margin: 0 auto;
+    }
+}
+
+#shareMerch {
+    background-color: $shareMerchBG;
+    color:$white;
+    font-weight:200;
+    padding:20px 0px 20px 0px;
+}
+
+#written-form {
+    margin-top:50px;
+}
+#video-form {
+    margin-top:50px;
+}
+
+label {
+    font-weight:200;
+    padding-bottom: 20px;
+}
+
+#shareArrow {
+    margin-top: -50px;
+    color: $purple !important;
 }
