@@ -1,6 +1,4 @@
 <?php
-	require_once('phpscripts/init.php');
-	confirm_logged_in(); //comment out so you can test page without having to login
 	admin_only();
 
 	if(isset($_POST['submit'])){
@@ -22,7 +20,7 @@
 ?>
 
 
-<?php include('includes/header.php'); ?>
+
 
 	<h1>Create User Account</h1>
 		<?php if(!empty($message)){echo $message;} ?>

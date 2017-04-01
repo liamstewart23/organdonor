@@ -1,6 +1,4 @@
 <?php
-	require_once('phpscripts/init.php');
-	confirm_logged_in(); //session will fully log out if you shut down entire browser, not just by closing tab
 	admin_only();
 
 	//STATS
@@ -33,7 +31,6 @@
 ?>
 
 
-<?php include('includes/header.php') ?>
 
 <h1>Edit Learn Page</h1>
 <?php //include('edit_stats.php') ?>
@@ -106,8 +103,8 @@
 							echo "<p>{$row['mf_myth']}</p>
 								<p>{$row['mf_fact']}</p>
 								<p>{$row['mf_keywords']}</p>
-								<a href=\"edit_editmythfact.php?id={$row['mf_id']}\">Edit</a><br><br>
-								<a href=\"edit_delete.php?table={$tbl}&col={$col}&id={$row['mf_id']}\">Delete</a><br><br>";
+								<a href=\"index.php?partial=edit_editmythfact&id={$row['mf_id']}\">Edit</a><br><br>
+								<a href=\"index.php?partial=edit_delete&table={$tbl}&col={$col}&id={$row['mf_id']}\">Delete</a><br><br>";
 						}
 					}else{
 						echo "<p>{$getMythFacts}</p>";
@@ -116,6 +113,3 @@
 			</div>
 		</form>
 	</div>
-
-
-<?php include('includes/footer.php') ?>

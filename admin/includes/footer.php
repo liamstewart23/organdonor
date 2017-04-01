@@ -12,5 +12,7 @@
 				<p>Your last login was on: <?php echo $lastSession ?></p>
 		</div>
 	</footer>
+	<script type="text/javascript" src="../../js/vendor/jquery.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

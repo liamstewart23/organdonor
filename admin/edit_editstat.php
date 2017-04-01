@@ -1,9 +1,6 @@
 <?php
-	require_once('phpscripts/init.php');
-	confirm_logged_in(); //comment out so you can test page without having to login
-
 	if (empty($_GET['id'])){//prevent people from typing in admin_editstory with no id
-		redirect_to('edit_stats.php');
+		redirect_to('index.php?partial=edit_stats');
 	}
 
 	$id = $_GET['id'];
@@ -21,11 +18,9 @@
 	}
 ?>
 
-<?php include("includes/header.php") ?>
-
 	<h1>Stories</h1>
 		<?php if(!empty($message)){echo $message;} ?>
-		<?php echo "<form action=\"edit_editstat.php?id={$id}\" method=\"post\" enctype=\"multipart/form-data\">"?>
+		<?php echo "<form action=\"index.php?partial=edit_editstat&id={$id}\" method=\"post\" enctype=\"multipart/form-data\">"?>
 		<h2>Edit Stat</h2>
 
 			<div class="upForm">
@@ -42,5 +37,3 @@
 			</div>
 
 		</form>
-
-<?php include("includes/footer.php") ?>

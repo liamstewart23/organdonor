@@ -1,7 +1,4 @@
 <?php
-	require_once('phpscripts/init.php');
-	confirm_logged_in();
-
 	if(isset($_POST['submit'])){
 		$text = trim($_POST['text']);
 		$image = trim($_FILES['image']['name']);
@@ -11,11 +8,9 @@
 	}
 ?>
 
-<?php include("includes/header.php") ?>
-
 	<h1>Stories</h1>
 		<?php if(!empty($message)){echo $message;} ?>
-		<form action="edit_addstat.php" method="post" enctype="multipart/form-data">
+		<form action="index.php?partial=edit_addstat" method="post" enctype="multipart/form-data">
 		<h2>Add a New Story</h2>
 
 			<div class="upForm">
@@ -32,5 +27,3 @@
 			</div>
 
 		</form>
-
-<?php include("includes/footer.php")?>
