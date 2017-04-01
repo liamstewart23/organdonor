@@ -1,7 +1,4 @@
 <?php
-	require_once('phpscripts/init.php');
-	confirm_logged_in(); //comment out so you can test page without having to login
-
 	if(isset($_POST['submit'])){
 		//echo "works";
 		$password = $_POST['password'];
@@ -20,9 +17,6 @@
 	}
 
 ?>
-
-
-<?php include('includes/header.php'); ?>
 
 	<h1>Setup Account Password</h1>
 		<?php if(!empty($message)){echo $message;} ?>

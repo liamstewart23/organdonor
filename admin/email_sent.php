@@ -1,7 +1,4 @@
 <?php
-	require_once('phpscripts/init.php');
-	confirm_logged_in();
-
 	$lastSession = $_SESSION['users_time'];
 ?>
 
@@ -12,7 +9,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Welcome to Paddy's Secret Admin</title>
-<link rel="stylesheet" href="css/main.css"/>
 </head>
 
 	<body>

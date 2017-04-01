@@ -1,9 +1,7 @@
 <?php
-	require_once('phpscripts/init.php');
-	confirm_logged_in(); //comment out so you can test page without having to login
 
 	if (empty($_GET['id'])){//prevent people from typing in admin_editstory with no id
-		redirect_to('edit_stats.php');
+		redirect_to('index.php?partial=edit_stats');
 	}
 
 	$id = $_GET['id'];
@@ -21,9 +19,5 @@
 	}
 ?>
 
-<?php include("includes/header.php") ?>
-
 	<h1>Under Construction</h1>
 	<p>This page is currently under construction.</p>
-		
-<?php include("includes/footer.php") ?>

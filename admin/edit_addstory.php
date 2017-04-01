@@ -1,9 +1,7 @@
 <?php
-	require_once('phpscripts/init.php');
-	confirm_logged_in();
 
 	if (empty($_GET['type'])){//prevent people from typing in admin_edituser with no id
-		redirect_to('admin_stories.php');
+		redirect_to('index.php?partial=admin_stories');
 	}
 
 	$type = $_GET['type'];
@@ -28,7 +26,7 @@
 		}
 
 		if ($message == 1){//if story was successfully added
-				redirect_to('edit_stories.php');
+				redirect_to('index.php?partial=edit_stories');
 		}
 	}
 ?>
@@ -37,7 +35,7 @@
 
 	<h1>Stories</h1>
 		<?php if(!empty($message)){echo $message;} ?>
-		<?php echo "<form action=\"edit_addstory.php?type={$type}\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
+		<?php echo "<form action=\"index.php?partial=edit_addstory&type={$type}\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
 		<h2>Add a New Story</h2>
 
 			<div class="upForm">
@@ -80,5 +78,3 @@
 			</div>
 
 		</form>
-
-<?php include("includes/footer.php") ?>
