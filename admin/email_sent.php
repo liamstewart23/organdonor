@@ -1,4 +1,4 @@
-<?php
+<?php require_once('phpscripts/init.php');
 	$lastSession = $_SESSION['users_time'];
 ?>
 

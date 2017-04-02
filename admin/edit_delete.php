@@ -1,4 +1,4 @@
-<?php
+<?php require_once('phpscripts/init.php');
 		$tbl = $_GET['table'];
 		//$tbl = "tbl_".$_GET['table'];
 		$id = $_GET['id'];

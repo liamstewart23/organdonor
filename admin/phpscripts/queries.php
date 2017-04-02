@@ -91,7 +91,7 @@
 		$run = mysqli_query($link, $query);
 
 		if($run){
-			redirect_to('edit_mythfact.php');
+			redirect_to('index.php?partial=edit_mythfact');
 		}else{
 			$error =  "There was an error accessing this information. Please contact your admin.";
 			return $error;
@@ -143,7 +143,7 @@
 			$run = mysqli_query($link, $query);
 
 			if($run){
-				redirect_to('edit_stats.php');
+				redirect_to('index.php?partial=edit_stats');
 			}else{
 				$message = "There was an error entering this information. Please contact your admin.";
 				return $message;
@@ -160,7 +160,7 @@
 			$run = mysqli_query($link, $query);
 
 			if($run){
-				redirect_to('edit_stats.php');
+				redirect_to('index.php?partial=edit_stats');
 			}else{
 				$message = "There was an error entering this information. Please contact your admin.";
 				return $message;
@@ -217,7 +217,7 @@
 				$run = mysqli_query($link, $query);
 				
 				if($run){
-					redirect_to('edit_stats.php');
+					redirect_to('index.php?partial=edit_stats');
 				}
 			} else if($fileType == "image/svg+xml" && $fileSize < (50*1024*1024)){ //50MB
 
@@ -231,7 +231,7 @@
 				$run = mysqli_query($link, $query);
 
 				if($run){
-					redirect_to('edit_stats.php');
+					redirect_to('index.php?partial=edit_stats');
 				}else{
 					$message = "There was an error entering this information. Please contact your admin.";
 					return $message;
@@ -245,7 +245,7 @@
 				$run = mysqli_query($link, $query);
 				
 				if($run){
-					redirect_to('edit_stats.php');
+					redirect_to('index.php?partial=edit_stats');
 				}else{
 					$error =  "There was an error accessing this information. Please contact your admin.";
 					return $error;
@@ -345,31 +345,39 @@
 			$ext = pathinfo($photoName, PATHINFO_EXTENSION);
 			$newImage = $date.".".$ext;
 
-			if($fileType == "image/jpg" || $fileType == "image/jpeg" || $fileType == "image/png" && $fileSize < (50*1024*1024)){//check and limit file types //50MB
+			if($fileType == "image/jpg" || $fileType == "image/jpeg" || $fileType == "image/png"){
+				$fileSize < (50*1024*1024)){//check and limit file types //50MB
 
-				$targetpath = "../img/stories/uploads/{$newImage}"; //where to send & name the file
-				$moveFile = move_uploaded_file($fileName, $targetpath);
-				if (!$moveFile){
-					//echo "Error copying file";
-				}
+					$targetpath = "../img/stories/uploads/{$newImage}"; //where to send & name the file
+					$moveFile = move_uploaded_file($fileName, $targetpath);
+					if (!$moveFile){
+						//echo "Error copying file";
+					}
 
-				//FILE SIZE FOR STORY AUTHOR IMAGE
-				$wmin = 450;
-				$hmin = 300;
-				$wmax = 450;
-				$hmax = 300;
-				imageResize($fileType, $targetpath,$wmin,$hmin,$wmax,$hmax); //Send to resize file
-				
-				$query = "UPDATE tbl_stories SET story_name = '{$name}', story_email = '{$email}', story_organ = '{$organ}', story_city = '{$city}', story_photo = '{$newImage}', story_text = '{$story}', story_link = '{$video}', story_status = '{$status}' WHERE story_id = {$id}";
-				$run = mysqli_query($link, $query);
-				//echo $query;
-				if($run){
-					return $run;
-					//redirect_to('edit_stories.php');
-				}else{
-					$error = "There was an error accessing this information. Please contact your admin.";
-					return $error;
+					//FILE SIZE FOR STORY AUTHOR IMAGE
+					$wmin = 450;
+					$hmin = 300;
+					$wmax = 450;
+					$hmax = 300;
+					imageResize($fileType, $targetpath,$wmin,$hmin,$wmax,$hmax); //Send to resize file
+					
+					$query = "UPDATE tbl_stories SET story_name = '{$name}', story_email = '{$email}', story_organ = '{$organ}', story_city = '{$city}', story_photo = '{$newImage}', story_text = '{$story}', story_link = '{$video}', story_status = '{$status}' WHERE story_id = {$id}";
+					$run = mysqli_query($link, $query);
+					//echo $query;
+					if($run){
+						return $run;
+						//redirect_to('edit_stories.php');
+					}else{
+						$message = "There was an error accessing this information. Please contact your admin.";
+						return $message;
+					}
+				} else {
+					$message =  "Your image is too large to upload.";
+					return $message;
 				}
+			}else{
+				$error = "There was an error with your image type. Please load a JPG or PNG image.";
+				return $error;
 			}
 		}else if(empty($photo)){ //if photo hasn't been updated
 			$query = "UPDATE tbl_stories SET story_name = '{$name}', story_email = '{$email}', story_organ = '{$organ}', story_city = '{$city}',  story_text = '{$story}', story_link = '{$video}', story_status = '{$status}'  WHERE story_id = {$id}";

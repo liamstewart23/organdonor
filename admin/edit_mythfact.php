@@ -1,4 +1,4 @@
-<?php
+<?php require_once('phpscripts/init.php');
 	editor_only();
 
 	if(isset($_POST['submit'])){

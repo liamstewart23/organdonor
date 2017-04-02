@@ -1,4 +1,4 @@
-<?php
+<?php require_once('phpscripts/init.php');
 
 	if (empty($_GET['type'])){//prevent people from typing in admin_edituser with no id
 		redirect_to('index.php?partial=admin_stories');
@@ -31,7 +31,6 @@
 	}
 ?>
 
-<?php include("includes/header.php") ?>
 
 	<h1>Stories</h1>
 		<?php if(!empty($message)){echo $message;} ?>

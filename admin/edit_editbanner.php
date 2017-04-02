@@ -1,9 +1,6 @@
-<?php
-
+<?php require_once('phpscripts/init.php');
 	if (empty($_GET['id'])){//prevent people from typing in admin_editstory with no id
-
-		redirect_to('index.php?partial=edit_stats');
-
+		redirect_to('edit_index.php');
 	}
 
 	$id = $_GET['id'];
@@ -11,14 +8,15 @@
 	$tbl = 'tbl_banners';
 	$col = 'banner_id';
 	$getBanner = getTable($tbl, $col, $id);
-	$direct = 'edit_'.$getBanner['banner_page'].'.php';
+	$direct = 'index.php?partial=edit_'.$getBanner['banner_page'];
 
 	if(isset($_POST['submit'])){
 		$title = trim($_POST['title']);
 		$desc = "";
 		$icon = "";
 		if($id == 3 || $id == 4 || $id == 5 || $id == 8 || $id == 9 || $id == 10 ){
-			$desc = trim($_POST["desc"]);
+			$desc = preg_replace("/\r\n|\r/", "<br>", $_POST["desc"]);
+			$desc = trim($desc);
 		}
 		if($id == 1 || $id == 2 || $id == 5 || $id == 7 || $id == 8 || $id == 9 || $id == 10 ){
 			$icon = trim($_FILES["image"]["name"]);
@@ -28,10 +26,6 @@
 		$message = $result;
 	}
 ?>
-
-
-<?php include("includes/header.php") ?>
-
 	<section>
 	<h1>Edit Banner</h1>
 		<?php if(!empty($message)){echo $message;} ?>
@@ -45,7 +39,9 @@
 				<?php 
 					if($id == 3 || $id == 4 || $id == 5 || $id == 8 || $id == 9 || $id == 10 ){
 						echo "<label>Description:</label><br>
-							<input type=\"text\" name=\"desc\" value=\"{$getBanner['banner_desc']}\"><br>";
+							<textarea type=\"text\" name=\"desc\">";
+						echo str_replace('<br>', "\r\n", $getBanner['banner_desc']);
+						echo "</textarea><br>";
 					}
 
 					if($id == 1 || $id == 2 || $id == 5 || $id == 7 || $id == 8 || $id == 9 || $id == 10 ){
@@ -62,5 +58,3 @@
 
 		</form>
 	</section>
-<?php include("includes/footer.php") ?>
-

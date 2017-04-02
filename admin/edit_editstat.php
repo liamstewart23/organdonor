@@ -1,4 +1,5 @@
 <?php
+require_once('phpscripts/init.php');
 	if (empty($_GET['id'])){//prevent people from typing in admin_editstory with no id
 		redirect_to('index.php?partial=edit_stats');
 	}

@@ -1,5 +1,5 @@
 <?php
-
+require_once('phpscripts/init.php');
 	//BANNERS
 	$tbl = 'tbl_banners';
 	$col = 'banner_id';
@@ -30,7 +30,7 @@
 		$message = $addStory;
 
 		if ($message == 1){//if story was successfully added
-				redirect_to('index.php?partial=edit_stories');
+				//redirect_to('index.php?partial=edit_stories');
 		}
 	}
 	if(isset($_POST['submitVideo'])){
