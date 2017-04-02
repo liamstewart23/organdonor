@@ -7,7 +7,7 @@
 	<!-- Search -->
 	<div class="col-xs-12 col-md-12 col-md-12 text-center" id="myths">
 		<img src="img/icons/myth.svg" height="0" alt="Because a Donor" id="iconMyth">
-		<h3 class="bannerHeading">Myth vs. Fact</h3>
+		<h3 class="bannerHeading"><?php echo $getMythsB['banner_title']; ?></h3>
 		<div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
 			
 			<div id="myth-vs-fact-search">

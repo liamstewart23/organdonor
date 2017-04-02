@@ -1,4 +1,4 @@
-<?php
+<?php require_once('phpscripts/init.php');
 	admin_only();
 
 	ini_set('display_errors',1);

@@ -1,4 +1,4 @@
-<?php
+<?php require_once('phpscripts/init.php');
 	if(isset($_POST['submit'])){
 		//echo "works";
 		$password = $_POST['password'];

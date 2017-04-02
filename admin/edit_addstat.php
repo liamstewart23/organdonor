@@ -1,4 +1,4 @@
-<?php
+<?php require_once('phpscripts/init.php');
 	if(isset($_POST['submit'])){
 		$text = trim($_POST['text']);
 		$image = trim($_FILES['image']['name']);

@@ -1,4 +1,4 @@
-<?php
+<?php require_once('phpscripts/init.php');
 	admin_only();
 
 	$tbl = 'tbl_banners';
@@ -17,9 +17,6 @@
 	$getShareB = getTable($tbl, $col, $id);
 
 ?>
-
-
-<?php include('includes/header.php') ?>
 
 	<section>
 	<h1>Home Page</h1>
@@ -59,6 +56,4 @@
 		</div>
 		
 	</section>
-		
-<?php include("includes/footer.php") ?>
 

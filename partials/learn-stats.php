@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-12 col-md-12 text-center" id="statistics">
 			<!-- <img src="img/icons/stats.svg" height="0" alt="Because a Donor" id="iconStats"> -->
-			<h4 id="statsh4">Organ Donation Statistics</h4>
+			<h4 id="statsh4"><?php echo $getStatsB['banner_title']; ?></h4>
 			<?php
 			$displayOrder = 0;
 				if(!is_string($getStats)){

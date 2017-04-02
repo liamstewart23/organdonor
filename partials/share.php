@@ -1,5 +1,17 @@
 <?php
 	require_once('../admin/phpscripts/init.php');
+
+	//BANNERS
+	$tbl = 'tbl_banners';
+	$col = 'banner_id';
+
+	$id = '8';
+	$getMessageB = getTable($tbl, $col, $id);
+
+	$id = '9';
+	$getShareB = getTable($tbl, $col, $id);
+
+
 	if(isset($_POST['submitWritten'])){
 		$name = trim($_POST['name']);
 		$email = trim($_POST['email']);
@@ -42,9 +54,9 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-12 banner" id="bannerShare1">
 			<div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
-				<img src="img/icons/speech.svg" height="0" alt="Because a Donor" id="iconShare">
-				<h3 class="bannerHeading">Share the Message</h3>
-				<p>Have you or a loved one had an experience with organ donation?<br>Want us to share your story? Click the button bellow to find our how to share your video or written story to help raise awareness.</p>
+				<img src="img/icons/<?php echo $getMessageB['banner_img']; ?>" height="0" alt="Because a Donor" id="iconShare">
+				<h3 class="bannerHeading"><?php echo $getMessageB['banner_title']; ?></h3>
+				<p><?php echo $getMessageB['banner_desc']; ?></p>
 				
 				<!-- 				<div class="col-xs-12 col-sm-offset-0 col-md-12">
 					<a href="#" class="btnB1" id="btnShareStory">share your story</a>
@@ -93,9 +105,9 @@
 	</div></a>
 	<div class="col-xs-12 col-md-12 banner" id="shareStoryBanner">
 		<div class="col-xs-12 col-sm-offset-0 col-md-6 col-md-offset-3 text-center">
-			<img src="img/icons/speech.svg" height="0" alt="Because a Donor" id="iconShare2">
-			<h3 class="bannerHeading">Tell Us Your Story</h3>
-			<p>Help inspire Canadians become organ donors by sharing your story. To help you out, we’ve outlined some talking points to make sure you’re story is as effective as possible.</p>
+			<img src="img/icons/<?php echo $getShareB['banner_img']; ?>" height="0" alt="Because a Donor" id="iconShare2">
+			<h3 class="bannerHeading"><?php echo $getShareB['banner_title']; ?></h3>
+			<p><?php echo $getShareB['banner_desc']; ?></p>
 		</div>
 	</div>
 	<div class="col-xs-12 text-center" id="shareStory">

@@ -2,6 +2,12 @@
 	ini_set('display_errors',1);
 error_reporting(E_ALL);
 	require_once('../admin/phpscripts/init.php');
+	//BANNERS
+	$tbl = 'tbl_banners';
+	$col = 'banner_id';
+	$id = '10';
+	$getStoryB = getTable($tbl, $col, $id);
+
 	$tbl = 'tbl_stories';
 	$getStories = getAll($tbl);
 ?>
@@ -12,11 +18,9 @@ error_reporting(E_ALL);
 	<div class="row">
 		<div class="col-xs-12 col-md-12 banner" id="bannerStories1">
 			<div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
-				<img src="img/icons/feather.svg" height="0" alt="Because a Donor" id="iconStories">
-				<h3 class="bannerHeading">Discover Their Stories</h3>
-				<p>Here we have gathered the stories of donors, donor families,
-					and organ recipients from across Ontario. See for yourself the truly
-				profound impact of organ donation on our communities. </p>
+				<img src="img/icons/<?php echo $getStoryB['banner_img']; ?>" height="0" alt="Because a Donor" id="iconStories">
+				<h3 class="bannerHeading"><?php echo $getStoryB['banner_title']; ?></h3>
+				<p><?php echo $getStoryB['banner_desc']; ?></p>
 			</div>
 		</div>
 								<div class="col-xs-12 col-md-12 text-center bounceArrow">

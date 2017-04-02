@@ -1,3 +1,12 @@
+<?php 
+    require_once('phpscripts/init.php');
+    date_default_timezone_set('America/New_York');
+    $hour = date('G');
+    $id = $_SESSION['users_creds'];
+    $userlevel = $_SESSION['users_level'];
+    $lastSession = $_SESSION['users_time'];
+?>
+
         <div class="contentCon">
             <h1><?php   if ($hour >= 5 && $hour < 12) {echo "Good Morning";} 
                         else if ($hour >= 12 && $hour < 16) {echo "Good Afternoon";}

@@ -20,8 +20,6 @@
 
 ?>
 
-<?php //include("includes/header.php") ?>
-
 <h1>Admin Login</h1>
 
 <?php if(!empty($message)) {echo $message;}	?>

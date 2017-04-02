@@ -1,5 +1,5 @@
-<?php
-	admin_only();
+<?php require_once('phpscripts/init.php');
+	superadmin_only();
 
 	if(isset($_POST['submit'])){
 		//echo "works";
@@ -19,10 +19,6 @@
 
 ?>
 
-
-
-<?php include('includes/header.php'); ?>
-	
 	<section>
 
 	<h1>Create User Account</h1>

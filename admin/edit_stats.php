@@ -1,4 +1,4 @@
-<?php
+<?php require_once('phpscripts/init.php');
 
 	$tbl = 'tbl_statistics';
 	$tblurl = 'statistics';
