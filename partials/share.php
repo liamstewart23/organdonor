@@ -68,7 +68,7 @@
 		</div>
 	</div>
 	<div class="col-xs-12 col-md-12 col-md-6 text-center" id="twitter">
-		<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1">
+		<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1" id="tInner">
 			<h4>Spread the Word</h4>
 			<p>Join our Twitter community with our hashtag <a class="red" href="https://twitter.com/search?q=%40becauseadonor&src=typd" target="_blank">#becauseadonor</a>. Help to spread awareness by sharing your story, or use one of our tweets below!</p>
 			<div class="premadeTweets">
@@ -84,7 +84,7 @@
 		</div>
 	</div>
 	<div class="col-xs-12 col-md-12 col-md-6 text-center" id="facebook">
-		<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1">
+		<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1" id="fbInner">
 			<h4>Show Your Support</h4>
 			<p>Start a movement with your community.<br>Use our generator to use our profile photo filter below!</p>
 			<div class="fbPP text-center">
@@ -96,9 +96,9 @@
 			<br>
 		</div>
 	</div>
-<!-- 	<div class="col-xs-12 col-md-12 text-center" id="shareArrow">
-		<?php //include("arrow-down.html") ?>
-	</div> -->
+	<div class="col-xs-12 col-md-12 text-center" id="shareArrow">
+		<?php include("arrow-down.html") ?>
+	</div>
 	<a href="https://teespring.com/" target="_blank">
 	<div class="col-xs-12 col-md-12 text-center" id="shareMerch">
 		Want to show your support? Click here to buy our Merch
