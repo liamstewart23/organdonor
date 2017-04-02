@@ -1,6 +1,4 @@
 <?php
-	require_once('phpscripts/init.php');
-	confirm_logged_in(); //comment out so you can test page without having to login
 	admin_only();
 
 	$tbl = 'tbl_banners';
@@ -19,6 +17,7 @@
 	$getShareB = getTable($tbl, $col, $id);
 
 ?>
+
 
 <?php include('includes/header.php') ?>
 
@@ -62,3 +61,4 @@
 	</section>
 		
 <?php include("includes/footer.php") ?>
+

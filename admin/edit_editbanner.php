@@ -1,9 +1,9 @@
 <?php
-	require_once('phpscripts/init.php');
-	confirm_logged_in(); //comment out so you can test page without having to login
 
 	if (empty($_GET['id'])){//prevent people from typing in admin_editstory with no id
-		redirect_to('edit_index.php');
+
+		redirect_to('index.php?partial=edit_stats');
+
 	}
 
 	$id = $_GET['id'];
@@ -28,6 +28,7 @@
 		$message = $result;
 	}
 ?>
+
 
 <?php include("includes/header.php") ?>
 
@@ -62,3 +63,4 @@
 		</form>
 	</section>
 <?php include("includes/footer.php") ?>
+

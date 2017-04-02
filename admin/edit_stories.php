@@ -1,6 +1,4 @@
 <?php
-	require_once('phpscripts/init.php');
-	confirm_logged_in();
 
 	//BANNERS
 	$tbl = 'tbl_banners';
@@ -24,14 +22,15 @@
 		$photo = $_FILES['photo']['name'];
 		$thumb = "th_{$photo}";
 		$video = "";
-		$story = trim($_POST['story']);
+		$story = preg_replace("/\r\n|\r/", "<br />", $_POST["story"]);
+		$story = trim($story);
 		$type = "written";
 		$status = $_POST['status'];
 		$addStory = addStory($name,$email,$city,$organ,$photo,$thumb,$story,$video,$type,$status);
 		$message = $addStory;
 
 		if ($message == 1){//if story was successfully added
-				redirect_to('edit_stories.php');
+				redirect_to('index.php?partial=edit_stories');
 		}
 	}
 	if(isset($_POST['submitVideo'])){
@@ -49,11 +48,11 @@
 		$message = $addStory;
 
 		if ($message == 1){//if story was successfully added
-				redirect_to('edit_stories.php');
+				redirect_to('index.php?partial=edit_stories');
 		}
 	}
 ?>
-<?php include('includes/header.php') ?>
+
 	<h1>Stories</h1>
 
 		<!--<h2>Add a New Story</h2>
@@ -81,7 +80,7 @@
 		<h2>Add New Story</h2>
 			<div id="written-form">
 				<?php if(!empty($message)){echo $message;} ?>
-				<?php echo "<form action=\"edit_stories.php\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
+				<?php echo "<form action=\"index.php?partial=edit_stories\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
 				<h3>Written Story</h3>
 					<div class="upForm">
 						<label>Name:</label><br>
@@ -118,7 +117,7 @@
 
 			<div id="video-form">
 				<?php if(!empty($message)){echo $message;} ?>
-				<?php echo "<form action=\"edit_stories.php\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
+				<?php echo "<form action=\"index.php?partial=edit_stories\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
 				<h3>Video Story</h3>
 					<div class="upForm">
 						<label>Name:</label><br>
@@ -159,8 +158,8 @@
 						echo "<h3>{$row['story_name']}</h3>
 							<p>{$row['story_city']}</p>
 							<p>{$row['story_organ']}</p>
-							<a href=\"edit_editstory.php?id={$row['story_id']}\">Edit Story</a><br><br>
-							<a href=\"edit_delete.php?table={$tbl}&col={$col}&id={$row['story_id']}\">Delete Story</a><br><br>";
+							<a href=\"index.php?partial=edit_editstory&id={$row['story_id']}\">Edit Story</a><br><br>
+							<a href=\"index.php?partial=edit_delete&table={$tbl}&col={$col}&id={$row['story_id']}\">Delete Story</a><br><br>";
 						}
 					}
 				}else{
@@ -178,8 +177,8 @@
 						echo "<h3>{$row['story_name']}</h3>
 							<p>{$row['story_city']}</p>
 							<p>{$row['story_organ']}</p>
-							<a href=\"edit_editstory.php?id={$row['story_id']}\">Edit Story</a><br><br>
-							<a href=\"edit_delete.php?table={$tbl}&col={$col}&id={$row['story_id']}\">Delete Story</a><br><br>";
+							<a href=\"index.php?partial=edit_editstory&id={$row['story_id']}\">Edit Story</a><br><br>
+							<a href=\"index.php?partial=edit_delete&table={$tbl}&col={$col}&id={$row['story_id']}\">Delete Story</a><br><br>";
 						}
 					}
 				}else{

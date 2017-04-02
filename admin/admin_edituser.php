@@ -23,7 +23,6 @@
 		$message = $result;
 	}
 ?>
-<?php include('includes/header.php'); ?>
 
 	<section>
 	<h1>Edit User Account</h1>

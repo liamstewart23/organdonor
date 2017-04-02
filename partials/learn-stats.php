@@ -12,7 +12,7 @@
 					while($row = mysqli_fetch_array($getStats)){
 						if ($displayOrder==1) {
 							echo "<div class=\"col-xs-12 col-md-12 text-center\">";
-							 echo "<div class=\"col-xs-12 hidden-xs col-md-5\">									<img src=\"img/learn/stats/{$row['stat_img']}\" class=\"statsIcon\" alt=\"{$row['stat_text']}\"></div>";
+							 echo "<div class=\"col-xs-12 hidden-xs col-md-5 iconWrap\">									<img src=\"img/learn/stats/{$row['stat_img']}\" class=\"statsIcon img-responsive\" alt=\"{$row['stat_text']}\"></div>";
 
 							echo "<div class=\"col-xs-12 col-md-7 stat-item\">
 									<p>{$row['stat_text']}</p>
@@ -25,7 +25,7 @@
 							echo "<div class=\"col-xs-12 col-md-7 stat-item\">
 									<p>{$row['stat_text']}</p>
 							 </div>";
-							 echo "<div class=\"col-xs-12 hidden-xs col-md-5\">									<img src=\"img/learn/stats/{$row['stat_img']}\" class=\"statsIcon\" alt=\"{$row['stat_text']}\"></div></div>";
+							 echo "<div class=\"col-xs-12 hidden-xs col-md-5 iconWrap\">									<img src=\"img/learn/stats/{$row['stat_img']}\" class=\"statsIcon img-responsive\" alt=\"{$row['stat_text']}\"></div></div>";
 							 $displayOrder = 1;
 						}
 					}

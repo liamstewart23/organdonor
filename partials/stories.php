@@ -17,11 +17,11 @@ error_reporting(E_ALL);
 				<p>Here we have gathered the stories of donors, donor families,
 					and organ recipients from across Ontario. See for yourself the truly
 				profound impact of organ donation on our communities. </p>
-				<div class="col-xs-12 col-md-12 text-center">
-					<?php include("arrow-down.html") ?>
-				</div>
 			</div>
 		</div>
+								<div class="col-xs-12 col-md-12 text-center bounceArrow">
+					<?php include("arrow-down.html") ?>
+				</div>
 	</div>
 	<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1 text-center" id="storiesContainer">
 		<!-- 			<img src="img/icons/feather.svg" height="0" alt="Because a Donor" id="iconFeather">
@@ -32,11 +32,17 @@ error_reporting(E_ALL);
 			while($row = mysqli_fetch_array($getStories)){
 				if($row['story_status'] == "posted"){
 					echo "<div class=\"col-xs-12 col-md-4 story\">
+<a href=\"#stories/{$row['story_id']}\" class=\"storyLink\">
+					<div class=\"inner\">
 								<img src=\"img/stories/uploads/{$row['story_photo']}\" alt=\"{$row['story_name']}\" class=\"img-responsive\">
+								
 								<h2>{$row['story_name']}</h2>
 								<p>{$row['story_city']}</p>
 								<p>{$row['story_organ']}</p>
-								<a href=\"#stories/{$row['story_id']}\" class=\"storyLink\">More...</a><br><br>
+
+								
+</div></a>
+								<br><br>
 						</div>";
 				}
 			}

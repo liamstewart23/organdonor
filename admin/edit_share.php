@@ -1,4 +1,5 @@
 <?php
+
 	require_once('phpscripts/init.php');
 	confirm_logged_in(); //comment out so you can test page without having to login
 	admin_only();
@@ -14,9 +15,10 @@
 	$getShareB = getTable($tbl, $col, $id);
 
 
+
 ?>
 
-<?php include("includes/header.php") ?>
+
 
 	<section>
 		<div>
@@ -44,4 +46,3 @@
 		</div>
 	</section>
 		
-<?php include("includes/footer.php") ?>

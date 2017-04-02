@@ -68,7 +68,7 @@
 					return $message;
 				}
 			}
-				redirect_to('admin_index.php');//redirect to this page when successfully logged in
+				redirect_to('index.php');//redirect to this page when successfully logged in
 			
 			
 

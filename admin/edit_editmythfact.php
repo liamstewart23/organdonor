@@ -1,9 +1,7 @@
 <?php
-	require_once('phpscripts/init.php');
-	confirm_logged_in();
 
 	if (empty($_GET['id'])){//prevent people from typing in admin_editstory with no id
-		redirect_to('edit_stories.php');
+		redirect_to('index.php?partial=edit_stories');
 	}
 
 	$id = $_GET['id'];
@@ -23,10 +21,9 @@
 
 
 ?>
-<?php include("includes/header.php") ?>
 	<h1>Stories</h1>
 		<?php if(!empty($message)){echo $message;} ?>
-		<?php echo "<form action=\"edit_editmythfact.php?id={$id}\" method=\"post\">"?>
+		<?php echo "<form action=\"index.php?partial=edit_editmythfact&id={$id}\" method=\"post\">"?>
 		<h2>Edit Myth vs Fact</h2>
 
 			<div class="upForm">
@@ -47,5 +44,3 @@
 			<div>
 
 		</form>
-
-<?php include("includes/footer.php") ?>

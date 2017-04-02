@@ -262,7 +262,7 @@
 		require_once('img_fix.php');
 
 		//Keep paragraphs seperated in database - prevents all text from being on one line
-		nl2br($story);
+		//nl2br($story);
 
 		//prevent possible SQLI injection attacks
 		$name = mysqli_real_escape_string($link,$name);

@@ -166,6 +166,50 @@ li {
     text-decoration: none;
 }
 
+
+.btnB1Home {
+    font-weight: 500;
+    text-transform: lowercase;
+    border-radius: 25px;
+    background: $white;
+    border: 2px solid $white;
+    color: #4eaee9;
+    padding: 5px 50px 5px 50px;
+    align-content: center;
+    margin-top: 200px;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.btnB1Home:hover {
+    opacity: .7;
+    background: $white;
+    border: 2px solid $white;
+    color: $blue;
+    text-decoration: none;
+}
+
+.btnB2Home {
+    font-weight: 500;
+    text-transform: lowercase;
+    border-radius: 25px;
+    background: $white;
+    border: 2px solid $white;
+    color: #9d5bc2 !important;
+    padding: 5px 50px 5px 50px;
+    align-content: center !important;
+    margin-top: 200px;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.btnB2Home:hover {
+    opacity: .7;
+    background: $white;
+    border: 2px solid $white;
+    color: $purple;
+    text-decoration: none;
+}
+
+
 .btnB3,
 .btnB4 {
     margin-top: 20px;
@@ -194,6 +238,13 @@ li {
 .fa {
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
+}
+
+.bounceArrow {
+    margin-top: -50px;
+    i {
+        color:$white;
+    }
 }
 
 .bounce {
