@@ -1,3 +1,23 @@
+<?php
+    ini_set('display_errors',1);
+    error_reporting(E_ALL);
+    include('admin/phpscripts/init.php');
+    //BANNERS
+    $tbl = 'tbl_banners';
+    $col = 'banner_id';
+    $id = '1';
+    $getRegisterB = getTable($tbl, $col, $id);
+
+    $id = '2';
+    $getLearnB = getTable($tbl, $col, $id);
+
+    $id = '3';
+    $getStoriesB = getTable($tbl, $col, $id);
+
+    $id = '4';
+    $getShareB = getTable($tbl, $col, $id);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

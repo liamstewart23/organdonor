@@ -346,7 +346,7 @@
 			$newImage = $date.".".$ext;
 
 			if($fileType == "image/jpg" || $fileType == "image/jpeg" || $fileType == "image/png"){
-				$fileSize < (50*1024*1024)){//check and limit file types //50MB
+				if($fileSize < (50*1024*1024)){//check and limit file types //50MB
 
 					$targetpath = "../img/stories/uploads/{$newImage}"; //where to send & name the file
 					$moveFile = move_uploaded_file($fileName, $targetpath);
