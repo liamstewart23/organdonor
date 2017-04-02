@@ -7,7 +7,7 @@
 		$password = mysqli_real_escape_string($link,$password);
 
 		$loginString = "SELECT * FROM tbl_user WHERE user_username = '{$username}' AND user_password = '{$password}'";
-		echo $loginString;
+		//echo $loginString;
 		$attemptString = "SELECT user_attempts, user_locked_time FROM tbl_user WHERE user_username = '{$username}'";
 		//echo $attemptString;
 		$setupString = "SELECT user_time FROM tbl_user WHERE user_username = '{$username}'";

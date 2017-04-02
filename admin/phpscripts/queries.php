@@ -1,6 +1,6 @@
 <?php
 
-	// ----- GET ALL FROM ONE TABLE ----- //
+// ----- GET ALL FROM ONE TABLE ----- //
 	function getAll($tbl) {
 		include('config.php');
 		$queryAll = "SELECT * FROM {$tbl}";
@@ -14,7 +14,7 @@
 	mysqli_close($link);
 	}
 
-	// ----- GET ONE ENTRY FROM A TABLE ----- //
+// ----- GET ONE ENTRY FROM A TABLE ----- //
 	function getTable($tbl, $col, $id){
 		include('config.php');
 		$queryTable = "SELECT * FROM {$tbl} WHERE {$col} = {$id}";
@@ -30,7 +30,7 @@
 	mysqli_close($link);
 	}
 
-	// ----- DELETE POST ----- //
+// ----- DELETE POST ----- //
 	function deletePost($tbl,$col,$id){
 		include('config.php');
 
@@ -55,7 +55,7 @@
 	mysqli_close($link);
 	}
 
-	// ----- SEND EMAIL ----- //
+// ----- SEND EMAIL ----- //
 	function sendMessage($name,$email,$subject,$msg,$direct) {
 		$to = "becauseadonor@gmail.com";
 		$from = "Reply-To: {$email}";
@@ -63,12 +63,14 @@
 		mail($to, $subject, $body, $from);
 		redirect_to($direct);	}
 
-	// ----- MYTHS VS FACTS FUNCTIONS ----- //
+// ----- MYTHS VS FACTS FUNCTIONS ----- //
 
 	function addMythFact($myth,$fact,$keyword){
 		include('config.php');
+		$myth = mysqli_real_escape_string($link,$myth);
+		$fact = mysqli_real_escape_string($link,$fact);
+		$keyword = mysqli_real_escape_string($link,$keyword);
 		$query = "INSERT INTO tbl_myths_facts VALUES(NULL,'{$myth}','{$fact}','{$keyword}')";
-		echo $query;
 		$run = mysqli_query($link, $query);
 
 		if($run){
@@ -86,7 +88,6 @@
 		$fact = mysqli_real_escape_string($link,$fact);
 		$keyword = mysqli_real_escape_string($link,$keyword);
 		$query = "UPDATE tbl_myths_facts SET mf_myth = '{$myth}', mf_fact = '{$fact}', mf_keywords = '{$keyword}' WHERE mf_id = {$id}";
-		echo $query;
 		$run = mysqli_query($link, $query);
 
 		if($run){
@@ -99,7 +100,7 @@
 	}
 
 
-	// ----- STATISTIC FUNCTIONS ----- //
+// ----- STATISTIC FUNCTIONS ----- //
 
 	function addStat($text,$image){
 		include('config.php');
@@ -175,7 +176,6 @@
 	function editStat($id,$text,$image){
 		$type = 'written';
 		include('config.php');
-		echo "Hello";
 
 		if(!empty($image)){		
 			require_once('img_fix.php');
@@ -255,7 +255,7 @@
 		}
 
 
-	// ----- STORY FUNCTIONS ----- //
+// ----- STORY FUNCTIONS ----- //
 
 	function addStory($name,$email,$city,$organ,$photo,$thumb,$story,$video,$type,$status){
 		include('config.php');
@@ -388,5 +388,69 @@
 			return $error;
 		}
 	mysqli_close($link);
-	}	
+	}
+
+
+// ----- BANNER FUNCTIONS ----- //
+
+	function editBanner($id,$title,$desc,$icon,$direct){
+		include('config.php');
+			
+		//prevent possible SQLI injection attacks
+		$title = mysqli_real_escape_string($link,$title);
+		$desc = mysqli_real_escape_string($link,$desc);
+		$icon = mysqli_real_escape_string($link,$icon);
+	
+		if(!empty($icon)){		
+			require_once('img_fix.php');
+
+			//Set Timezone, get date for image name (M = Month, d = day, Y = year, H = hour(24), i = minute, s = second, ex. Jan_01_2017_030201)
+			date_default_timezone_set('America/Toronto');
+			$date = date("M_d_Y_His");
+			
+			//CHECK IF FILE IS JPG, JPEG OR PNG
+			$photoName = $_FILES['image']['name'];
+			$fileType = $_FILES['image']['type'];
+			$fileName = $_FILES['image']['tmp_name'];
+			$fileSize = $_FILES['image']['size'];
+			$newImage = $photoName;
+
+			if($fileType == "image/svg+xml"){ //50MB
+				if($fileSize < (50*1024*1024)){
+					$targetpath = "../img/learn/stats/{$newImage}"; //where to send & name the file
+					$moveFile = move_uploaded_file($fileName, $targetpath);
+					if (!$moveFile){
+						echo "Error copying file";
+					}
+
+					$query = "UPDATE tbl_banners SET banner_img = '{$newImage}', banner_title = '{$title}', banner_desc = '{$desc}' WHERE banner_id = {$id}";
+					$run = mysqli_query($link, $query);
+
+					if($run){
+						redirect_to($direct);
+					}else{
+						$message = "! There was an error entering this information. Please contact your admin.";
+						return $message;
+					}
+				}else{
+					$message =  "Your image is too large to upload.";
+					return $message;
+				}
+			}else{
+				$message =  "There was an error with your image type. Please load an SVG image.";
+				return $message;
+			}
+		}else if(empty($icon)){
+			$query = "UPDATE tbl_banners SET banner_title = '{$title}', banner_desc = '{$desc}' WHERE banner_id = {$id}";
+				$run = mysqli_query($link, $query);
+				
+				if($run){
+					redirect_to($direct);
+				}else{
+					$message =  "There was an error accessing this information. Please contact your admin.";
+					return $message;
+				}
+			}
+		mysqli_close($link);
+	}
 ?>

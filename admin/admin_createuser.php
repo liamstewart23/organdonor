@@ -21,6 +21,9 @@
 
 
 
+<?php include('includes/header.php'); ?>
+	
+	<section>
 
 	<h1>Create User Account</h1>
 		<?php if(!empty($message)){echo $message;} ?>
@@ -50,6 +53,7 @@
 			</div>
 
 		</form>
+	</section>
 
-	</body>
+</body>
 </html>
