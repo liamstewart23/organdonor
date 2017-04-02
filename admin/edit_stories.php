@@ -2,6 +2,14 @@
 	require_once('phpscripts/init.php');
 	confirm_logged_in();
 
+	//BANNERS
+	$tbl = 'tbl_banners';
+	$col = 'banner_id';
+
+	$id = '10';
+	$getStoriesB = getTable($tbl, $col, $id);
+
+	//STORIES
 	$tbl = 'tbl_stories';
 	$tblurl = 'stories';
 	$col = 'story_id';
@@ -51,6 +59,23 @@
 		<!--<h2>Add a New Story</h2>
 		<a href="edit_addstory.php?type=written">Written</a>
 		<a href="edit_addstory.php?type=video">Video</a>-->
+
+		<?php 
+			if($_SESSION['users_level'] == 2 || $_SESSION['users_level'] == 3){
+				echo "<section>
+						<div>
+						<h2>Stories Banner</h2>
+							<?php 
+							<div class=\"admin-banner\">
+								<h3>{$getStoriesB['banner_title']}</h3>
+								<p>{$getStoriesB['banner_desc']}</p>
+								<p>{$getStoriesB['banner_img']}</p>
+								<a href=\"edit_editbanner.php?id={$getStoriesB['banner_id']}\">Edit</a>
+							</div>
+						</div>
+					</section>";
+			}
+		?>
 
 		<div id="addstory">
 		<h2>Add New Story</h2>

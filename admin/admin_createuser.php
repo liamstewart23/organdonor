@@ -23,7 +23,8 @@
 
 
 <?php include('includes/header.php'); ?>
-
+	
+	<section>
 	<h1>Create User Account</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<form action="admin_createuser.php" method="post">
@@ -52,6 +53,7 @@
 			</div>
 
 		</form>
+	</section>
 
-	</body>
+</body>
 </html>

@@ -25,6 +25,7 @@
 ?>
 <?php include('includes/header.php'); ?>
 
+	<section>
 	<h1>Edit User Account</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<form action="admin_edituser.php?id=<?php echo $popForm['user_id']; ?>" method="post">
@@ -44,6 +45,6 @@
 			<input type="submit" name="submit" value="Apply Changes">
 
 		</form>
-
+	</section>
 	</body>
 </html>

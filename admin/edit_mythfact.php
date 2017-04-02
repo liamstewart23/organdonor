@@ -39,7 +39,7 @@
 			<div class="addbtn">
 				<input type="submit" name="submit" value="Add Myth vs Fact">
 			</div>
-
+		</form>
 			<div>
 			<h2>Myths vs Facts</h2>
 				<?php 
@@ -56,4 +56,4 @@
 					}
 				?>
 			</div>
-		</form>
+<?php include('includes/footer.php') ?>		

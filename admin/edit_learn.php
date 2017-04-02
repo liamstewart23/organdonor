@@ -3,6 +3,19 @@
 	confirm_logged_in(); //session will fully log out if you shut down entire browser, not just by closing tab
 	admin_only();
 
+	//BANNERS
+	$tbl = 'tbl_banners';
+	$col = 'banner_id';
+
+	$id = '5';
+	$getLearnB = getTable($tbl, $col, $id);
+
+	$id = '6';
+	$getStatsB = getTable($tbl, $col, $id);
+
+	$id = '7';
+	$getMythsB = getTable($tbl, $col, $id);
+
 	//STATS
 	$tbl = 'tbl_statistics';
 	$tblurl = 'statistics';
@@ -39,12 +52,48 @@
 <?php //include('edit_stats.php') ?>
 <?php //include('edit_mythfact.php') ?>
 
-	<div>
+	<section>
+		<div>
+		<h2>Learn Banner</h2>
+			<?php 
+			echo "<div class=\"admin-banner\">
+					<h3>{$getLearnB['banner_title']}</h3>
+					<p>{$getLearnB['banner_desc']}</p>
+					<p>{$getLearnB['banner_img']}</p>
+					<a href=\"edit_editbanner.php?id={$getLearnB['banner_id']}\">Edit</a>
+				</div>";
+			?>
+		</div>
+
+		<div>	
+		<h2>Stats Title</h2>
+		<?php 
+			echo "<div class=\"admin-banner\">
+					<h3>{$getStatsB['banner_title']}</h3>
+					<a href=\"edit_editbanner.php?id={$getStatsB['banner_id']}\">Edit</a>
+				</div>";
+			?>
+		</div>
+
+		<div>
+		<h2>Myths Banner</h2>
+			<?php 
+			echo "<div class=\"admin-banner\">
+					<h3>{$getMythsB['banner_title']}</h3>
+					<p>{$getMythsB['banner_desc']}</p>
+					<p>{$getMythsB['banner_img']}</p>
+					<a href=\"edit_editbanner.php?id={$getMythsB['banner_id']}\">Edit</a>
+				</div>";
+			?>
+		</div>
+	</section>
+
+	<section>
+	<h1>Statistics</h2>
 		<div>
 		<h2>Add a New Statistic</h2>
 		<?php if(!empty($message)){echo $message;} ?>
 		<form action="edit_addstat.php" method="post" enctype="multipart/form-data">
-		<h2>Add a New Story</h2>
 
 			<div class="upForm">
 				<label>Name:</label><br>
@@ -75,9 +124,9 @@
 				}
 			?>
 		</div>
-	</div>
+	</section>
 
-	<div>
+	<section>
 	<h1>Myths Vs Facts</h1>
 		<?php if(!empty($message)){echo $message;} ?>
 		<form action="edit_mythfact.php" method="post">
@@ -115,7 +164,7 @@
 				?>
 			</div>
 		</form>
-	</div>
+	</section>
 
 
 <?php include('includes/footer.php') ?>
