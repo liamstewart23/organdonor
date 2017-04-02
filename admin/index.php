@@ -21,15 +21,6 @@ $hour = date('G');
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle navbar-toggle-sidebar collapsed">
-                    MENU
-                    </button>
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
                     <a class="navbar-brand" href="index.php" class="img-responsive" id="logo">
                         <img src="../img/logo.jpg" alt="becauseadonor">
                     </a>
@@ -38,9 +29,7 @@ $hour = date('G');
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="../" target="_blank">Visit Site</a></li>
                         <li class="dropdown ">
-                            <a href="index.php?partial=admin_edituser">
-                                My Account
-                                </a>
+                            <a href="index.php?partial=admin_edituser">My Account</a>
                             </li>
                         </ul>
                     </div>
