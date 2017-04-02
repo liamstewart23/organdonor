@@ -87,10 +87,13 @@ label {
     font-weight:200;
     padding-bottom: 20px;
 }
-
+#tInner, #fbInner {
+    z-index: 2;
+}
 #shareArrow {
     margin-top: -50px;
     color: $purple !important;
+    z-index: 1;
 }
 
 .file {
