@@ -14,7 +14,8 @@
 		$photo = $_FILES['photo']['name'];
 		$thumb = "th_{$photo}";
 		$video = "";
-		$story = trim($_POST['story']);
+		$story = preg_replace("/\r\n|\r/", "<br />", $_POST["story"]);
+		$story = trim($story);
 		$type = "written";
 		$status = $_POST['status'];
 		$addStory = addStory($name,$email,$city,$organ,$photo,$thumb,$story,$video,$type,$status);

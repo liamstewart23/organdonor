@@ -18,7 +18,6 @@
 		<h2>Add a New Statistic</h2>
 		<?php if(!empty($message)){echo $message;} ?>
 		<form action="index.php?partial=edit_addstat" method="post" enctype="multipart/form-data">
-		<h2>Add a New Story</h2>
 
 			<div class="upForm">
 				<label>Name:</label><br>

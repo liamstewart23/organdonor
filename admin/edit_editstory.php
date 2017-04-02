@@ -21,7 +21,8 @@
 		$story = "";
 		$status = $_POST['status'];
 		if($type == "written"){
-				$story = trim($_POST['story']);
+				$story = preg_replace("/\r\n|\r/", "<br>", $_POST["story"]);
+				$story = trim($story);
 				$editStory = editStory($id,$name,$email,$city,$organ,$photo,$story,$video,$status);
 				$message = $editStory;
 
@@ -63,7 +64,7 @@
 					if($getStories['story_type'] == "written"){
 						echo 	"<label>Written Story:</label><br>
 								<textarea required type=\"text\" name=\"story\">";
-						echo 	$getStories['story_text'];
+						echo 	str_replace('<br>', "\r\n", $getStories['story_text']);
 						echo	"</textarea><br>";
 					}else if ($getStories['story_type'] == "video"){
 						echo 	"<label>Youtube Embeded Link:</label><br>
