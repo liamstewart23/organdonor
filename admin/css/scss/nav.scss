@@ -3,13 +3,8 @@
     background: transparent !important;
 }
 
-.navbar-nav li {
-a{
-    color: $white;
-}
-a:hover {
+.navbar-nav li a:hover {
     opacity: .7;
-}
 }
 
 .nav-top {
