@@ -28,7 +28,7 @@
 	<!-- End Search -->
 	<!-- Myths v Facts - Use even / odd for styling colours -->
 	<div ng-repeat="mf in mythfact | filter: searchfilter">
-		<div class="col-xs-12 col-md-12 myth-fact-bg-offset">
+		<div class="col-xs-12 col-md-12" ng-class-odd="'myth-fact-bg'" ng-class-even="'myth-fact-bg-offset'">
 			<div class="col-xs-10 col-xs-offset-1 col-md-10 col-md-offset-1 myth-fact">
 				<h3 class="red"><i class="fa fa-times" aria-hidden="true"></i> {{mf.mf_myth}}</h3>
 				<p><i class="fa fa-check green" aria-hidden="true"></i> {{mf.mf_fact}}</p>
