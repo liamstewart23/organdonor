@@ -146,8 +146,8 @@ app.controller('HomeCtrl', [function() {
     });
 }]);
 //Controller for Learn
-app.controller('LearnCtrl', [function() {
-    angular.element(document).ready(function() {
+app.controller('LearnCtrl', ['$scope','$http', function($scope, $http) {
+    angular.element(document).ready(function($scope, $http) {
         document.title = "Learn - " + siteTitle;
         var learn = $('#learn');
         TweenMax.to(learn, .5, { opacity: 1 });
@@ -176,42 +176,66 @@ app.controller('LearnCtrl', [function() {
 
         //-- add function to output json of all results from tbl_myths_facts
 
+        
 
         // // AJAX FOR SEARCH FUNCTION MYTHS VS FACTS
-        // var searchbtn = document.querySelector('#searchbtn');
-        // var searchtext = document.querySelector('#searchtext');
+        var searchbtn = document.querySelector('#searchbtn');
+        var searchtext = document.querySelector('#searchtext');
+        
+        app.controller('searchCtrl',['$scope','$http', function($scope, $http){
+            console.log('working!');
+            $http.get('admin/phpscripts/search-query.php')
+                .success(function(response){
+                    $scope.mythfact = response;
+                })
+                .error(function() {
+                    $scope.mythfact = "There was an error accessing this information. Please contact admin.";
+                });
+        }]);
+        
+
+        /* function makeRequest(url,e){
+             console.log('clicked');
+             httpRequest = new XMLHttpRequest();
+
+             if(!httpRequest){ // Checking to make sure the browser isn't too old    
+                 alert('Sorry, your browser is too old to access this content.');
+                 return false; // This exits out of a function, will execute the next line after function is closed
+             }
 
 
-        // function makeRequest(url,e){
-        //     console.log('clicked');
-        //     httpRequest = new XMLHttpRequest();
+             httpRequest.onreadystatechange = searchResults;               
+             httpRequest.open('GET', 'admin/phpscripts/search-query.php'); //Passing in a url through a get protocol
+             httpRequest.send();
+         }
 
-        //     if(!httpRequest){ // Checking to make sure the browser isn't too old    
-        //         alert('Sorry, your browser is too old to access this content.');
-        //         return false; // This exits out of a function, will execute the next line after function is closed
-        //     }
+        function searchResults(url,e){
+            if(httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200){
+                var sResult = httpRequest.responseText;
 
+                console.log(sResult);
+                //json output object array here for search results
+            }
+        }
 
-        //     httpRequest.onreadystatechange = searchResults;               
-        //     httpRequest.open('GET', 'includes/search-query.php?search='+searchtext); //Passing in a url through a get protocol
-        //     httpRequest.send();
-        // }
-
-        // function searchResults(url,e){
-        //     if(httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200){
-        //         var sResult = JSON.parse(httpRequest.responseText);
-        //         //json output object array here for search results
-
-        //     }
-        // }
-
-        // searchbtn.addEventListener('click', makeRequest, false); //start ajax search on search click
+        window.addEventListener('load', makeRequest, false); //start ajax search on search click
+        */
 
 
 
         footerLoad();
     });
+
+    // SEARCH FUNCTION ON LEARN PAGE
+    $http.get('admin/phpscripts/search-query.php')
+        .success(function(response){
+            $scope.mythfact = response;
+        })
+        .error(function() {
+            $scope.mythfact = "There was an error accessing this information. Please contact admin.";
+        });
 }]);
+
 //Controller for Stories
 app.controller('StoriesCtrl', [function() {
     angular.element(document).ready(function() {
