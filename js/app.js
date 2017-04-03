@@ -276,13 +276,13 @@ app.controller('StoriesCtrl', [function() {
 //Controller for Story
 app.controller('StoryCtrl', [function() {
     angular.element(document).ready(function() {
-        var person = "Sarah"; // Lauren I was thinking we could use ajax to pull the first name of story for title tag.
+        //var person = "Sarah"; // Lauren I was thinking we could use ajax to pull the first name of story for title tag.
         document.title = " Story - " + siteTitle;
 
         var story = $('#story');
         TweenMax.to(story, .5, { opacity: 1 });
 
-        $('#story').css({ 'height': (($(window).height() * 2)) + 'px' });
+        //$('#story').css({ 'height': (($(window).height() * 2)) + 'px' });
 
         footerLoad();
     });

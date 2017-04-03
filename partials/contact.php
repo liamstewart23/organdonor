@@ -1,31 +1,33 @@
 <?php if(isset($_POST['name'])) {
-        //echo "Thanks, {$_POST['name']}";
-        
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $subject = $_POST['subject'];
-        $msg = $_POST['message'];
-        $honeypot = $_POST['phone'];
-        $direct = "thankyou.php";
-        //sendMessage($name,$email,$company,$msg,$direct);
-            if($honeypot==="") {
-                //echo "Email sent";
-                sendMessage($name,$email,$subject,$msg,$direct);
-            } else {
-                echo "This is contact form is not for robots.";
-            }
-    } else {
-        //echo "Don't be lazy, fill out the form";
-    }
-?>
-<!-- <!doctype html> --> 
-<!-- Doctype for partial html validation testing  -->
+//echo "Thanks, {$_POST['name']}";
 
+$name = $_POST['name'];
+$email = $_POST['email'];
+$subject = $_POST['subject'];
+$msg = $_POST['message'];
+$honeypot = $_POST['phone'];
+$direct = "thankyou.php";
+//sendMessage($name,$email,$company,$msg,$direct);
+if($honeypot==="") {
+//echo "Email sent";
+sendMessage($name,$email,$subject,$msg,$direct);
+} else {
+echo "This is contact form is not for robots.";
+}
+} else {
+//echo "Don't be lazy, fill out the form";
+}
+?>
+<!-- <!doctype html> -->
+<!-- Doctype for partial html validation testing  -->
 <section id="contact">
     <h2 class="hidden">Because a Donor Website - Contact Us</h2>
     <div class="row">
         <div class="col-xs-12 col-sm-offset-0 col-md-6 col-md-offset-3">
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                <div class="col-xs-12 col-sm-offset-11 col-md-1">
+                    <a href="javascript:history.go(-1)"><i class="fa fa-times fa-2x white" aria-hidden="true"></i></a>
+                </div>
                 <h3>Contact Us</h3>
                 <div class="row">
                     <div class="col-md-6">

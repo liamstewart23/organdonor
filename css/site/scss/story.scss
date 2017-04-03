@@ -1,7 +1,7 @@
 #story {
 	opacity: 0;
-	background-color: $purple;
-	color:$white;
+	background-color: $white;
+	color:$black;
 	padding-top: 50px;
 	height: 100%;
 	h4 {
@@ -16,13 +16,18 @@
 	padding-bottom: 56.25%; /* 16:9 */
 	padding-top: 25px;
 	height: 0;
-}
-.videoWrapper iframe {
+iframe {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 }
-
+}
+.storyPage {
+	margin-bottom: 50px;
+	p {
+		font-weight: 200;
+	}
+}
 }
