@@ -30,7 +30,7 @@ require_once('phpscripts/init.php');
 		$message = $addStory;
 
 		if ($message == 1){//if story was successfully added
-				//redirect_to('index.php?partial=edit_stories');
+				redirect_to('index.php?partial=edit_stories');
 		}
 	}
 	if(isset($_POST['submitVideo'])){
@@ -96,7 +96,7 @@ require_once('phpscripts/init.php');
 						<input required type="text" name="organ" value="<?php if(!empty($organ)){echo $organ;} ?>"><br>
 
 						<label>Photo:</label><br>
-						<input required type="file" name="photo" value="<?php if(!empty($photo)){echo $photo;} ?>"><br>
+						<input type="file" name="photo" value="<?php if(!empty($photo)){echo $photo;} ?>"><br>
 
 						<label>Written Story:</label><br>
 						<textarea required type="text" name="story" value=""><?php if(!empty($story)){echo $story;} ?></textarea><br>
