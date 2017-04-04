@@ -1,5 +1,4 @@
 <?php require_once('phpscripts/init.php');
-	editor_only();
 
 	if(isset($_POST['submit'])){
 		$myth = trim($_POST['myth']);
@@ -52,4 +51,3 @@
 					}
 				?>
 			</div>
-<?php include('includes/footer.php') ?>		

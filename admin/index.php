@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include('phpscripts/init.php');
 confirm_logged_in();//session will fully log out if you shut down entire browser, not just by closing tab
 $id = $_SESSION['users_creds'];

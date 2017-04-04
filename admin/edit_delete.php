@@ -7,13 +7,10 @@
 
 	if (isset($_POST['yes'])){
 		
-		redirect_to('index.php');
+		//redirect_to('index.php');
 		$deletePost = deletePost($tbl,$col,$id);
-		$message = $deletePost;
+		redirect_to('index.php');
 
-		if ($message == 1){//if post was successfully deleted
-				redirect_to('index');
-		}
 		//previous_page();
 
 	}

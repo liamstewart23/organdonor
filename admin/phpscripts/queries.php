@@ -295,10 +295,10 @@
 			}
 
 			//FILE SIZE FOR STORY AUTHOR IMAGE
-			$wmin = 450;
-			$hmin = 300;
-			$wmax = 450;
-			$hmax = 300;
+			$wmin = 400;
+			$hmin = 250;
+			$wmax = 400;
+			$hmax = 250;
 			imageResize($fileType, $targetpath,$wmin,$hmin,$wmax,$hmax); //Send to resize file
 
 			$query = "INSERT INTO tbl_stories VALUES(NULL,'{$name}','{$email}','{$organ}','{$city}','{$type}','{$story}','{$video}','{$newImage}','{$status}')";
