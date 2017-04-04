@@ -237,7 +237,7 @@ app.controller('LearnCtrl', ['$scope','$http', function($scope, $http) {
 }]);
 
 //Controller for Stories
-app.controller('StoriesCtrl', [function() {
+app.controller('StoriesCtrl', ['$scope','$http', function($scope, $http) {
     angular.element(document).ready(function() {
         document.title = "Stories - " + siteTitle;
 
@@ -272,6 +272,29 @@ app.controller('StoriesCtrl', [function() {
         //End Linking changes
         footerLoad();
     });
+
+    // LOAD MORE FUNCTION ON STORIES PAGE
+
+    $http.get('admin/phpscripts/story-query.php')
+        .success(function(response){
+            $scope.stories = response;
+        })
+        .error(function() {
+            $scope.stories = "There was an error accessing this information. Please contact admin.";
+        });
+
+    $scope.limit = 3; //how many to load per page
+
+    $scope.loadMore = function() {
+        $scope.limit = $scope.limit+3; //how many to load on "load more" button click
+        console.log($scope.limit);
+        if($scope.limit >= $scope.stories.length){//hide load more button when all are loaded
+            $scope.hideBtn = function(){
+                $scope.hideBtn = !scope.hideBtn;
+            }
+        }
+    }
+
 }]);
 //Controller for Story
 app.controller('StoryCtrl', [function() {
