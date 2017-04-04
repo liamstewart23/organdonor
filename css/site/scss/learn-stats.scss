@@ -5,30 +5,21 @@
     }
 }
 
-.stat-item {
+.statItem {
     background-color: $white;
     color: $white;
-    padding:25px;
+    margin-bottom: 30px;
     min-height: 250px;
-    margin-bottom:100px;
-    min-height: 250px;
-    background-color: $purple;
     display: flex;
   justify-content: center;
   flex-direction: column;
-  .iconWrap {
-                display: flex;
-  justify-content: center;
-  flex-direction: column;
-  }
-    .statsIcon {
-        background-color: transparent;
-            display: flex;
-  justify-content: center;
-  flex-direction: column;
-    }
+  .inner {
+    background-color: $purple;
+    padding: 10px;
     p {
+      padding-top: 25px;
         font-weight: 200;
         font-size: 1.2em;
     }
+  }
 }

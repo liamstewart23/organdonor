@@ -96,7 +96,7 @@
 			<br>
 		</div>
 	</div>
-	<div class="col-xs-12 col-md-12 text-center" id="shareArrow">
+	<div class="col-xs-12 col-md-12 text-center purple" id="shareArrow">
 		<?php include("arrow-down.html") ?>
 	</div>
 	<a href="https://teespring.com/" target="_blank">
@@ -155,7 +155,7 @@
 							</div>
 							<!-- File Button -->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="photo">Donor/Recipient Photo:</label>
+								<label class="col-md-4 control-label fileLabel" for="photo">Donor/Recipient Photo:</label>
 								<div class="col-md-4">
 									<input type="file" name="photo" class="file">
 									<div class="input-group col-xs-12">
@@ -220,7 +220,7 @@
 							</div>
 							<!-- File Button -->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="photo">Donor/Recipient Photo:</label>
+								<label class="col-md-4 control-label fileLabel" for="photo">Donor/Recipient Photo:</label>
 								<div class="col-md-4">
 									<input type="file" name="img[]" class="file">
 									<div class="input-group col-xs-12">

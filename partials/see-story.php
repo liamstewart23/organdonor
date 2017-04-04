@@ -23,6 +23,7 @@ error_reporting(E_ALL);
 			<div class=\"col-xs-12 col-md-offset-10 col-md-1\"><a href=\"#stories\"><i class=\"red fa fa-times fa-2x\" aria-hidden=\"true\"></i></a></div>
 				<div class=\"col-xs-12 col-md-11 col-md-offset-1\">
 					<h3>{$getStory['story_name']}</h3>
+					
 					<h4 class=\"red\">{$getStory['story_organ']}</h4>
 					";
 					//echo "<div class=\"row\"><div class=\"col-xs-12 col-md-12 story-content text-center\">";
@@ -35,6 +36,7 @@ error_reporting(E_ALL);
 							</div>
 							<div class=\"col-xs-12 col-md-6\">
 								<h3>{$getStory['story_name']}</h3>
+
 								<h4 class=\"red\">{$getStory['story_organ']}</h4>
 								";
 									//echo "<div class=\"row\"><div class=\"col-xs-12 col-md-12 story-content text-center\">";

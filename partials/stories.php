@@ -38,17 +38,22 @@ error_reporting(E_ALL);
 					echo "<div class=\"col-xs-12 col-md-4 story\">
 <a href=\"#stories/{$row['story_id']}\" class=\"storyLink\">
 					<div class=\"inner\">
-								<img src=\"img/stories/uploads/{$row['story_photo']}\" alt=\"{$row['story_name']}\" class=\"img-responsive\">
-								
-								<h2>{$row['story_name']}</h2>
+					";
+					if($row['story_photo'] == NULL){
+								echo "<h2>{$row['story_name']}</h2>
 								<p>{$row['story_city']}</p>
 								<p>{$row['story_organ']}</p>
-
-								
-</div></a>
-								<br><br>
-						</div>";
+								</div></a><br><br></div>";
 				}
+					else {
+					echo "<img src=\"img/stories/uploads/{$row['story_photo']}\" alt=\"{$row['story_name']}\" class=\"img-responsive\">";
+					
+								echo "<h2>{$row['story_name']}</h2>
+								<p>{$row['story_city']}</p>
+								<p>{$row['story_organ']}</p>
+								</div></a><br><br></div>";
+				}
+			}
 			}
 		}
 		?>
