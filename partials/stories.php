@@ -31,12 +31,26 @@ error_reporting(E_ALL);
 		<!-- 			<img src="img/icons/feather.svg" height="0" alt="Because a Donor" id="iconFeather">
 		<h4>Discover their Stories</h4> -->
 		<!-- Stories -->
+		
+		<div ng-repeat="story in stories | limitTo:limit" class="col-xs-12 col-md-4 story">
+			<a href="#stories/{{story.story_id}}" class="storyLink">
+				<div class="inner">
+					<img src="img/stories/uploads/{{story.story_photo}}" alt="{{story.story_name}}" class="img-responsive">
+					<h2>{{story.story_name}}</h2>
+					<p>{{story.story_city}}</p>
+					<p>{{story.story_organ}}</p>
+				</div>
+			</a>
+			<br><br>
+		</div>
+
+
 		<?php
-		if(!is_string($getStories)){
+		/*if(!is_string($getStories)){
 			while($row = mysqli_fetch_array($getStories)){
 				if($row['story_status'] == "posted"){
 					echo "<div class=\"col-xs-12 col-md-4 story\">
-<a href=\"#stories/{$row['story_id']}\" class=\"storyLink\">
+					<a href=\"#stories/{$row['story_id']}\" class=\"storyLink\">
 					<div class=\"inner\">
 					";
 					if($row['story_photo'] == NULL){
@@ -55,13 +69,13 @@ error_reporting(E_ALL);
 				}
 			}
 			}
-		}
+		}*/
 		?>
 	</div>
 	<!-- End Stories -->
 	
 	<div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1 text-center" id="btnLoadStories">
-		<a href="#" class="btnBlue">load more stories</a>
+		<a ng-click="loadMore()" ng-hide="hideBtn" class="btnBlue">load more stories</a>
 	</div>
 </div>
 <div class="col-xs-12 col-md-12 col-md-10 col-md-offset-1 text-center">
