@@ -44,10 +44,9 @@ error_reporting(E_ALL);
 								if($getStory['story_type'] == 'written'){
 									echo "</div><div class=\"row\"><div class=\"col-xs-12 col-md-10 col-md-offset-1 story-content\"><p>{$getStory['story_text']}</p>";
 								}else if($getStory['story_type'] == 'video'){
-									//{$getStory['story_link']}
 								echo "</div><div class=\"row\"><div class=\"col-xs-12 col-md-10 col-md-offset-1 story-content text-center\">
 								<div class=\"videoWrapper\">
-									<iframe src=\"https://player.vimeo.com/video/121366735\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+											{$getStory['story_link']}
 								</div>";
 							}
 						echo "</div></div></div>";
