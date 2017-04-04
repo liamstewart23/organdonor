@@ -133,10 +133,10 @@
 			}
 
 			//FILE SIZE FOR LEARN STAT IMAGE
-			$wmin = 450;
-			$hmin = 300;
-			$wmax = 450;
-			$hmax = 300;
+			$wmin = 400;
+			$hmin = 250;
+			$wmax = 400;
+			$hmax = 250;
 			imageResize($fileType, $targetpath,$wmin,$hmin,$wmax,$hmax); //Send to resize file
 
 			$query = "INSERT INTO tbl_statistics VALUES(NULL,'{$newImage}','{$text}')";
@@ -207,10 +207,10 @@
 				}
 
 				//FILE SIZE FOR LEARN STAT IMAGE
-				$wmin = 450;
-				$hmin = 300;
-				$wmax = 450;
-				$hmax = 300;
+				$wmin = 400;
+				$hmin = 250;
+				$wmax = 400;
+				$hmax = 250;
 				imageResize($fileType, $targetpath,$wmin,$hmin,$wmax,$hmax); //Send to resize file
 
 				$query = "UPDATE tbl_statistics SET stat_img = '{$newImage}', stat_text = '{$text}' WHERE stat_id = {$id}";
@@ -355,10 +355,10 @@
 					}
 
 					//FILE SIZE FOR STORY AUTHOR IMAGE
-					$wmin = 450;
-					$hmin = 300;
-					$wmax = 450;
-					$hmax = 300;
+					$wmin = 400;
+					$hmin = 250;
+					$wmax = 400;
+					$hmax = 250;
 					imageResize($fileType, $targetpath,$wmin,$hmin,$wmax,$hmax); //Send to resize file
 					
 					$query = "UPDATE tbl_stories SET story_name = '{$name}', story_email = '{$email}', story_organ = '{$organ}', story_city = '{$city}', story_photo = '{$newImage}', story_text = '{$story}', story_link = '{$video}', story_status = '{$status}' WHERE story_id = {$id}";

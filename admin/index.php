@@ -1,6 +1,6 @@
 <?php
 include('phpscripts/init.php');
-confirm_logged_in(); //session will fully log out if you shut down entire browser, not just by closing tab
+confirm_logged_in();//session will fully log out if you shut down entire browser, not just by closing tab
 $id = $_SESSION['users_creds'];
 $userlevel = $_SESSION['users_level'];
 $lastSession = $_SESSION['users_time'];
@@ -43,7 +43,8 @@ $hour = date('G');
                             <nav class="navbar navbar-default" role="navigation">
                                 <div class="side-menu-container">
                                     <ul class="nav navbar-nav">
-                                        <?php   if($userlevel == 1 || $userlevel == 2 || $userlevel == 3){
+                                        <?php
+                                        if($userlevel == 1 || $userlevel == 2 || $userlevel == 3){
                                         echo    "<li>
                                             <a href=\"index.php?partial=edit_stories\"><i class=\"fa fa-book\"></i> Stories</a>
                                         </li>
@@ -58,7 +59,7 @@ $hour = date('G');
                                         </li>";
                                         }
                                         if($userlevel == 2 || $userlevel == 3){
-                                        echo "                                            <li class=\"panel panel-default\" id=\"dropdown\">
+                                        echo "<li class=\"panel panel-default\" id=\"dropdown\">
                                             <a data-toggle=\"collapse\" href=\"#dropdown-lvl1\">
                                                 <i class=\"fa fa-file\"></i> Pages <span class=\"caret\"></span>
                                             </a>
@@ -98,22 +99,16 @@ $hour = date('G');
                     </div>
                     <div class="col-md-10 content">
                         <?php
-                        if (isset($_GET['partial'])) {
+                        if (isset($_GET['partial'])){
                         $partial =  $_GET['partial'];
-                        include $partial.'.php';
+                        include($partial.'.php');
                         }
                         else {
-                        include 'admin_index.php';
+                        include('admin_index.php');
                         }
                         ?>
                     </div>
-                    <?php
-                    $id = $_SESSION['users_creds'];
-                    $userlevel = $_SESSION['users_level'];
-                    $lastSession = $_SESSION['users_time'];
-                    date_default_timezone_set('America/New_York');
-                    $hour = date('G');
-                    ?>
+                    
                     <footer class="pull-left footer">
                         <div id="lastLog">
                             <p>Your last login was on: <?php echo $lastSession ?></p>

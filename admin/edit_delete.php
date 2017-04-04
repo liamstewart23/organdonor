@@ -6,8 +6,14 @@
 		
 
 	if (isset($_POST['yes'])){
-		deletePost($tbl,$col,$id);
+		
 		redirect_to('index.php');
+		$deletePost = deletePost($tbl,$col,$id);
+		$message = $deletePost;
+
+		if ($message == 1){//if post was successfully deleted
+				redirect_to('index');
+		}
 		//previous_page();
 
 	}
