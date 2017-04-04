@@ -11,21 +11,21 @@
 
 	function editor_only() { //only editors allowed on this page
 		if($_SESSION['users_level'] == 2 || $_SESSION['users_level'] == 3){
-			redirect_to('admin_index.php');
+			redirect_to('index.php');
 		}
 	}
 
 	function admin_only() { //only admins (admin & super admin) allowed on this page
 		
 		if($_SESSION['users_level'] == 1){
-			redirect_to('admin_index.php');
+			redirect_to('index.php');
 		}
 	}
 
 	function superadmin_only() { //only admins (admin & super admin) allowed on this page
 		
 		if($_SESSION['users_level'] == 1 || $_SESSION['users_level'] == 2){
-			redirect_to('admin_index.php');
+			redirect_to('index.php');
 		}
 	}
 
