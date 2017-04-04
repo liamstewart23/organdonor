@@ -287,7 +287,6 @@ app.controller('StoriesCtrl', ['$scope','$http', function($scope, $http) {
 
     $scope.loadMore = function() {
         $scope.limit = $scope.limit+3; //how many to load on "load more" button click
-        console.log($scope.limit);
         if($scope.limit >= $scope.stories.length){//hide load more button when all are loaded
             $scope.hideBtn = function(){
                 $scope.hideBtn = !scope.hideBtn;
