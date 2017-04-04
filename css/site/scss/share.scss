@@ -17,9 +17,7 @@
 }
 
 #share {
-    h3 {
-        margin-top:60px;
-    }
+
     h4 {
         font-weight: 500;
         margin-bottom: 50px;
@@ -76,30 +74,32 @@
     padding:20px 0px 20px 0px;
 }
 
-#written-form {
-    margin-top:50px;
-}
-#video-form {
-    margin-top:50px;
+#shareStory {
+    h3 {
+        margin-top: 50px;
+    }
 }
 
-label {
-    font-weight:200;
-    padding-bottom: 20px;
-}
 #tInner, #fbInner {
     z-index: 2;
 }
 #shareArrow {
     margin-top: -50px;
-    color: $purple !important;
     z-index: 1;
 }
 
-.file {
+#written-form,#video-form {
+    margin: 50px 0px 50px 0px;
+    .file {
   visibility: hidden;
   position: absolute;
 }
-#written-form,#video-form {
-    margin: 50px 0px 50px 0px;
+.fileLabel {
+    line-height: 30px;
+}
+    label {
+    font-weight:200;
+    padding-bottom: 20px;
+    line-height: 18px;
+}
 }

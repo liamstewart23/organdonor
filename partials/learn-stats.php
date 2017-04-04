@@ -9,10 +9,11 @@
 		<?php
 			if(!is_string($getStats)){
 				while($row = mysqli_fetch_array($getStats)){
-					echo "<div class=\"col-md-6\">
-							<img src=\"img/learn/stats/{$row['stat_img']}\" class=\"statsIcon img-responsive\" alt=\"{$row['stat_text']}\">
+					echo "<div class=\"col-md-6 text-center statItem\">
+					<div class=\"inner\">
+							<img src=\"img/learn/stats/{$row['stat_img']}\" class=\"img-responsive\" alt=\"{$row['stat_text']}\">
 							<p>{$row['stat_text']}</p>
-						</div>";
+						</div></div>";
 		
 				}
 			}

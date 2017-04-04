@@ -298,11 +298,11 @@ app.controller('ShareCtrl', [function() {
         $(document).ready(function() {
             //Initial Browser height for banners sizing
             $('#bannerShare1').css({ 'height': (($(window).height())) + 'px' });
+            $('#iconShare').css({ 'height': (($(window).height() / 6)) + 'px' });
+            $('#iconShare').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
             $('#twitter').css({ 'height': (($(window).height())) + 'px' });
             $('#facebook').css({ 'height': (($(window).height())) + 'px' });
             $('#shareStoryBanner').css({ 'height': (($(window).height() / 1.35)) + 'px' });
-            $('#iconShare').css({ 'height': (($(window).height() / 6)) + 'px' });
-            $('#iconShare').css({ 'margin-top': (($(window).height() / 4)) + 'px' });
             $('#iconShare2').css({ 'height': (($(window).height() / 6)) + 'px' });
             $('#iconShare2').css({ 'margin-top': (($(window).height() / 16)) + 'px' });
             $('#twitter h4').css({ 'margin-top': (($(window).height() / 6)) + 'px' });
